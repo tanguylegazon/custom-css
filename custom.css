@@ -44,6 +44,10 @@
     --duration-long: 500ms;
 }
 
+* {
+    font-family: ui-sans-serif, system-ui, sans-serif;
+}
+
 html {
     width: auto;
     overflow-x: hidden;
@@ -52,7 +56,6 @@ html {
 
 body {
     background-color: var(--bg-page);
-    font-family: ui-sans-serif, system-ui, sans-serif;
 }
 
 a, a:hover, a:active, a:focus, a:visited {
@@ -125,6 +128,7 @@ button {
     height: var(--button-height);
     padding: .55em;
     border-radius: var(--border-radius);
+    font-weight: 600;
     cursor: pointer;
 }
 
