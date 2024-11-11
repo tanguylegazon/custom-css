@@ -1,5 +1,6 @@
 /* === Colors === */
 :root {
+    /* General */
     --bg-page: #f9fafb; /* slate-050 */
     --text-primary: #334155; /* slate-700 */
     --bg-item: #d2dbe580; /* slate-270 50% */
@@ -11,6 +12,12 @@
     --btn-text-checked: #f0f9ff; /* lightBlue-050 */
     --btn-outline-checked-hover: #0376b4; /* lightBlue-800 */
     --btn-outline-hover: #bae6fd; /* lightBlue-200 */
+
+    /* Banners */
+    --bg-info: #f0f9ff; /* lightBlue-050 */
+    --text-info: #8bd7fc; /* lightBlue-280 */
+    --bg-github: #f1f5f9; /* slate-100 */
+    --text-github: #d6dee8; /* slate-250 */
 }
 
 /* === Spacing === */
@@ -39,23 +46,66 @@
 
 html {
     width: auto;
-    scroll-behavior: smooth;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: ui-sans-serif, system-ui, sans-serif;
     background-color: var(--bg-page);
+    font-family: ui-sans-serif, system-ui, sans-serif;
 }
 
-a {
-    color: inherit;
+a, a:hover, a:active, a:focus, a:visited {
     text-decoration: none;
 }
 
 svg {
     fill: currentColor;
     overflow: visible;
+}
+
+.info-banner, .github-banner {
+    position: absolute;
+    left: 50%;
+    transform: translateX(calc(-50% - 24px));
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: fit-content;
+    margin: 24px;
+    font-weight: 600;
+    border-radius: var(--border-radius);
+}
+
+.info-banner {
+    top: 0;
+    max-width: 20em;
+    padding: var(--padding-y) var(--padding-x);
+    gap: 1em;
+    color: var(--text-info);
+    background: var(--bg-info);
+}
+
+.info-banner svg {
+    height: 1.8em;
+}
+
+.github-banner {
+    bottom: 0;
+    gap: .5em;
+    color: var(--text-github);
+    background: none;
+    border-radius: var(--border-radius);
+    transition: color var(--duration-short) ease;
+    font-size: calc(.8 * var(--font-size));
+}
+
+.github-banner:hover {
+    color: var(--text-primary);
+}
+
+.github-banner svg {
+    height: 1.4em;
 }
 
 input[type="text"], button, .btn {
@@ -70,32 +120,14 @@ input[type="text"], button, .btn {
 }
 
 button {
-    height: var(--button-height);
-}
-
-input[type="text"] {
-    height: var(--input-height);
-}
-
-input[type="text"] {
-    width: 22.5ch;
-    padding: var(--padding-y) var(--padding-x);
-    outline: none;
-}
-
-input[type="text"]:hover,
-input[type="text"]:focus,
-button:hover {
-    background: var(--bg-item-hover);
-}
-
-button {
-    padding: .55em;
-    box-shadow: none;
-    cursor: pointer;
     display: flex;
     align-items: center;
     gap: .6em;
+    height: var(--button-height);
+    padding: .55em;
+    border-radius: var(--border-radius);
+    box-shadow: none;
+    cursor: pointer;
 }
 
 button > svg {
@@ -112,24 +144,37 @@ button.circle {
 }
 
 button.secondary {
-    background: none;
-    height: calc(var(--button-height) - 2px);
-    border-radius: calc(var(--border-radius) - 1px);
     position: absolute;
+    height: calc(var(--button-height) - 2px);
     padding: .68em;
+    border-radius: calc(var(--border-radius) - 1px);
+    background: none;
+}
+
+input[type="text"] {
+    width: 22.5ch;
+    padding: var(--padding-y) var(--padding-x);
+    outline: none;
+    height: var(--input-height);
+}
+
+input[type="text"]:hover,
+input[type="text"]:focus,
+button:hover {
+    background: var(--bg-item-hover);
 }
 
 .btn {
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: var(--btn-height);
-    border-radius: 1.125em;
-    padding: .08em 1em;
-    gap: calc(.6em);
-    aspect-ratio: 16/5;
+    justify-content: center;
     align-content: center;
     text-align: center;
+    height: var(--btn-height);
+    padding: .08em 1em;
+    border-radius: 1.125em;
+    gap: calc(.6em);
+    aspect-ratio: 16/5;
     font-size: calc(.8 * var(--font-size));
     font-weight: bold;
     outline: .25em solid transparent;
@@ -146,8 +191,8 @@ button.secondary {
 
 input[type="checkbox"] + .btn {
     background: var(--btn-background-unchecked);
-    user-select: none;
     color: #fff;
+    user-select: none;
 }
 
 input[type="checkbox"]:checked + .btn {
