@@ -80,7 +80,7 @@ svg {
 
 .info-banner {
     top: 0;
-    width: calc(100% - 24px - 2 * 24px);
+    max-width: 28em;
     padding: var(--padding-y) var(--padding-x);
     gap: 1em;
     color: var(--text-info);
