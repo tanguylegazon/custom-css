@@ -126,7 +126,6 @@ button {
     height: var(--button-height);
     padding: .55em;
     border-radius: var(--border-radius);
-    box-shadow: none;
     cursor: pointer;
 }
 
@@ -148,6 +147,7 @@ button.secondary {
     height: calc(var(--button-height) - 2px);
     padding: .68em;
     border-radius: calc(var(--border-radius) - 1px);
+    box-shadow: none;
     background: none;
 }
 
@@ -160,7 +160,7 @@ input[type="text"] {
 
 input[type="text"]:hover,
 input[type="text"]:focus,
-button:hover {
+button:not(.secondary):hover {
     background: var(--bg-item-hover);
 }
 
