@@ -45,6 +45,7 @@
 }
 
 * {
+    max-width: 100vw;
     font-family: ui-sans-serif, system-ui, sans-serif;
 }
 
@@ -68,9 +69,7 @@ svg {
 }
 
 .info-banner, .github-banner {
-/*    position: absolute;
-    left: 50%;
-    transform: translateX(calc(-50% - 24px));*/
+    position: absolute;
     display: flex;
     flex-direction: row;
     align-items: center;
