@@ -181,7 +181,7 @@ button:not(.secondary):hover {
     font-size: calc(.8 * var(--font-size));
     font-weight: bold;
     outline: .25em solid transparent;
-    outline-offset: .2em;
+    outline-offset: .15em;
     z-index: 1;
     cursor: pointer;
     user-select: none;
