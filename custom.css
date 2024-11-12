@@ -200,6 +200,7 @@ input[type="checkbox"] + .btn {
 input[type="checkbox"]:checked + .btn {
     background: var(--btn-background-checked);
     color: var(--btn-text-checked);
+    outline-color: var(--btn-outline-checked-hover);
 }
 
 @media (hover: hover) and (min-width: 600px) {
