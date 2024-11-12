@@ -28,7 +28,8 @@
     --border-radius: calc(.624 * var(--font-size));
     --button-height: calc(2.08 * var(--font-size));
     --input-height: calc(2.08 * var(--font-size) - 2 * var(--padding-y));
-    --btn-height: 3.6em;
+    --btn-width: 20ch;
+    --btn-height: calc(5 / 16 * var(--btn-width));
 }
 
 /* === Shadows === */
@@ -173,10 +174,10 @@ button:not(.secondary):hover {
     align-content: center;
     text-align: center;
     height: var(--btn-height);
+    width: var(--btn-width);
     padding: .08em 1em;
     border-radius: 1.125em;
     gap: calc(.6em);
-    aspect-ratio: 16/5;
     font-size: calc(.8 * var(--font-size));
     font-weight: bold;
     outline: .25em solid transparent;
