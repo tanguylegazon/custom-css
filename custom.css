@@ -154,7 +154,7 @@ button.secondary {
 }
 
 input[type="text"] {
-    width: 24.5ch;
+    width: 23.6ch;
     padding: var(--padding-y) var(--padding-x);
     outline: none;
     height: var(--input-height);
