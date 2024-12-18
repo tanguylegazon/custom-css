@@ -15,7 +15,7 @@ To use this custom CSS in your project, you can either:
    ```html
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tanguylegazon/custom-css/custom.min.css">
    ```
-2. Clone this repository and include the CSS file in your project.
+2. Clone this repository and include `custom.css` or `custom.min.css` in your project.
    ```html
    <link rel="stylesheet" href="relative/path/to/custom.min.css">
    ```
