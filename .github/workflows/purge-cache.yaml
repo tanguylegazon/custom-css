@@ -1,0 +1,18 @@
+name: Purge CDN cache
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "custom.min.css"
+
+jobs:
+  purge_cache:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+
+    steps:
+      - name: Purge JSDelivr cache
+        run: curl -X GET "https://purge.jsdelivr.net/gh/$GITHUB_REPOSITORY@custom.min.css" -s
