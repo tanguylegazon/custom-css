@@ -1,8 +1,7 @@
 *
 !.gitignore
+!.github/
+!.github/**
 !*.css
 !README.md
 !LICENSE
-!.github/
-!.github/workflows/
-
