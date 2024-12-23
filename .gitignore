@@ -1,4 +1,8 @@
 *
 !.gitignore
-!custom.css
-!custom.min.css
+!*.css
+!README.md
+!LICENSE
+!.github/
+!.github/workflows/
+
