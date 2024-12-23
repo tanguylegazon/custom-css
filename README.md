@@ -22,4 +22,4 @@ To use this custom CSS in your project, you can either:
 
 ## License
 
-This project is licensed under the terms of the MIT License. For more information, see the [LICENSE](LICENSE) file.
+This project is licensed under the terms of the MIT License. See the [LICENSE](LICENSE) file for details.
