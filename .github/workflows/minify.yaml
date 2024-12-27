@@ -24,15 +24,15 @@ jobs:
         with:
           node-version: '16'
 
-      - name: Minify CSS Files
+      - name: Minify CSS files
         run: npx csso-cli -i "custom.css" -o "custom.min.css" --comments first-exclamation
 
-      - name: Commit minified file
+      - name: Push to build branch
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
-          if [ "$(git status --porcelain)" ]; then
-            git add .
-            git commit -m "Minify CSS [skip ci]"
-            git push
-          fi
+          git checkout --orphan dist
+          git reset
+          git add custom.min.css
+          git commit -m "Minify CSS [skip ci]"
+          git push --force origin dist
