@@ -2,6 +2,11 @@ name: Purge CDN cache
 
 on:
   workflow_dispatch:
+  workflow_run:
+    workflows:
+      - Minify CSS
+    types:
+      - completed
   push:
     branches:
       - main
