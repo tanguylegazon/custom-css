@@ -20,11 +20,8 @@ jobs:
         with:
           node-version: '16'
 
-      - name: Install csso-cli
-        run: npm install -g csso-cli
-
       - name: Minify CSS Files
-        run: csso-cli -i "custom.css" -o "custom.min.css" --comments first-exclamation
+        run: npx csso-cli -i "custom.css" -o "custom.min.css" --comments first-exclamation
 
       - name: Commit minified file
         run: |
