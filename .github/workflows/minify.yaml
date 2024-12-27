@@ -7,6 +7,9 @@ on:
       - 'custom.css'
       - '!**/*.min.css'
 
+permissions:
+  contents: write
+
 jobs:
   minify:
     runs-on: ubuntu-latest
