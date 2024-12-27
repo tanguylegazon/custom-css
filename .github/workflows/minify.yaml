@@ -25,7 +25,7 @@ jobs:
           node-version: '16'
 
       - name: Minify CSS Files
-        run: npx csso-cli -i "custom.css" -o "custom.min.css" --comments first-exclamation && ls
+        run: npx csso-cli -i "custom.css" -o "custom.min.css" --comments first-exclamation
 
       - name: Commit minified file
         run: |
