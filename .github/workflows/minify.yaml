@@ -1,0 +1,37 @@
+name: Minify CSS
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'custom.css'
+      - '!**/*.min.css'
+
+jobs:
+  minify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install csso-cli
+        run: npm install -g csso-cli
+
+      - name: Minify CSS Files
+        run: csso-cli -i "custom.css" -o "custom.min.css" --comments first-exclamation
+
+      - name: Commit minified file
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          if [ "$(git status --porcelain)" ]; then
+            git add .
+            git commit -m "Minify CSS [skip ci]"
+            git push
+          fi
