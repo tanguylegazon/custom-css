@@ -1,11 +1,10 @@
-name: Minify CSS
+name: Deploy for distribution
 
 on:
   workflow_dispatch:
   push:
     paths:
       - 'custom.css'
-      - '!**/*.min.css'
 
 permissions:
   contents: write
@@ -22,12 +21,12 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: 'latest'
 
       - name: Minify CSS files
         run: npx csso-cli -i "custom.css" -o "custom.min.css" --comments first-exclamation
 
-      - name: Push to build branch
+      - name: Push to distribution branch
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
