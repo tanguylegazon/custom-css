@@ -3,50 +3,144 @@
  * A copy of the license is available at https://github.com/tanguylegazon/custom-css/blob/main/LICENSE.
  */
 
-/* === Colors === */
-:root {
-    /* General */
-    --bg-page: #f9fbfd; /* slate-040 */
-    --text-primary: #334155; /* slate-700 */
-    --bg-item: #d2dbe580; /* slate-270 50% */
-    --bg-item-hover: #dde4ed80; /* slate-220 50% */
-    --shadow-primary: #f1f5f9; /* slate-100 */
-    --shadow-hover: #dde4ed; /* slate-240 */
-    --btn-background-unchecked: #a9e0fd; /* lightBlue-230 */
-    --btn-background-checked: #0376b4; /* lightBlue-650 */
-    --btn-text-checked: #f0f9ff; /* lightBlue-050 */
-    --btn-outline-checked-hover: #0376b4; /* lightBlue-800 */
-    --btn-outline-hover: #bae6fd; /* lightBlue-200 */
+@media (prefers-color-scheme: light) {
+    :root {
+        --decor-body-gradient: radial-gradient(circle at 60% 0, #fbedff /* fuchsia-080 */ 0%, #fdfdff /* violet-010 */ 42%);
+        --decor-dot-color: rgba(91, 33, 182, .2);
+        --decor-noise-blend-mode: multiply;
+        --decor-noise-opacity: 0.08;
 
-    /* Banners */
-    --bg-info: #eaf6ff; /* lightBlue-070 */
-    --text-info: #94dafc; /* lightBlue-265 */
-    --text-github: #dbe2eb; /* slate-230 */
+        --color-bg-neutral: #e9eef4; /* slate-150 */
+        --color-hover-bg-neutral: #475569; /* slate-600 */
+        --color-txt-neutral: #3d4b5f; /* slate-650 */
+        --color-border-neutral: transparent;
+        --color-shadow-neutral: var(--color-hover-bg-neutral);
+
+        .note {
+            --color-bg-note: var(--color-bg-neutral);
+            --color-hover-bg-note: var(--color-hover-bg-neutral);
+            --color-txt-note: var(--color-txt-neutral);
+            --color-shadow-note: var(--color-shadow-neutral);
+        }
+
+        .info {
+            --color-bg-info: #e3effe; /* blue-080 */
+            --color-hover-bg-info: #2563eb; /* blue-600 */
+            --color-txt-info: #2158e1; /* blue-650 */
+            --color-shadow-info: var(--color-hover-bg-info);
+        }
+
+        .success {
+            --color-bg-success: #e4fcec; /* green-080 */
+            --color-hover-bg-success: #16a34a; /* green-600 */
+            --color-txt-success: #169143; /* green-650 */
+            --color-shadow-success: var(--color-hover-bg-success);
+        }
+
+        .warning {
+            --color-bg-warning: #fff6d5; /* amber-080 */
+            --color-hover-bg-warning: #d97706; /* amber-600 */
+            --color-txt-warning: #c66508; /* amber-650 */
+            --color-shadow-warning: var(--color-hover-bg-warning);
+        }
+
+        .danger {
+            --color-bg-danger: #fee8e8; /* red-080 */
+            --color-hover-bg-danger: #dc2626; /* red-600 */
+            --color-txt-danger: #ca2121; /* red-650 */
+            --color-shadow-danger: var(--color-hover-bg-danger);
+        }
+    }
 }
 
-/* === Spacing === */
-:root {
-    --font-size: 1.25em;
-    --padding-x: calc(.68 * var(--font-size));
-    --padding-y: calc(.56 * var(--font-size));
-    --border-radius: calc(.624 * var(--font-size));
-    --button-height: calc(2.08 * var(--font-size));
-    --input-height: calc(2.08 * var(--font-size) - 2 * var(--padding-y));
-    --btn-width: 20ch;
-    --btn-height: calc(5 / 16 * var(--btn-width));
+@media (prefers-color-scheme: dark) {
+    :root {
+        --decor-body-gradient: radial-gradient(circle at 60% 0, #210f3d /* violet-960 */ -10%, #130e21 /* indigo-980 */ 38%);
+        --decor-dot-color: rgba(255, 255, 255, .18);
+        --decor-noise-blend-mode: soft-light;
+        --decor-noise-opacity: 0.3;
+
+        --color-bg-neutral: #0c0715; /* indigo-990 */
+        --color-hover-bg-neutral: #342f92; /* indigo-850 */
+        --color-txt-neutral: #d4dcff; /* indigo-150 */
+        --color-border-neutral: var(--color-hover-bg-neutral);
+        --color-shadow-neutral: transparent;
+
+        .note {
+            --color-bg-note: var(--color-bg-neutral);
+            --color-hover-bg-note: var(--color-hover-bg-neutral);
+            --color-txt-note: var(--color-txt-neutral);
+            --color-border-note: var(--color-hover-bg-note);
+        }
+
+        .info {
+            --color-bg-info: #070e14; /* sky-990 */
+            --color-hover-bg-info: #065c8b; /* sky-780 */
+            --color-txt-info: #c6eafd; /* sky-170 */
+            --color-border-info: var(--color-hover-bg-info);
+        }
+
+        .success {
+            --color-bg-success: #030d0a; /* emerald-990 */
+            --color-hover-bg-success: #066449; /* emerald-780 */
+            --color-txt-success: #b4f5d6; /* emerald-170 */
+            --color-border-success: var(--color-hover-bg-success);
+        }
+
+        .warning {
+            --color-bg-warning: #150901; /* yellow-990 */
+            --color-hover-bg-warning: #8b510d; /* yellow-780 */
+            --color-txt-warning: #fff39b; /* yellow-170 */
+            --color-border-warning: var(--color-hover-bg-warning);
+        }
+
+        .danger {
+            --color-bg-danger: #180506; /* rose-990 */
+            --color-hover-bg-danger: #a5123a; /* rose-780 */
+            --color-txt-danger: #fed4d9; /* rose-170 */
+            --color-border-danger: var(--color-hover-bg-danger);
+        }
+    }
 }
 
-/* === Shadows === */
-:root {
-    --main-shadow: 0 0 1.2em .2em var(--shadow-primary);
-    --main-hover-shadow: 0 .8em 3.8em .2em var(--shadow-hover);
+.note {
+    --color-bg-button: var(--color-bg-note);
+    --color-hover-bg-button: var(--color-hover-bg-note);
+    --color-txt-button: var(--color-txt-note);
+    --color-border-button: var(--color-border-note, transparent);
+    --color-shadow-button: var(--color-shadow-note, transparent);
 }
 
-/* === Transitions === */
-:root {
-    --duration-short: 150ms;
-    --duration-normal: 200ms;
-    --duration-long: 500ms;
+.info {
+    --color-bg-button: var(--color-bg-info);
+    --color-hover-bg-button: var(--color-hover-bg-info);
+    --color-txt-button: var(--color-txt-info);
+    --color-border-button: var(--color-border-info, transparent);
+    --color-shadow-button: var(--color-shadow-info, transparent);
+}
+
+.success {
+    --color-bg-button: var(--color-bg-success);
+    --color-hover-bg-button: var(--color-hover-bg-success);
+    --color-txt-button: var(--color-txt-success);
+    --color-border-button: var(--color-border-success, transparent);
+    --color-shadow-button: var(--color-shadow-success, transparent);
+}
+
+.warning {
+    --color-bg-button: var(--color-bg-warning);
+    --color-hover-bg-button: var(--color-hover-bg-warning);
+    --color-txt-button: var(--color-txt-warning);
+    --color-border-button: var(--color-border-warning, transparent);
+    --color-shadow-button: var(--color-shadow-warning, transparent);
+}
+
+.danger {
+    --color-bg-button: var(--color-bg-danger);
+    --color-hover-bg-button: var(--color-hover-bg-danger);
+    --color-txt-button: var(--color-txt-danger);
+    --color-border-button: var(--color-border-danger, transparent);
+    --color-shadow-button: var(--color-shadow-danger, transparent);
 }
 
 * {
@@ -61,8 +155,49 @@ html {
 }
 
 body {
-    background-color: var(--bg-page);
+    margin: 0;
+    position: relative;
+    box-sizing: border-box;
+    background: var(--decor-body-gradient) no-repeat;
+    background-size: auto;
+    min-height: 100vh;
 }
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    mix-blend-mode: var(--decor-noise-blend-mode);
+    opacity: var(--decor-noise-opacity);
+    background: url("data:image/svg+xml;utf8,\
+                    <svg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'>\
+                      <filter id='n'>\
+                        <feTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='3' stitchTiles='stitch'/>\
+                      </filter>\
+                      <rect width='100%' height='100%' filter='url(%23n)'/>\
+                    </svg>") repeat;
+    background-size: 200px 200px;
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+
+    background-image: radial-gradient(circle at center, var(--decor-dot-color) 1px, transparent 0);
+    background-size: 50px 50px;
+    background-repeat: repeat;
+
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, .3) 100%);
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+    mask-mode: alpha;
+}
+
 
 a, a:hover, a:active, a:focus, a:visited {
     text-decoration: none;
@@ -73,152 +208,54 @@ svg {
     overflow: visible;
 }
 
-.info-banner, .github-banner {
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 24px;
-    font-weight: 600;
-    border-radius: var(--border-radius);
-}
-
-.info-banner {
-    top: 0;
-    max-width: 28em;
-    padding: var(--padding-y) var(--padding-x);
-    gap: 1em;
-    color: var(--text-info);
-    background: var(--bg-info);
-}
-
-.info-banner svg {
-    height: 1.8em;
-}
-
-.github-banner {
-    bottom: 0;
-    gap: .5em;
-    color: var(--text-github);
-    background: none;
-    border-radius: var(--border-radius);
-    transition: color var(--duration-short) ease;
-    font-size: calc(.75 * var(--font-size));
-}
-
-.github-banner:hover {
-    color: var(--text-primary);
-}
-
-.github-banner svg {
-    height: 1.32em;
-}
-
-input[type="text"], button, .btn {
-    backdrop-filter: blur(50px);
-    background: var(--bg-item);
-    border: none;
-    border-radius: var(--border-radius);
-    box-shadow: 0 0 1.2em .2em var(--shadow-primary);
-    color: var(--text-primary);
-    font-size: var(--font-size);
-    transition: background-color var(--duration-normal) ease;
-}
-
 button {
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: .6em;
-    height: var(--button-height);
-    padding: .55em;
-    border-radius: var(--border-radius);
+    max-width: 48ch;
+    text-align: left;
+    border-radius: 0;
+    border: none;
     font-weight: 600;
     cursor: pointer;
+    box-shadow: inset 0 0 0 1px var(--color-border-button, var(--color-border-neutral)),
+    0 0 20px 0 color-mix(in oklch, var(--color-shadow-button, var(--color-shadow-neutral)), transparent 96%);
+    font-size: 1rem;
+    margin: .5em;
+    padding: .6em .8em;
+    background: var(--color-bg-button, var(--color-bg-neutral));
+    color: var(--color-txt-button, var(--color-txt-neutral));
+    transition: color 50ms ease, background-color 100ms ease, box-shadow 80ms ease;
 }
 
-button > svg {
-    height: 100%;
-}
+button:has(> svg:first-child:last-child) {
+    padding: .6em;
 
-button.small {
-    font-size: calc(var(--font-size) * .7);
-}
-
-button.circle {
-    aspect-ratio: 1;
-    border-radius: 50%;
-}
-
-button.secondary {
-    position: absolute;
-    height: calc(var(--button-height) - 2px);
-    padding: .68em;
-    border-radius: calc(var(--border-radius) - 1px);
-    box-shadow: none;
-    background: none;
-}
-
-input[type="text"] {
-    width: 23.6ch;
-    padding: var(--padding-y) var(--padding-x);
-    outline: none;
-    height: var(--input-height);
-}
-
-input[type="text"]:hover,
-input[type="text"]:focus,
-button:not(.secondary):hover {
-    background: var(--bg-item-hover);
-}
-
-.btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    height: var(--btn-height);
-    width: var(--btn-width);
-    padding: .08em 1em;
-    border-radius: 1.125em;
-    gap: calc(.6em);
-    font-size: calc(.8 * var(--font-size));
-    font-weight: bold;
-    outline: .3em solid transparent;
-    outline-offset: .15em;
-    z-index: 1;
-    cursor: pointer;
-    user-select: none;
-    transition: background-color var(--duration-short) linear, outline var(--duration-short) linear, box-shadow var(--duration-long) ease-out, z-index var(--duration-long) ease-out;
-}
-
-.btn svg {
-    width: 1.6em;
-}
-
-input[type="checkbox"] + .btn {
-    background: var(--btn-background-unchecked);
-    color: #fff;
-    user-select: none;
-}
-
-input[type="checkbox"]:checked + .btn {
-    background: var(--btn-background-checked);
-    color: var(--btn-text-checked);
-    outline-color: var(--btn-outline-checked-hover);
-}
-
-@media (hover: hover) and (min-width: 600px) {
-    .btn:hover {
-        z-index: 10;
-        box-shadow: var(--main-hover-shadow);
+    svg {
+        height: 1lh;
     }
+}
 
-    input[type="checkbox"] + .btn:hover {
-        outline-color: var(--btn-outline-hover);
-    }
+button svg {
+    height: 1.2em;
+    box-sizing: border-box;
+}
 
-    input[type="checkbox"]:checked + .btn:hover {
-        outline-color: var(--btn-outline-checked-hover);
-    }
+button:hover {
+    background-color: var(--color-hover-bg-button, var(--color-hover-bg-neutral));
+    color: white;
+    transition: color 100ms ease, background-color 200ms ease, box-shadow 160ms ease;
+    box-shadow: inset 0 0 0 1px var(--color-border-button, var(--color-border-neutral)),
+    0 2px 24px 8px color-mix(in oklch, var(--color-shadow-button, var(--color-shadow-neutral)), transparent 88%);
+}
+
+button:focus-visible {
+    outline: 2px solid var(--color-hover-bg-button, var(--color-hover-bg-neutral));
+    outline-offset: 5px;
+}
+
+.rounded {
+    border-radius: 12px;
+    corner-shape: squircle;
 }
