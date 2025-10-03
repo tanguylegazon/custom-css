@@ -11,6 +11,7 @@
         --color-neutral-text: #39475b; /* slate-670 */
         --color-neutral-text-on-primary: #f8fafc; /* slate-050 */
         --color-neutral-border: transparent;
+        --color-neutral-shadow: var(--color-neutral-primary);
 
         /* Note */
         --color-note-primary: var(--color-neutral-primary);
@@ -18,6 +19,7 @@
         --color-note-text: var(--color-neutral-text);
         --color-note-text-on-primary: var(--color-neutral-text-on-primary);
         --color-note-border: var(--color-neutral-border);
+        --color-note-shadow: var(--color-neutral-shadow);
 
         /* Info */
         --color-info-primary: #2563eb; /* blue-600 */
@@ -25,6 +27,7 @@
         --color-info-text: #2054de; /* blue-670 */
         --color-info-text-on-primary: #f5faff; /* blue-030 */
         --color-info-border: transparent;
+        --color-info-shadow: var(--color-info-primary);
 
         /* Warning */
         --color-warning-primary: #d97706; /* amber-600 */
@@ -32,6 +35,7 @@
         --color-warning-text: #bf5e08; /* amber-670 */
         --color-warning-text-on-primary: #fffdf3; /* amber-030 */
         --color-warning-border: transparent;
+        --color-warning-shadow: var(--color-warning-primary);
 
         /* Danger */
         --color-danger-primary: #dc2626; /* red-600 */
@@ -39,6 +43,7 @@
         --color-danger-text: #c31f1f; /* red-670 */
         --color-danger-text-on-primary: #fef7f7; /* red-030 */
         --color-danger-border: transparent;
+        --color-danger-shadow: var(--color-danger-primary);
 
         /* Success */
         --color-success-primary: #16a34a; /* green-600 */
@@ -46,7 +51,9 @@
         --color-success-text: #168a41; /* green-670 */
         --color-success-text-on-primary: #f6fef8; /* green-030 */
         --color-success-border: transparent;
+        --color-success-shadow: var(--color-success-primary);
 
+        /* Theme */
         --theme-body-gradient: radial-gradient(circle at 60% 0, #fbedff /* fuchsia-080 */ 0%, #fdfdff /* violet-010 */ 42%);
         --theme-body-pattern-color: rgba(91, 33, 182, .2);
         --theme-body-noise-blend: multiply;
@@ -62,6 +69,7 @@
         --color-neutral-text: #d9e1ff; /* indigo-130 */
         --color-neutral-text-on-primary: #eef2ff; /* indigo-050 */
         --color-neutral-border: var(--color-neutral-primary);
+        --color-neutral-shadow: var(--color-neutral-secondary);
 
         /* Note */
         --color-note-primary: var(--color-neutral-primary);
@@ -69,6 +77,7 @@
         --color-note-text: var(--color-neutral-text);
         --color-note-text-on-primary: var(--color-neutral-text-on-primary);
         --color-note-border: var(--color-note-primary);
+        --color-note-shadow: var(--color-neutral-shadow);
 
         /* Info */
         --color-info-primary: #065c8b; /* sky-780 */
@@ -76,6 +85,7 @@
         --color-info-text: #d1edfe; /* sky-140 */
         --color-info-text-on-primary: #f6fbff; /* sky-030 */
         --color-info-border: var(--color-info-primary);
+        --color-info-shadow: var(--color-info-secondary);
 
         /* Warning */
         --color-warning-primary: #8b510d; /* yellow-780 */
@@ -83,6 +93,7 @@
         --color-warning-text: #fff5ac; /* yellow-140 */
         --color-warning-text-on-primary: #fffdf1; /* yellow-030 */
         --color-warning-border: var(--color-warning-primary);
+        --color-warning-shadow: var(--color-warning-secondary);
 
         /* Danger */
         --color-danger-primary: #a5123a; /* rose-780 */
@@ -90,6 +101,7 @@
         --color-danger-text: #ffdbde; /* rose-140 */
         --color-danger-text-on-primary: #fff7f7; /* rose-030 */
         --color-danger-border: var(--color-danger-primary);
+        --color-danger-shadow: var(--color-danger-secondary);
 
         /* Success */
         --color-success-primary: #066449; /* emerald-780 */
@@ -97,79 +109,15 @@
         --color-success-text: #c1f7dd; /* emerald-140 */
         --color-success-text-on-primary: #f4fef9; /* emerald-030 */
         --color-success-border: var(--color-success-primary);
+        --color-success-shadow: var(--color-success-secondary);
 
+        /* Theme */
         --theme-body-gradient: radial-gradient(circle at 60% 0, #210f3d /* violet-960 */ -10%, #130e21 /* indigo-980 */ 38%);
         --theme-body-pattern-color: rgba(255, 255, 255, .18);
         --theme-body-noise-blend: soft-light;
         --theme-body-noise-opacity: 0.3;
     }
 }
-
-.note {
-    background-color: var(--color-note-secondary);
-    color: var(--color-note-text);
-    outline-color: var(--color-note-border);
-}
-
-:is(
-  button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
-).note:hover {
-    background-color: var(--color-note-primary);
-    color: var(--color-note-text-on-primary);
-}
-
-.info {
-    background-color: var(--color-info-secondary);
-    color: var(--color-info-text);
-    outline-color: var(--color-info-border);
-}
-
-:is(
-    button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
-).info:hover {
-    background-color: var(--color-info-primary);
-    color: var(--color-info-text-on-primary);
-}
-
-.warning {
-    background-color: var(--color-warning-secondary);
-    color: var(--color-warning-text);
-    outline-color: var(--color-warning-border);
-}
-
-:is(
-    button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
-).warning:hover {
-    background-color: var(--color-warning-primary);
-    color: var(--color-warning-text-on-primary);
-}
-
-.danger {
-    background-color: var(--color-danger-secondary);
-    color: var(--color-danger-text);
-    outline-color: var(--color-danger-border);
-}
-
-:is(
-    button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
-).danger:hover {
-    background-color: var(--color-danger-primary);
-    color: var(--color-danger-text-on-primary);
-}
-
-.success {
-    background-color: var(--color-success-secondary);
-    color: var(--color-success-text);
-    outline-color: var(--color-success-border);
-}
-
-:is(
-    button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
-).success:hover {
-    background-color: var(--color-success-primary);
-    color: var(--color-success-text-on-primary);
-}
-
 
 * {
     max-width: 100vw;
@@ -229,7 +177,224 @@ body::after {
 svg {
     fill: currentColor;
     overflow: visible;
+    height: 1.2em;
 }
+
+button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"] {
+    background-color: var(--color-neutral-secondary);
+    color: var(--color-neutral-text);
+    outline-color: var(--color-neutral-border);
+    height: fit-content;
+    max-width: 48ch;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 0 20px 0 color-mix(in oklch, var(--color-shadow), transparent 96%);
+    font-size: 1rem;
+    transition: color 90ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+
+:is(
+  button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
+):hover {
+    background-color: var(--color-neutral-primary);
+    color: var(--color-neutral-text-on-primary);
+
+    transition: color 110ms ease, background-color 220ms ease, box-shadow 220ms ease;
+    box-shadow: 0 2px 24px 8px color-mix(in oklch, var(--color-shadow), transparent 88%);
+}
+
+
+
+
+/* Note */
+.note {
+    background-color: var(--color-note-secondary);
+    color: var(--color-note-text);
+    outline-color: transparent;
+}
+
+:is(
+    button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
+).note {
+    outline-color: var(--color-note-border);
+}
+
+:is(
+    button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
+).note:hover {
+    background-color: var(--color-note-primary);
+    color: var(--color-note-text-on-primary);
+    --color-shadow: var(--color-note-shadow);
+}
+
+.note.secondary {
+    color: var(--color-note-text);
+}
+
+:is(
+  button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
+).note.secondary:hover {
+    color: var(--color-note-text);
+}
+
+
+/* Info */
+.info {
+    background-color: var(--color-info-secondary);
+    color: var(--color-info-text);
+    outline-color: var(--color-info-border);
+}
+
+:is(
+    button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
+).info {
+    outline-color: var(--color-info-border);
+}
+
+:is(
+    button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
+).info:hover {
+    background-color: var(--color-info-primary);
+    color: var(--color-info-text-on-primary);
+    --color-shadow: var(--color-info-shadow);
+}
+
+.info.secondary {
+    color: var(--color-info-text);
+}
+
+:is(
+  button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
+).info.secondary:hover {
+    color: var(--color-info-text);
+}
+
+
+/* Warning */
+.warning {
+    background-color: var(--color-warning-secondary);
+    color: var(--color-warning-text);
+    outline-color: var(--color-warning-border);
+}
+
+:is(
+    button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
+).warning {
+    outline-color: var(--color-warning-border);
+}
+
+:is(
+    button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
+).warning:hover {
+    background-color: var(--color-warning-primary);
+    color: var(--color-warning-text-on-primary);
+    --color-shadow: var(--color-warning-shadow);
+}
+
+.warning.secondary {
+    color: var(--color-warning-text);
+}
+
+:is(
+  button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
+).warning.secondary:hover {
+    color: var(--color-warning-text);
+}
+
+
+/* Danger */
+.danger {
+    background-color: var(--color-danger-secondary);
+    color: var(--color-danger-text);
+    outline-color: var(--color-danger-border);
+    --color-shadow: var(--color-danger-shadow);
+}
+
+:is(
+    button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
+).danger {
+    outline-color: var(--color-danger-border);
+}
+
+:is(
+    button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
+).danger:hover {
+    background-color: var(--color-danger-primary);
+    color: var(--color-danger-text-on-primary);
+}
+
+.danger.secondary {
+    color: var(--color-danger-text);
+}
+
+:is(
+    button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
+).danger.secondary:hover {
+    color: var(--color-danger-text);
+}
+
+
+/* Success */
+.success {
+    background-color: var(--color-success-secondary);
+    color: var(--color-success-text);
+    outline-color: var(--color-success-border);
+}
+
+:is(
+    button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
+).success {
+    outline-color: var(--color-success-border);
+}
+
+:is(
+    button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
+).success:hover {
+    background-color: var(--color-success-primary);
+    color: var(--color-success-text-on-primary);
+    --color-shadow: var(--color-success-shadow);
+}
+
+.success.secondary {
+    color: var(--color-success-text);
+}
+
+:is(
+  button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
+).success.secondary:hover {
+    color: var(--color-success-text);
+}
+
+
+
+
+
+
+.secondary {
+    background: none;
+    box-shadow: none;
+    outline: none;
+    padding: .6em .4em;
+    color: var(--color-neutral-text);
+}
+
+:is(
+    button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
+).secondary:hover {
+    color: var(--color-neutral-text);
+    text-decoration: underline;
+    text-decoration-thickness: .1em;
+    background: none;
+    box-shadow: none;
+    outline: none;
+}
+
+
+
+
+
+
+
 
 .note, .info, .warning, .danger, .success,
 button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"] {
@@ -247,28 +412,24 @@ button, a, input[type="button"], input[type="submit"], input[type="reset"], [rol
     font-size: 1rem;
 }
 
-button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"] {
-    background-color: var(--color-neutral-secondary);
-    color: var(--color-neutral-text);
-    outline-color: var(--color-neutral-border);
 
-    max-width: 48ch;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 0 20px 0 color-mix(in oklch, var(--color-shadow-button, var(--color-shadow-neutral)), transparent 96%);
-    font-size: 1rem;
-    transition: color 50ms ease, background-color 100ms ease, box-shadow 80ms ease;
-}
 
-:is(
-  button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
-):hover {
-    background-color: var(--color-neutral-primary);
-    color: var(--color-neutral-text-on-primary);
 
-    transition: color 100ms ease, background-color 200ms ease, box-shadow 160ms ease;
-    box-shadow: 0 2px 24px 8px color-mix(in oklch, var(--color-shadow-button, var(--color-shadow-neutral)), transparent 88%);
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 :is(
     button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
@@ -280,9 +441,7 @@ button, a, input[type="button"], input[type="submit"], input[type="reset"], [rol
     }
 }
 
-svg {
-    height: 1.2em;
-}
+
 
 .rounded {
     border-radius: 12px;
