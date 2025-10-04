@@ -7,55 +7,61 @@
     :root {
         /* Neutral */
         --color-neutral-primary: #475569; /* slate-600 */
-        --color-neutral-secondary: #e9eef4; /* slate-150 */
-        --color-neutral-text: #39475b; /* slate-670 */
-        --color-neutral-text-on-primary: #f8fafc; /* slate-050 */
+        --color-neutral-surface: #e9eef4; /* slate-150 */
+        --color-neutral-on: var(--color-neutral-primary);
+        --color-neutral-on-surface: #39475b; /* slate-670 */
+        --color-neutral-on-primary: #f8fafc; /* slate-050 */
         --color-neutral-border: transparent;
         --color-neutral-shadow: var(--color-neutral-primary);
 
         /* Note */
         --color-note-primary: var(--color-neutral-primary);
-        --color-note-secondary: var(--color-neutral-secondary);
-        --color-note-text: var(--color-neutral-text);
-        --color-note-text-on-primary: var(--color-neutral-text-on-primary);
+        --color-note-surface: var(--color-neutral-surface);
+        --color-note-on: var(--color-neutral-on);
+        --color-note-on-surface: var(--color-neutral-on-surface);
+        --color-note-on-primary: var(--color-neutral-on-primary);
         --color-note-border: var(--color-neutral-border);
         --color-note-shadow: var(--color-neutral-shadow);
 
         /* Info */
         --color-info-primary: #2563eb; /* blue-600 */
-        --color-info-secondary: #e3effe; /* blue-080 */
-        --color-info-text: #2054de; /* blue-670 */
-        --color-info-text-on-primary: #f5faff; /* blue-030 */
+        --color-info-surface: #e3effe; /* blue-080 */
+        --color-info-on: var(--color-info-primary);
+        --color-info-on-surface: #2054de; /* blue-670 */
+        --color-info-on-primary: #f5faff; /* blue-030 */
         --color-info-border: transparent;
         --color-info-shadow: var(--color-info-primary);
 
         /* Warning */
         --color-warning-primary: #d97706; /* amber-600 */
-        --color-warning-secondary: #fff6d5; /* amber-080 */
-        --color-warning-text: #bf5e08; /* amber-670 */
-        --color-warning-text-on-primary: #fffdf3; /* amber-030 */
+        --color-warning-surface: #fff6d5; /* amber-080 */
+        --color-warning-on: var(--color-warning-primary);
+        --color-warning-on-surface: #bf5e08; /* amber-670 */
+        --color-warning-on-primary: #fffdf3; /* amber-030 */
         --color-warning-border: transparent;
         --color-warning-shadow: var(--color-warning-primary);
 
         /* Danger */
         --color-danger-primary: #dc2626; /* red-600 */
-        --color-danger-secondary: #fee8e8; /* red-080 */
-        --color-danger-text: #c31f1f; /* red-670 */
-        --color-danger-text-on-primary: #fef7f7; /* red-030 */
+        --color-danger-surface: #fee8e8; /* red-080 */
+        --color-danger-on: var(--color-danger-primary);
+        --color-danger-on-surface: #c31f1f; /* red-670 */
+        --color-danger-on-primary: #fef7f7; /* red-030 */
         --color-danger-border: transparent;
         --color-danger-shadow: var(--color-danger-primary);
 
         /* Success */
         --color-success-primary: #16a34a; /* green-600 */
-        --color-success-secondary: #e4fcec; /* green-080 */
-        --color-success-text: #168a41; /* green-670 */
-        --color-success-text-on-primary: #f6fef8; /* green-030 */
+        --color-success-surface: #e4fcec; /* green-080 */
+        --color-success-on: var(--color-success-primary);
+        --color-success-on-surface: #168a41; /* green-670 */
+        --color-success-on-primary: #f6fef8; /* green-030 */
         --color-success-border: transparent;
         --color-success-shadow: var(--color-success-primary);
 
         /* Theme */
         --theme-body-gradient: radial-gradient(circle at 60% 0, #fbedff /* fuchsia-080 */ 0%, #fdfdff /* violet-010 */ 42%);
-        --theme-body-pattern-color: rgba(91, 33, 182, .2);
+        --theme-body-pattern-color: rgba(91, 33, 182, .22); /* violet-800 */
         --theme-body-noise-blend: multiply;
         --theme-body-noise-opacity: 0.08;
     }
@@ -65,55 +71,61 @@
     :root {
         /* Neutral */
         --color-neutral-primary: #342f92; /* indigo-850 */
-        --color-neutral-secondary: #0c0715; /* indigo-990 */
-        --color-neutral-text: #d9e1ff; /* indigo-130 */
-        --color-neutral-text-on-primary: #eef2ff; /* indigo-050 */
+        --color-neutral-surface: #0c0715; /* indigo-990 */
+        --color-neutral-on: #b3c0fd; /* indigo-260 */
+        --color-neutral-on-surface: #d9e1ff; /* indigo-130 */
+        --color-neutral-on-primary: #eef2ff; /* indigo-050 */
         --color-neutral-border: var(--color-neutral-primary);
-        --color-neutral-shadow: var(--color-neutral-secondary);
+        --color-neutral-shadow: var(--color-neutral-surface);
 
         /* Note */
         --color-note-primary: var(--color-neutral-primary);
-        --color-note-secondary: var(--color-neutral-secondary);
-        --color-note-text: var(--color-neutral-text);
-        --color-note-text-on-primary: var(--color-neutral-text-on-primary);
+        --color-note-surface: var(--color-neutral-surface);
+        --color-note-on: var(--color-neutral-on);
+        --color-note-on-surface: var(--color-neutral-on-surface);
+        --color-note-on-primary: var(--color-neutral-on-primary);
         --color-note-border: var(--color-note-primary);
         --color-note-shadow: var(--color-neutral-shadow);
 
         /* Info */
         --color-info-primary: #065c8b; /* sky-780 */
-        --color-info-secondary: #070e14; /* sky-990 */
-        --color-info-text: #d1edfe; /* sky-140 */
-        --color-info-text-on-primary: #f6fbff; /* sky-030 */
+        --color-info-surface: #070e14; /* sky-990 */
+        --color-info-on: #97dbfc; /* sky-260 */
+        --color-info-on-surface: #d1edfe; /* sky-140 */
+        --color-info-on-primary: #f6fbff; /* sky-030 */
         --color-info-border: var(--color-info-primary);
-        --color-info-shadow: var(--color-info-secondary);
+        --color-info-shadow: var(--color-info-surface);
 
         /* Warning */
         --color-warning-primary: #8b510d; /* yellow-780 */
-        --color-warning-secondary: #150901; /* yellow-990 */
-        --color-warning-text: #fff5ac; /* yellow-140 */
-        --color-warning-text-on-primary: #fffdf1; /* yellow-030 */
+        --color-warning-surface: #150901; /* yellow-990 */
+        --color-warning-on: #fde079; /* amber-230 */
+        --color-warning-on-surface: #fff5ac; /* yellow-140 */
+        --color-warning-on-primary: #fffdf1; /* yellow-030 */
         --color-warning-border: var(--color-warning-primary);
-        --color-warning-shadow: var(--color-warning-secondary);
+        --color-warning-shadow: var(--color-warning-surface);
 
         /* Danger */
         --color-danger-primary: #a5123a; /* rose-780 */
-        --color-danger-secondary: #180506; /* rose-990 */
-        --color-danger-text: #ffdbde; /* rose-140 */
-        --color-danger-text-on-primary: #fff7f7; /* rose-030 */
+        --color-danger-surface: #180506; /* rose-990 */
+        --color-danger-on: #feb5bd; /* rose-260 */
+        --color-danger-on-surface: #ffdbde; /* rose-140 */
+        --color-danger-on-primary: #fff7f7; /* rose-030 */
         --color-danger-border: var(--color-danger-primary);
-        --color-danger-shadow: var(--color-danger-secondary);
+        --color-danger-shadow: var(--color-danger-surface);
 
         /* Success */
         --color-success-primary: #066449; /* emerald-780 */
-        --color-success-secondary: #030d0a; /* emerald-990 */
-        --color-success-text: #c1f7dd; /* emerald-140 */
-        --color-success-text-on-primary: #f4fef9; /* emerald-030 */
+        --color-success-surface: #030d0a; /* emerald-990 */
+        --color-success-on: #86ecc1; /* emerald-260 */
+        --color-success-on-surface: #c1f7dd; /* emerald-140 */
+        --color-success-on-primary: #f4fef9; /* emerald-030 */
         --color-success-border: var(--color-success-primary);
-        --color-success-shadow: var(--color-success-secondary);
+        --color-success-shadow: var(--color-success-surface);
 
         /* Theme */
         --theme-body-gradient: radial-gradient(circle at 60% 0, #210f3d /* violet-960 */ -10%, #130e21 /* indigo-980 */ 38%);
-        --theme-body-pattern-color: rgba(255, 255, 255, .18);
+        --theme-body-pattern-color: rgba(224, 231, 255, .2); /* indigo-100 */
         --theme-body-noise-blend: soft-light;
         --theme-body-noise-opacity: 0.3;
     }
@@ -137,11 +149,12 @@ body {
     background: var(--theme-body-gradient) no-repeat;
     background-size: auto;
     min-height: 100vh;
+    overflow: hidden;
 }
 
 body::before {
     content: "";
-    position: fixed;
+    position: absolute;
     inset: 0;
     pointer-events: none;
     mix-blend-mode: var(--theme-body-noise-blend);
@@ -161,14 +174,13 @@ body::after {
     content: "";
     position: absolute;
     inset: 0;
-    pointer-events: none;
     z-index: -1;
 
     background-image: radial-gradient(circle at center, var(--theme-body-pattern-color) 1px, transparent 0);
     background-size: 50px 50px;
     background-repeat: repeat;
 
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, .3) 100%);
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, .2) 100%);
     mask-repeat: no-repeat;
     mask-size: 100% 100%;
     mask-mode: alpha;
@@ -181,26 +193,57 @@ svg {
 }
 
 button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"] {
-    background-color: var(--color-neutral-secondary);
-    color: var(--color-neutral-text);
-    outline-color: var(--color-neutral-border);
+    opacity: 1 !important;
+    background-color: var(--color-neutral-surface);
+    color: var(--color-neutral-on-surface);
+    outline: var(--color-neutral-border) solid 1px;
     height: fit-content;
     max-width: 48ch;
     font-weight: 600;
+    padding: .6em .8em !important;
     cursor: pointer;
-    box-shadow: 0 0 20px 0 color-mix(in oklch, var(--color-shadow), transparent 96%);
     font-size: 1rem;
-    transition: color 90ms ease, background-color 180ms ease, box-shadow 180ms ease;
+    transition: color 100ms ease, background-color 200ms ease, box-shadow 200ms ease;
 }
 
 :is(
   button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
 ):hover {
     background-color: var(--color-neutral-primary);
-    color: var(--color-neutral-text-on-primary);
+    color: var(--color-neutral-on-primary);
 
-    transition: color 110ms ease, background-color 220ms ease, box-shadow 220ms ease;
-    box-shadow: 0 2px 24px 8px color-mix(in oklch, var(--color-shadow), transparent 88%);
+    transition: color 100ms ease, background-color 200ms ease, box-shadow 200ms ease;
+}
+
+:is(
+  button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
+).secondary {
+    /* TODO */
+}
+
+
+
+
+
+
+
+
+:is(
+    .note, .info, .warning, .danger, .success
+):not(
+    button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
+) {
+    opacity: .85;
+    padding: 1em 1.8em;
+    text-decoration: none;
+}
+
+:is(
+    .note, .info, .warning, .danger, .success
+).secondary {
+    @media (prefers-color-scheme: light) {
+        opacity: .7;
+    }
 }
 
 
@@ -208,8 +251,8 @@ button, a, input[type="button"], input[type="submit"], input[type="reset"], [rol
 
 /* Note */
 .note {
-    background-color: var(--color-note-secondary);
-    color: var(--color-note-text);
+    background-color: var(--color-note-surface);
+    color: var(--color-note-on-surface);
     outline-color: transparent;
 }
 
@@ -217,31 +260,36 @@ button, a, input[type="button"], input[type="submit"], input[type="reset"], [rol
     button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
 ).note {
     outline-color: var(--color-note-border);
+    box-shadow: 0 0 20px 0 color-mix(in oklch, var(--color-note-shadow), transparent 92%);
 }
 
 :is(
     button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
 ).note:hover {
     background-color: var(--color-note-primary);
-    color: var(--color-note-text-on-primary);
-    --color-shadow: var(--color-note-shadow);
+    color: var(--color-note-on-primary);
+    box-shadow: 0 2px 24px 8px color-mix(in oklch, var(--color-note-shadow), transparent 86%);
 }
 
 .note.secondary {
-    color: var(--color-note-text);
+    color: var(--color-note-on);
+}
+
+.note.secondary:hover {
+    color: color-mix(in oklch, var(--color-note-on), black 10%);
 }
 
 :is(
   button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
 ).note.secondary:hover {
-    color: var(--color-note-text);
+    color: var(--color-note-on-surface);
 }
 
 
 /* Info */
 .info {
-    background-color: var(--color-info-secondary);
-    color: var(--color-info-text);
+    background-color: var(--color-info-surface);
+    color: var(--color-info-on-surface);
     outline-color: var(--color-info-border);
 }
 
@@ -249,31 +297,32 @@ button, a, input[type="button"], input[type="submit"], input[type="reset"], [rol
     button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
 ).info {
     outline-color: var(--color-info-border);
+    box-shadow: 0 0 20px 0 color-mix(in oklch, var(--color-info-shadow), transparent 92%);
 }
 
 :is(
     button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
 ).info:hover {
     background-color: var(--color-info-primary);
-    color: var(--color-info-text-on-primary);
-    --color-shadow: var(--color-info-shadow);
+    color: var(--color-info-on-primary);
+    box-shadow: 0 2px 24px 8px color-mix(in oklch, var(--color-info-shadow), transparent 86%);
 }
 
 .info.secondary {
-    color: var(--color-info-text);
+    color: var(--color-info-on);
 }
 
 :is(
   button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
 ).info.secondary:hover {
-    color: var(--color-info-text);
+    color: var(--color-info-on-surface);
 }
 
 
 /* Warning */
 .warning {
-    background-color: var(--color-warning-secondary);
-    color: var(--color-warning-text);
+    background-color: var(--color-warning-surface);
+    color: var(--color-warning-on-surface);
     outline-color: var(--color-warning-border);
 }
 
@@ -281,63 +330,65 @@ button, a, input[type="button"], input[type="submit"], input[type="reset"], [rol
     button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
 ).warning {
     outline-color: var(--color-warning-border);
+    box-shadow: 0 0 20px 0 color-mix(in oklch, var(--color-warning-shadow), transparent 92%);
 }
 
 :is(
     button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
 ).warning:hover {
     background-color: var(--color-warning-primary);
-    color: var(--color-warning-text-on-primary);
-    --color-shadow: var(--color-warning-shadow);
+    color: var(--color-warning-on-primary);
+    box-shadow: 0 2px 24px 8px color-mix(in oklch, var(--color-warning-shadow), transparent 86%);
 }
 
 .warning.secondary {
-    color: var(--color-warning-text);
+    color: var(--color-warning-on);
 }
 
 :is(
   button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
 ).warning.secondary:hover {
-    color: var(--color-warning-text);
+    color: var(--color-warning-on-surface);
 }
 
 
 /* Danger */
 .danger {
-    background-color: var(--color-danger-secondary);
-    color: var(--color-danger-text);
+    background-color: var(--color-danger-surface);
+    color: var(--color-danger-on-surface);
     outline-color: var(--color-danger-border);
-    --color-shadow: var(--color-danger-shadow);
 }
 
 :is(
     button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
 ).danger {
     outline-color: var(--color-danger-border);
+    box-shadow: 0 0 20px 0 color-mix(in oklch, var(--color-danger-shadow), transparent 92%);
 }
 
 :is(
     button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
 ).danger:hover {
     background-color: var(--color-danger-primary);
-    color: var(--color-danger-text-on-primary);
+    color: var(--color-danger-on-primary);
+    box-shadow: 0 2px 24px 8px color-mix(in oklch, var(--color-danger-shadow), transparent 86%);
 }
 
 .danger.secondary {
-    color: var(--color-danger-text);
+    color: var(--color-danger-on);
 }
 
 :is(
     button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
 ).danger.secondary:hover {
-    color: var(--color-danger-text);
+    color: var(--color-danger-on-surface);
 }
 
 
 /* Success */
 .success {
-    background-color: var(--color-success-secondary);
-    color: var(--color-success-text);
+    background-color: var(--color-success-surface);
+    color: var(--color-success-on-surface);
     outline-color: var(--color-success-border);
 }
 
@@ -345,24 +396,25 @@ button, a, input[type="button"], input[type="submit"], input[type="reset"], [rol
     button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
 ).success {
     outline-color: var(--color-success-border);
+    box-shadow: 0 0 20px 0 color-mix(in oklch, var(--color-success-shadow), transparent 92%);
 }
 
 :is(
     button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
 ).success:hover {
     background-color: var(--color-success-primary);
-    color: var(--color-success-text-on-primary);
-    --color-shadow: var(--color-success-shadow);
+    color: var(--color-success-on-primary);
+    box-shadow: 0 2px 24px 8px color-mix(in oklch, var(--color-success-shadow), transparent 86%);
 }
 
 .success.secondary {
-    color: var(--color-success-text);
+    color: var(--color-success-on);
 }
 
 :is(
   button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
 ).success.secondary:hover {
-    color: var(--color-success-text);
+    color: var(--color-success-on-surface);
 }
 
 
@@ -372,21 +424,24 @@ button, a, input[type="button"], input[type="submit"], input[type="reset"], [rol
 
 .secondary {
     background: none;
-    box-shadow: none;
-    outline: none;
+    box-shadow: none !important;
+    outline: none !important;
     padding: .6em .4em;
-    color: var(--color-neutral-text);
+    color: var(--color-neutral-on);
+    text-decoration: underline;
+    text-decoration-thickness: .1em;
+    text-decoration-color: transparent;
+    transition: color 200ms ease, text-decoration-color 200ms ease;
 }
 
 :is(
     button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
 ).secondary:hover {
-    color: var(--color-neutral-text);
-    text-decoration: underline;
-    text-decoration-thickness: .1em;
+    color: color-mix(in oklch, var(--color-neutral-on), black 20%);
+    text-decoration-color: currentColor;
     background: none;
     box-shadow: none;
-    outline: none;
+    transition: color 200ms ease, text-decoration-color 200ms ease;
 }
 
 
@@ -404,11 +459,8 @@ button, a, input[type="button"], input[type="submit"], input[type="reset"], [rol
     text-align: left;
     gap: .6em;
     margin: 8px;
-    padding: .6em .8em;
     border-radius: 0;
     border: none;
-    outline-width: 1px;
-    outline-style: solid;
     font-size: 1rem;
 }
 
@@ -434,7 +486,7 @@ button, a, input[type="button"], input[type="submit"], input[type="reset"], [rol
 :is(
     button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
 ):has(> svg:first-child:last-child) {
-    padding: .6em;
+    padding: .6em !important;
 
     svg {
         height: 1lh;
@@ -444,6 +496,6 @@ button, a, input[type="button"], input[type="submit"], input[type="reset"], [rol
 
 
 .rounded {
-    border-radius: 12px;
+    border-radius: .75rem;
     corner-shape: squircle;
 }
