@@ -200,9 +200,8 @@ button, a, input[type="button"], input[type="submit"], input[type="reset"], [rol
     height: fit-content;
     max-width: 48ch;
     font-weight: 600;
-    padding: .6em .8em !important;
+    padding: .6em .8em;
     cursor: pointer;
-    font-size: 1rem;
     transition: color 100ms ease, background-color 200ms ease, box-shadow 200ms ease;
 }
 
@@ -424,14 +423,19 @@ button, a, input[type="button"], input[type="submit"], input[type="reset"], [rol
 
 .secondary {
     background: none;
-    box-shadow: none !important;
-    outline: none !important;
+    outline: none;
     padding: .6em .4em;
     color: var(--color-neutral-on);
     text-decoration: underline;
     text-decoration-thickness: .1em;
     text-decoration-color: transparent;
     transition: color 200ms ease, text-decoration-color 200ms ease;
+}
+
+:is(
+    button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
+).secondary {
+    box-shadow: none;
 }
 
 :is(
@@ -498,4 +502,11 @@ button, a, input[type="button"], input[type="submit"], input[type="reset"], [rol
 .rounded {
     border-radius: .75rem;
     corner-shape: squircle;
+}
+
+.hidden {
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+    display: none !important;
 }
