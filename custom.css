@@ -6,58 +6,52 @@
 @media (prefers-color-scheme: light) {
     :root {
         /* Neutral */
-        --color-neutral-primary: #475569; /* slate-600 */
-        --color-neutral-surface: #e9eef4; /* slate-150 */
-        --color-neutral-on: var(--color-neutral-primary);
-        --color-neutral-on-surface: #39475b; /* slate-670 */
-        --color-neutral-on-primary: #f8fafc; /* slate-050 */
-        --color-neutral-border: transparent;
-        --color-neutral-shadow: var(--color-neutral-primary);
+        --color-neutral-primary: black;
+        --color-neutral-secondary: grey;
+        --color-neutral-surface: white;
+        --color-neutral-on: black;
+        --color-neutral-on-surface: black;
+        --color-neutral-on-primary: white;
 
         /* Note */
-        --color-note-primary: var(--color-neutral-primary);
-        --color-note-surface: var(--color-neutral-surface);
-        --color-note-on: var(--color-neutral-on);
-        --color-note-on-surface: var(--color-neutral-on-surface);
-        --color-note-on-primary: var(--color-neutral-on-primary);
-        --color-note-border: var(--color-neutral-border);
-        --color-note-shadow: var(--color-neutral-shadow);
+        --color-note-primary: #475569; /* slate-600 */
+        --color-note-secondary: #b5c1d0; /* slate-340 */
+        --color-note-surface: #e9eef4; /* slate-150 */
+        --color-note-on: var(--color-note-primary);
+        --color-note-on-surface: #374559; /* slate-680 */
+        --color-note-on-primary: #fbfcfd; /* slate-030 */
 
         /* Info */
         --color-info-primary: #2563eb; /* blue-600 */
+        --color-info-secondary: #80b8fc; /* blue-340 */
         --color-info-surface: #e3effe; /* blue-080 */
         --color-info-on: var(--color-info-primary);
-        --color-info-on-surface: #2054de; /* blue-670 */
+        --color-info-on-surface: #1f52dc; /* blue-680 */
         --color-info-on-primary: #f5faff; /* blue-030 */
-        --color-info-border: transparent;
-        --color-info-shadow: var(--color-info-primary);
 
         /* Warning */
         --color-warning-primary: #d97706; /* amber-600 */
+        --color-warning-secondary: #fdaa5e; /* orange-340 */
         --color-warning-surface: #fff6d5; /* amber-080 */
         --color-warning-on: var(--color-warning-primary);
-        --color-warning-on-surface: #bf5e08; /* amber-670 */
+        --color-warning-on-surface: #bb5a09; /* amber-680 */
         --color-warning-on-primary: #fffdf3; /* amber-030 */
-        --color-warning-border: transparent;
-        --color-warning-shadow: var(--color-warning-primary);
 
         /* Danger */
         --color-danger-primary: #dc2626; /* red-600 */
+        --color-danger-secondary: #fb9190; /* red-340 */
         --color-danger-surface: #fee8e8; /* red-080 */
         --color-danger-on: var(--color-danger-primary);
-        --color-danger-on-surface: #c31f1f; /* red-670 */
+        --color-danger-on-surface: #c01e1e; /* red-670 */
         --color-danger-on-primary: #fef7f7; /* red-030 */
-        --color-danger-border: transparent;
-        --color-danger-shadow: var(--color-danger-primary);
 
         /* Success */
         --color-success-primary: #16a34a; /* green-600 */
+        --color-success-secondary: #5adfab; /* emerald-340 */
         --color-success-surface: #e4fcec; /* green-080 */
         --color-success-on: var(--color-success-primary);
-        --color-success-on-surface: #168a41; /* green-670 */
+        --color-success-on-surface: #158740; /* green-680 */
         --color-success-on-primary: #f6fef8; /* green-030 */
-        --color-success-border: transparent;
-        --color-success-shadow: var(--color-success-primary);
 
         /* Theme */
         --theme-body-gradient: radial-gradient(circle at 60% 0, #fbedff /* fuchsia-080 */ 0%, #fdfdff /* violet-010 */ 42%);
@@ -70,58 +64,52 @@
 @media (prefers-color-scheme: dark) {
     :root {
         /* Neutral */
-        --color-neutral-primary: #342f92; /* indigo-850 */
-        --color-neutral-surface: #0c0715; /* indigo-990 */
-        --color-neutral-on: #b3c0fd; /* indigo-260 */
-        --color-neutral-on-surface: #d9e1ff; /* indigo-130 */
-        --color-neutral-on-primary: #eef2ff; /* indigo-050 */
-        --color-neutral-border: var(--color-neutral-primary);
-        --color-neutral-shadow: var(--color-neutral-surface);
+        --color-neutral-primary: white;
+        --color-neutral-secondary: grey;
+        --color-neutral-surface: black;
+        --color-neutral-on: white;
+        --color-neutral-on-surface: white;
+        --color-neutral-on-primary: black;
 
         /* Note */
-        --color-note-primary: var(--color-neutral-primary);
-        --color-note-surface: var(--color-neutral-surface);
-        --color-note-on: var(--color-neutral-on);
-        --color-note-on-surface: var(--color-neutral-on-surface);
-        --color-note-on-primary: var(--color-neutral-on-primary);
-        --color-note-border: var(--color-note-primary);
-        --color-note-shadow: var(--color-neutral-shadow);
+        --color-note-primary: #36309c; /* indigo-820 */
+        --color-note-secondary: #3932ab; /* indigo-780 */
+        --color-note-surface: #0c0715; /* indigo-990 */
+        --color-note-on: #acbafc; /* indigo-280 */
+        --color-note-on-surface: #d6dfff; /* indigo-140 */
+        --color-note-on-primary: #f5f7ff; /* indigo-030 */
 
         /* Info */
         --color-info-primary: #065c8b; /* sky-780 */
+        --color-info-secondary: #0b4d73; /* sky-880 */
         --color-info-surface: #070e14; /* sky-990 */
-        --color-info-on: #97dbfc; /* sky-260 */
+        --color-info-on: #8bd7fc; /* sky-280 */
         --color-info-on-surface: #d1edfe; /* sky-140 */
         --color-info-on-primary: #f6fbff; /* sky-030 */
-        --color-info-border: var(--color-info-primary);
-        --color-info-shadow: var(--color-info-surface);
 
         /* Warning */
         --color-warning-primary: #8b510d; /* yellow-780 */
+        --color-warning-secondary: #754211; /* yellow-880 */
         --color-warning-surface: #150901; /* yellow-990 */
-        --color-warning-on: #fde079; /* amber-230 */
+        --color-warning-on: #fdd75a; /* amber-280 */
         --color-warning-on-surface: #fff5ac; /* yellow-140 */
         --color-warning-on-primary: #fffdf1; /* yellow-030 */
-        --color-warning-border: var(--color-warning-primary);
-        --color-warning-shadow: var(--color-warning-surface);
 
         /* Danger */
         --color-danger-primary: #a5123a; /* rose-780 */
+        --color-danger-secondary: #8d1337; /* rose-880 */
         --color-danger-surface: #180506; /* rose-990 */
-        --color-danger-on: #feb5bd; /* rose-260 */
+        --color-danger-on: #feacb6; /* rose-280 */
         --color-danger-on-surface: #ffdbde; /* rose-140 */
         --color-danger-on-primary: #fff7f7; /* rose-030 */
-        --color-danger-border: var(--color-danger-primary);
-        --color-danger-shadow: var(--color-danger-surface);
 
         /* Success */
         --color-success-primary: #066449; /* emerald-780 */
+        --color-success-secondary: #06513d; /* emerald-880 */
         --color-success-surface: #030d0a; /* emerald-990 */
-        --color-success-on: #86ecc1; /* emerald-260 */
+        --color-success-on: #7be9bc; /* emerald-280 */
         --color-success-on-surface: #c1f7dd; /* emerald-140 */
         --color-success-on-primary: #f4fef9; /* emerald-030 */
-        --color-success-border: var(--color-success-primary);
-        --color-success-shadow: var(--color-success-surface);
 
         /* Theme */
         --theme-body-gradient: radial-gradient(circle at 60% 0, #210f3d /* violet-960 */ -10%, #130e21 /* indigo-980 */ 38%);
@@ -190,34 +178,7 @@ svg {
     fill: currentColor;
     overflow: visible;
     height: 1.2em;
-}
-
-button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"] {
-    opacity: 1 !important;
-    background-color: var(--color-neutral-surface);
-    color: var(--color-neutral-on-surface);
-    outline: var(--color-neutral-border) solid 1px;
-    height: fit-content;
-    max-width: 48ch;
-    font-weight: 600;
-    padding: .6em .8em;
-    cursor: pointer;
-    transition: color 100ms ease, background-color 200ms ease, box-shadow 200ms ease;
-}
-
-:is(
-  button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
-):hover {
-    background-color: var(--color-neutral-primary);
-    color: var(--color-neutral-on-primary);
-
-    transition: color 100ms ease, background-color 200ms ease, box-shadow 200ms ease;
-}
-
-:is(
-  button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
-).secondary {
-    /* TODO */
+    height: .9lh;
 }
 
 
@@ -227,281 +188,223 @@ button, a, input[type="button"], input[type="submit"], input[type="reset"], [rol
 
 
 
-:is(
-    .note, .info, .warning, .danger, .success
-):not(
-    button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
-) {
-    opacity: .85;
-    padding: 1em 1.8em;
-    text-decoration: none;
+
+/* Neutral */
+* {
+    --color-primary: var(--color-neutral-primary);
+    --color-secondary: var(--color-neutral-secondary);
+    --color-surface: var(--color-neutral-surface);
+    --color-on: var(--color-neutral-on);
+    --color-on-primary: var(--color-neutral-on-primary);
+    --color-on-surface: var(--color-neutral-on-surface);
 }
-
-:is(
-    .note, .info, .warning, .danger, .success
-).secondary {
-    @media (prefers-color-scheme: light) {
-        opacity: .7;
-    }
-}
-
-
 
 
 /* Note */
 .note {
-    background-color: var(--color-note-surface);
-    color: var(--color-note-on-surface);
-    outline-color: transparent;
-}
-
-:is(
-    button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
-).note {
-    outline-color: var(--color-note-border);
-    box-shadow: 0 0 20px 0 color-mix(in oklch, var(--color-note-shadow), transparent 92%);
-}
-
-:is(
-    button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
-).note:hover {
-    background-color: var(--color-note-primary);
-    color: var(--color-note-on-primary);
-    box-shadow: 0 2px 24px 8px color-mix(in oklch, var(--color-note-shadow), transparent 86%);
-}
-
-.note.secondary {
-    color: var(--color-note-on);
-}
-
-.note.secondary:hover {
-    color: color-mix(in oklch, var(--color-note-on), black 10%);
-}
-
-:is(
-  button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
-).note.secondary:hover {
-    color: var(--color-note-on-surface);
+    --color-primary: var(--color-note-primary);
+    --color-secondary: var(--color-note-secondary);
+    --color-surface: var(--color-note-surface);
+    --color-on: var(--color-note-on);
+    --color-on-primary: var(--color-note-on-primary);
+    --color-on-surface: var(--color-note-on-surface);
 }
 
 
 /* Info */
 .info {
-    background-color: var(--color-info-surface);
-    color: var(--color-info-on-surface);
-    outline-color: var(--color-info-border);
-}
-
-:is(
-    button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
-).info {
-    outline-color: var(--color-info-border);
-    box-shadow: 0 0 20px 0 color-mix(in oklch, var(--color-info-shadow), transparent 92%);
-}
-
-:is(
-    button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
-).info:hover {
-    background-color: var(--color-info-primary);
-    color: var(--color-info-on-primary);
-    box-shadow: 0 2px 24px 8px color-mix(in oklch, var(--color-info-shadow), transparent 86%);
-}
-
-.info.secondary {
-    color: var(--color-info-on);
-}
-
-:is(
-  button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
-).info.secondary:hover {
-    color: var(--color-info-on-surface);
+    --color-primary: var(--color-info-primary);
+    --color-secondary: var(--color-info-secondary);
+    --color-surface: var(--color-info-surface);
+    --color-on: var(--color-info-on);
+    --color-on-primary: var(--color-info-on-primary);
+    --color-on-surface: var(--color-info-on-surface);
 }
 
 
 /* Warning */
 .warning {
-    background-color: var(--color-warning-surface);
-    color: var(--color-warning-on-surface);
-    outline-color: var(--color-warning-border);
-}
-
-:is(
-    button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
-).warning {
-    outline-color: var(--color-warning-border);
-    box-shadow: 0 0 20px 0 color-mix(in oklch, var(--color-warning-shadow), transparent 92%);
-}
-
-:is(
-    button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
-).warning:hover {
-    background-color: var(--color-warning-primary);
-    color: var(--color-warning-on-primary);
-    box-shadow: 0 2px 24px 8px color-mix(in oklch, var(--color-warning-shadow), transparent 86%);
-}
-
-.warning.secondary {
-    color: var(--color-warning-on);
-}
-
-:is(
-  button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
-).warning.secondary:hover {
-    color: var(--color-warning-on-surface);
+    --color-primary: var(--color-warning-primary);
+    --color-secondary: var(--color-warning-secondary);
+    --color-surface: var(--color-warning-surface);
+    --color-on: var(--color-warning-on);
+    --color-on-primary: var(--color-warning-on-primary);
+    --color-on-surface: var(--color-warning-on-surface);
 }
 
 
 /* Danger */
 .danger {
-    background-color: var(--color-danger-surface);
-    color: var(--color-danger-on-surface);
-    outline-color: var(--color-danger-border);
+    --color-primary: var(--color-danger-primary);
+    --color-secondary: var(--color-danger-secondary);
+    --color-surface: var(--color-danger-surface);
+    --color-on: var(--color-danger-on);
+    --color-on-primary: var(--color-danger-on-primary);
+    --color-on-surface: var(--color-danger-on-surface);
 }
 
-:is(
-    button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
-).danger {
-    outline-color: var(--color-danger-border);
-    box-shadow: 0 0 20px 0 color-mix(in oklch, var(--color-danger-shadow), transparent 92%);
-}
-
-:is(
-    button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
-).danger:hover {
-    background-color: var(--color-danger-primary);
-    color: var(--color-danger-on-primary);
-    box-shadow: 0 2px 24px 8px color-mix(in oklch, var(--color-danger-shadow), transparent 86%);
-}
-
-.danger.secondary {
-    color: var(--color-danger-on);
-}
-
-:is(
-    button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
-).danger.secondary:hover {
-    color: var(--color-danger-on-surface);
-}
 
 
 /* Success */
 .success {
-    background-color: var(--color-success-surface);
-    color: var(--color-success-on-surface);
-    outline-color: var(--color-success-border);
-}
-
-:is(
-    button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
-).success {
-    outline-color: var(--color-success-border);
-    box-shadow: 0 0 20px 0 color-mix(in oklch, var(--color-success-shadow), transparent 92%);
-}
-
-:is(
-    button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
-).success:hover {
-    background-color: var(--color-success-primary);
-    color: var(--color-success-on-primary);
-    box-shadow: 0 2px 24px 8px color-mix(in oklch, var(--color-success-shadow), transparent 86%);
-}
-
-.success.secondary {
-    color: var(--color-success-on);
-}
-
-:is(
-  button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
-).success.secondary:hover {
-    color: var(--color-success-on-surface);
+    --color-primary: var(--color-success-primary);
+    --color-secondary: var(--color-success-secondary);
+    --color-surface: var(--color-success-surface);
+    --color-on: var(--color-success-on);
+    --color-on-primary: var(--color-success-on-primary);
+    --color-on-surface: var(--color-success-on-surface);
 }
 
 
 
 
 
+
+
+
+
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, div,
+.note, .info, .warning, .danger, .success {
+    color: var(--color-on);
+}
 
 .secondary {
-    background: none;
-    outline: none;
-    padding: .6em .4em;
-    color: var(--color-neutral-on);
-    text-decoration: underline;
-    text-decoration-thickness: .1em;
-    text-decoration-color: transparent;
-    transition: color 200ms ease, text-decoration-color 200ms ease;
+    color: var(--color-secondary);
 }
 
-:is(
-    button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
-).secondary {
-    box-shadow: none;
-}
-
-:is(
-    button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
-).secondary:hover {
-    color: color-mix(in oklch, var(--color-neutral-on), black 20%);
-    text-decoration-color: currentColor;
-    background: none;
-    box-shadow: none;
-    transition: color 200ms ease, text-decoration-color 200ms ease;
-}
-
-
-
-
-
-
-
-
-.note, .info, .warning, .danger, .success,
-button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"] {
+button, div:is(.note, .info, .warning, .danger, .success), input {
+    font-size: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: left;
-    gap: .6em;
+    gap: .5em;
     margin: 8px;
     border-radius: 0;
+}
+
+input {
     border: none;
-    font-size: 1rem;
+    background-color: var(--color-surface);
+    color: var(--color-on-surface);
+    width: 24.3ch;
+    transition: color 100ms ease, background-color 200ms ease;
+
+}
+
+button, input {
+    border: none;
+    color: var(--color-on);
+    background-color: var(--color-surface);
+    max-width: 48ch;
+    font-weight: 600;
+    padding: .6em .8em;
+    transition: color 100ms ease;
+}
+
+button {
+    cursor: pointer;
 }
 
 
 
+button:not(.secondary) {
+    color: var(--color-on-surface);
 
+    transition: color 100ms ease, background-color 200ms ease;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-:is(
-    button, a, input[type="button"], input[type="submit"], input[type="reset"], [role="button"], [role="link"]
-):has(> svg:first-child:last-child) {
-    padding: .6em !important;
-
-    svg {
-        height: 1lh;
+    @media (prefers-color-scheme: dark) {
+        box-shadow: inset 0 0 0 1px var(--color-primary);
     }
 }
 
 
+button:hover {
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+    transition: color 100ms ease, background-color 200ms ease;
+}
+
+
+button.secondary {
+    text-decoration: underline;
+    text-decoration-thickness: .1em;
+    background: none;
+    box-shadow: none;
+    outline: none;
+    text-decoration-color: transparent;
+    transition: color 200ms ease, text-decoration-color 200ms ease;
+}
+
+button.secondary {
+    color: var(--color-on);
+}
+
+button.secondary:hover {
+    color: var(--color-on-surface);
+
+    text-decoration-color: currentColor;
+    box-shadow: none;
+    transition: color 200ms ease, text-decoration-color 200ms ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+button:has(> svg:first-child:last-child) {
+    padding: calc(.05lh + .6em);
+}
+
+
+
+
+.big {
+    font-size: 1.22rem;
+}
 
 .rounded {
     border-radius: .75rem;
     corner-shape: squircle;
+}
+
+.circle {
+    border-radius: 100%;
 }
 
 .hidden {
