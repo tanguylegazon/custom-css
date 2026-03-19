@@ -1,0 +1,61 @@
+/*!
+ * This Software is licensed under the terms of the MIT License.
+ * A copy of the license is available at https://github.com/tanguylegazon/custom-css/blob/main/LICENSE.
+ */
+
+button, div:is(.note, .info, .warning, .danger, .success), input {
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    gap: .5em;
+    margin: 8px;
+    border-radius: 0;
+}
+
+input {
+    color: var(--color-on-surface) !important;
+    outline-color: transparent;
+    width: 24.3ch;
+    transition: color 100ms ease, background-color 200ms ease, outline-color 50ms ease;
+}
+
+input:focus {
+    outline: var(--color-secondary) 2px solid;
+    outline-offset: 2px;
+    transition: outline-color 100ms ease;
+}
+
+input[readonly] {
+    outline: none;
+    user-select: none;
+}
+
+/*:is(.note, .info, .warning, .danger, .success)::selection,
+:is(.note, .info, .warning, .danger, .success) *::selection {
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+}*/
+
+input::selection {
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+}
+
+button, input {
+    border: none;
+    background-color: var(--color-surface);
+    max-width: 48ch;
+    padding: .6em .8em;
+    transition: color 100ms ease;
+}
+
+button {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+button:has(> svg:first-child:last-child) {
+    padding: calc(.05lh + .6em);
+}
