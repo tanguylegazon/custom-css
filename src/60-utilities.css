@@ -1,0 +1,25 @@
+/*!
+ * This Software is licensed under the terms of the MIT License.
+ * A copy of the license is available at https://github.com/tanguylegazon/custom-css/blob/main/LICENSE.
+ */
+
+/* Utilities */
+.big {
+    font-size: 1.22rem;
+}
+
+.rounded {
+    border-radius: .75rem;
+    corner-shape: squircle;
+}
+
+.circle {
+    border-radius: 100%;
+}
+
+.hidden {
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+    display: none !important;
+}

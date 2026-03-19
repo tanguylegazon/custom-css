@@ -4,9 +4,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - 'src/tokens.css'
-      - 'src/base.css'
-      - 'src/components.css'
+      - 'src/*.css'
 
 permissions:
   contents: write
@@ -27,7 +25,7 @@ jobs:
 
       - name: Build CSS files
         run: |
-          cat src/tokens.css src/base.css src/components.css > custom.css
+          cat src/*.css > custom.css
           npx csso-cli -i "custom.css" -o "custom.min.css" --comments first-exclamation
 
       - name: Push to distribution branch

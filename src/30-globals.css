@@ -22,6 +22,11 @@ body {
     background-size: auto;
     min-height: 100vh;
     overflow: hidden;
+    color: var(--color-on);
+}
+
+:is(.note, .info, .warning, .danger, .success) {
+    color: var(--color-on);
 }
 
 body::before {
@@ -63,17 +68,4 @@ svg {
     overflow: visible;
     height: 1.2em;
     height: .9lh;
-}
-
-
-
-
-
-
-
-
-
-h1, h2, h3, h4, h5, h6, p, blockquote, pre, div,
-.note, .info, .warning, .danger, .success {
-    color: var(--color-on);
 }

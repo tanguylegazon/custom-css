@@ -5,9 +5,12 @@ look that can be used alongside other user specific CSS files.
 
 ## Project structure
 
-- `src/tokens.css`: Theme tokens, color palettes, and semantic tones.
-- `src/base.css`: Global HTML and document styles.
-- `src/components.css`: Components and utility classes.
+- `src/10-theme.css`: Theme tokens and default tone.
+- `src/20-tones.css`: Semantic tones.
+- `src/30-globals.css`: Global HTML and document styles.
+- `src/40-components.css`: Components.
+- `src/50-variants.css`: Text emphasis and component variants.
+- `src/60-utilities.css`: Generic utility classes.
 
 The source files are concatenated and minified by GitHub Actions. The generated distribution files are published on the
 `dist` branch.
