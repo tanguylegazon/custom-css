@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - 'custom.css'
+      - '../../custom_backup.css'
 
 permissions:
   contents: write
@@ -24,7 +24,7 @@ jobs:
           node-version: 'latest'
 
       - name: Minify CSS files
-        run: npx csso-cli -i "custom.css" -o "custom.min.css" --comments first-exclamation
+        run: npx csso-cli -i "custom_backup.css" -o "custom.min.css" --comments first-exclamation
 
       - name: Push to distribution branch
         run: |

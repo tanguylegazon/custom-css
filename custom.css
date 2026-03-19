@@ -3,50 +3,120 @@
  * A copy of the license is available at https://github.com/tanguylegazon/custom-css/blob/main/LICENSE.
  */
 
-/* === Colors === */
-:root {
-    /* General */
-    --bg-page: #f9fbfd; /* slate-040 */
-    --text-primary: #334155; /* slate-700 */
-    --bg-item: #d2dbe580; /* slate-270 50% */
-    --bg-item-hover: #dde4ed80; /* slate-220 50% */
-    --shadow-primary: #f1f5f9; /* slate-100 */
-    --shadow-hover: #dde4ed; /* slate-240 */
-    --btn-background-unchecked: #a9e0fd; /* lightBlue-230 */
-    --btn-background-checked: #0376b4; /* lightBlue-650 */
-    --btn-text-checked: #f0f9ff; /* lightBlue-050 */
-    --btn-outline-checked-hover: #0376b4; /* lightBlue-800 */
-    --btn-outline-hover: #bae6fd; /* lightBlue-200 */
+@media (prefers-color-scheme: light) {
+    :root {
+        /* Neutral */
+        --color-neutral-primary: black;
+        --color-neutral-secondary: grey;
+        --color-neutral-surface: white;
+        --color-neutral-on: black;
+        --color-neutral-on-surface: black;
+        --color-neutral-on-primary: white;
 
-    /* Banners */
-    --bg-info: #eaf6ff; /* lightBlue-070 */
-    --text-info: #94dafc; /* lightBlue-265 */
-    --text-github: #dbe2eb; /* slate-230 */
+        /* Note */
+        --color-note-primary: #475569; /* slate-600 */
+        --color-note-secondary: #b5c1d0; /* slate-340 */
+        --color-note-surface: #e9eef4; /* slate-150 */
+        --color-note-on: var(--color-note-primary);
+        --color-note-on-surface: #374559; /* slate-680 */
+        --color-note-on-primary: #fbfcfd; /* slate-030 */
+
+        /* Info */
+        --color-info-primary: #2563eb; /* blue-600 */
+        --color-info-secondary: #80b8fc; /* blue-340 */
+        --color-info-surface: #e3effe; /* blue-080 */
+        --color-info-on: var(--color-info-primary);
+        --color-info-on-surface: #1f52dc; /* blue-680 */
+        --color-info-on-primary: #f5faff; /* blue-030 */
+
+        /* Warning */
+        --color-warning-primary: #d97706; /* amber-600 */
+        --color-warning-secondary: #fdaa5e; /* orange-340 */
+        --color-warning-surface: #fff6d5; /* amber-080 */
+        --color-warning-on: var(--color-warning-primary);
+        --color-warning-on-surface: #bb5a09; /* amber-680 */
+        --color-warning-on-primary: #fffdf3; /* amber-030 */
+
+        /* Danger */
+        --color-danger-primary: #dc2626; /* red-600 */
+        --color-danger-secondary: #fb9190; /* red-340 */
+        --color-danger-surface: #fee8e8; /* red-080 */
+        --color-danger-on: var(--color-danger-primary);
+        --color-danger-on-surface: #c01e1e; /* red-670 */
+        --color-danger-on-primary: #fef7f7; /* red-030 */
+
+        /* Success */
+        --color-success-primary: #16a34a; /* green-600 */
+        --color-success-secondary: #5adfab; /* emerald-340 */
+        --color-success-surface: #e4fcec; /* green-080 */
+        --color-success-on: var(--color-success-primary);
+        --color-success-on-surface: #158740; /* green-680 */
+        --color-success-on-primary: #f6fef8; /* green-030 */
+
+        /* Theme */
+        --theme-body-gradient: radial-gradient(circle at 60% 0, #fbedff /* fuchsia-080 */ 0%, #fdfdff /* violet-010 */ 42%);
+        --theme-body-pattern-color: rgba(91, 33, 182, .22); /* violet-800 */
+        --theme-body-noise-blend: multiply;
+        --theme-body-noise-opacity: 0.08;
+    }
 }
 
-/* === Spacing === */
-:root {
-    --font-size: 1.25em;
-    --padding-x: calc(.68 * var(--font-size));
-    --padding-y: calc(.56 * var(--font-size));
-    --border-radius: calc(.624 * var(--font-size));
-    --button-height: calc(2.08 * var(--font-size));
-    --input-height: calc(2.08 * var(--font-size) - 2 * var(--padding-y));
-    --btn-width: 20ch;
-    --btn-height: calc(5 / 16 * var(--btn-width));
-}
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Neutral */
+        --color-neutral-primary: white;
+        --color-neutral-secondary: grey;
+        --color-neutral-surface: black;
+        --color-neutral-on: white;
+        --color-neutral-on-surface: white;
+        --color-neutral-on-primary: black;
 
-/* === Shadows === */
-:root {
-    --main-shadow: 0 0 1.2em .2em var(--shadow-primary);
-    --main-hover-shadow: 0 .8em 3.8em .2em var(--shadow-hover);
-}
+        /* Note */
+        --color-note-primary: #36309c; /* indigo-820 */
+        --color-note-secondary: #3932ab; /* indigo-780 */
+        --color-note-surface: #0c0715; /* indigo-990 */
+        --color-note-on: #acbafc; /* indigo-280 */
+        --color-note-on-surface: #d6dfff; /* indigo-140 */
+        --color-note-on-primary: #f5f7ff; /* indigo-030 */
 
-/* === Transitions === */
-:root {
-    --duration-short: 150ms;
-    --duration-normal: 200ms;
-    --duration-long: 500ms;
+        /* Info */
+        --color-info-primary: #065c8b; /* sky-780 */
+        --color-info-secondary: #0b4d73; /* sky-880 */
+        --color-info-surface: #070e14; /* sky-990 */
+        --color-info-on: #8bd7fc; /* sky-280 */
+        --color-info-on-surface: #d1edfe; /* sky-140 */
+        --color-info-on-primary: #f6fbff; /* sky-030 */
+
+        /* Warning */
+        --color-warning-primary: #8b510d; /* yellow-780 */
+        --color-warning-secondary: #754211; /* yellow-880 */
+        --color-warning-surface: #150901; /* yellow-990 */
+        --color-warning-on: #fdd75a; /* amber-280 */
+        --color-warning-on-surface: #fff5ac; /* yellow-140 */
+        --color-warning-on-primary: #fffdf1; /* yellow-030 */
+
+        /* Danger */
+        --color-danger-primary: #a5123a; /* rose-780 */
+        --color-danger-secondary: #8d1337; /* rose-880 */
+        --color-danger-surface: #180506; /* rose-990 */
+        --color-danger-on: #feacb6; /* rose-280 */
+        --color-danger-on-surface: #ffdbde; /* rose-140 */
+        --color-danger-on-primary: #fff7f7; /* rose-030 */
+
+        /* Success */
+        --color-success-primary: #066449; /* emerald-780 */
+        --color-success-secondary: #06513d; /* emerald-880 */
+        --color-success-surface: #030d0a; /* emerald-990 */
+        --color-success-on: #7be9bc; /* emerald-280 */
+        --color-success-on-surface: #c1f7dd; /* emerald-140 */
+        --color-success-on-primary: #f4fef9; /* emerald-030 */
+
+        /* Theme */
+        --theme-body-gradient: radial-gradient(circle at 60% 0, #210f3d /* violet-960 */ -10%, #130e21 /* indigo-980 */ 38%);
+        --theme-body-pattern-color: rgba(224, 231, 255, .2); /* indigo-100 */
+        --theme-body-noise-blend: soft-light;
+        --theme-body-noise-opacity: 0.3;
+    }
 }
 
 * {
@@ -61,164 +131,305 @@ html {
 }
 
 body {
-    background-color: var(--bg-page);
+    margin: 0;
+    position: relative;
+    box-sizing: border-box;
+    background: var(--theme-body-gradient) no-repeat;
+    background-size: auto;
+    min-height: 100vh;
+    overflow: hidden;
 }
 
-a, a:hover, a:active, a:focus, a:visited {
-    text-decoration: none;
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    mix-blend-mode: var(--theme-body-noise-blend);
+    opacity: var(--theme-body-noise-opacity);
+    background: url("data:image/svg+xml;utf8,\
+                    <svg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'>\
+                      <filter id='n'>\
+                        <feTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='3' stitchTiles='stitch'/>\
+                      </filter>\
+                      <rect width='100%' height='100%' filter='url(%23n)'/>\
+                    </svg>") repeat;
+    background-size: 200px 200px;
+    z-index: -1;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background-image: radial-gradient(circle at center, var(--theme-body-pattern-color) 1px, transparent 0);
+    background-size: 50px 50px;
+    background-repeat: repeat;
+
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, .2) 100%);
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+    mask-mode: alpha;
 }
 
 svg {
     fill: currentColor;
     overflow: visible;
+    height: 1.2em;
+    height: .9lh;
 }
 
-.info-banner, .github-banner {
-    position: absolute;
+
+
+
+
+
+
+
+
+/* Neutral */
+* {
+    --color-primary: var(--color-neutral-primary);
+    --color-secondary: var(--color-neutral-secondary);
+    --color-surface: var(--color-neutral-surface);
+    --color-on: var(--color-neutral-on);
+    --color-on-primary: var(--color-neutral-on-primary);
+    --color-on-surface: var(--color-neutral-on-surface);
+}
+
+
+/* Note */
+.note, .note * {
+    --color-primary: var(--color-note-primary);
+    --color-secondary: var(--color-note-secondary);
+    --color-surface: var(--color-note-surface);
+    --color-on: var(--color-note-on);
+    --color-on-primary: var(--color-note-on-primary);
+    --color-on-surface: var(--color-note-on-surface);
+}
+
+
+/* Info */
+.info, .info * {
+    --color-primary: var(--color-info-primary);
+    --color-secondary: var(--color-info-secondary);
+    --color-surface: var(--color-info-surface);
+    --color-on: var(--color-info-on);
+    --color-on-primary: var(--color-info-on-primary);
+    --color-on-surface: var(--color-info-on-surface);
+}
+
+
+/* Warning */
+.warning, .warning * {
+    --color-primary: var(--color-warning-primary);
+    --color-secondary: var(--color-warning-secondary);
+    --color-surface: var(--color-warning-surface);
+    --color-on: var(--color-warning-on);
+    --color-on-primary: var(--color-warning-on-primary);
+    --color-on-surface: var(--color-warning-on-surface);
+}
+
+
+/* Danger */
+.danger, .danger * {
+    --color-primary: var(--color-danger-primary);
+    --color-secondary: var(--color-danger-secondary);
+    --color-surface: var(--color-danger-surface);
+    --color-on: var(--color-danger-on);
+    --color-on-primary: var(--color-danger-on-primary);
+    --color-on-surface: var(--color-danger-on-surface);
+}
+
+
+
+/* Success */
+.success, .success * {
+    --color-primary: var(--color-success-primary);
+    --color-secondary: var(--color-success-secondary);
+    --color-surface: var(--color-success-surface);
+    --color-on: var(--color-success-on);
+    --color-on-primary: var(--color-success-on-primary);
+    --color-on-surface: var(--color-success-on-surface);
+}
+
+
+
+
+
+
+
+
+
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, div,
+.note, .info, .warning, .danger, .success {
+    color: var(--color-on);
+}
+
+.secondary {
+    color: var(--color-secondary);
+}
+
+button, div:is(.note, .info, .warning, .danger, .success), input {
+    font-size: 1rem;
     display: flex;
-    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    margin: 24px;
-    font-weight: 600;
-    border-radius: var(--border-radius);
-}
-
-.info-banner {
-    top: 0;
-    max-width: 28em;
-    padding: var(--padding-y) var(--padding-x);
-    gap: 1em;
-    color: var(--text-info);
-    background: var(--bg-info);
-}
-
-.info-banner svg {
-    height: 1.8em;
-}
-
-.github-banner {
-    bottom: 0;
+    text-align: left;
     gap: .5em;
-    color: var(--text-github);
-    background: none;
-    border-radius: var(--border-radius);
-    transition: color var(--duration-short) ease;
-    font-size: calc(.75 * var(--font-size));
+    margin: 8px;
+    border-radius: 0;
 }
 
-.github-banner:hover {
-    color: var(--text-primary);
+input {
+    color: var(--color-on-surface) !important;
+    outline-color: transparent;
+    width: 24.3ch;
+    transition: color 100ms ease, background-color 200ms ease, outline-color 50ms ease;
 }
 
-.github-banner svg {
-    height: 1.32em;
+/* Not readonly focus */
+input:focus {
+    outline: var(--color-secondary) 2px solid;
+    outline-offset: 2px;
+    transition: outline-color 100ms ease;
 }
 
-input[type="text"], button, .btn {
-    backdrop-filter: blur(50px);
-    background: var(--bg-item);
+input[readonly] {
+    outline: none;
+    user-select: none;
+}
+
+/*:is(.note, .info, .warning, .danger, .success)::selection,
+:is(.note, .info, .warning, .danger, .success) *::selection {
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+}*/
+
+input::selection {
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+}
+
+button, input {
     border: none;
-    border-radius: var(--border-radius);
-    box-shadow: 0 0 1.2em .2em var(--shadow-primary);
-    color: var(--text-primary);
-    font-size: var(--font-size);
-    transition: background-color var(--duration-normal) ease;
+    background-color: var(--color-surface);
+    max-width: 48ch;
+    padding: .6em .8em;
+    transition: color 100ms ease;
 }
 
 button {
-    display: flex;
-    align-items: center;
-    gap: .6em;
-    height: var(--button-height);
-    padding: .55em;
-    border-radius: var(--border-radius);
-    font-weight: 600;
     cursor: pointer;
+    font-weight: 600;
 }
 
-button > svg {
-    height: 100%;
+
+
+button:not(.secondary) {
+    color: var(--color-on-surface);
+
+    transition: color 100ms ease, background-color 200ms ease;
+
+    @media (prefers-color-scheme: dark) {
+        box-shadow: inset 0 0 0 1px var(--color-primary);
+    }
 }
 
-button.small {
-    font-size: calc(var(--font-size) * .7);
+
+button:hover {
+    background-color: var(--color-primary);
+    color: var(--color-on-primary);
+    transition: color 100ms ease, background-color 200ms ease;
 }
 
-button.circle {
-    aspect-ratio: 1;
-    border-radius: 50%;
+
+button.secondary {
+    text-decoration: underline;
+    text-decoration-thickness: .1em;
+    background: none;
+    box-shadow: none;
+    outline: none;
+    text-decoration-color: transparent;
+    transition: color 200ms ease, text-decoration-color 200ms ease;
 }
 
 button.secondary {
-    position: absolute;
-    height: calc(var(--button-height) - 2px);
-    padding: .68em;
-    border-radius: calc(var(--border-radius) - 1px);
+    color: var(--color-on);
+}
+
+button.secondary:hover {
+    color: var(--color-on-surface);
+
+    text-decoration-color: currentColor;
     box-shadow: none;
-    background: none;
+    transition: color 200ms ease, text-decoration-color 200ms ease;
 }
 
-input[type="text"] {
-    width: 23.6ch;
-    padding: var(--padding-y) var(--padding-x);
-    outline: none;
-    height: var(--input-height);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+button:has(> svg:first-child:last-child) {
+    padding: calc(.05lh + .6em);
 }
 
-input[type="text"]:hover,
-input[type="text"]:focus,
-button:not(.secondary):hover {
-    background: var(--bg-item-hover);
+
+
+
+.big {
+    font-size: 1.22rem;
 }
 
-.btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-    height: var(--btn-height);
-    width: var(--btn-width);
-    padding: .08em 1em;
-    border-radius: 1.125em;
-    gap: calc(.6em);
-    font-size: calc(.8 * var(--font-size));
-    font-weight: bold;
-    outline: .3em solid transparent;
-    outline-offset: .15em;
-    z-index: 1;
-    cursor: pointer;
-    user-select: none;
-    transition: background-color var(--duration-short) linear, outline var(--duration-short) linear, box-shadow var(--duration-long) ease-out, z-index var(--duration-long) ease-out;
+.rounded {
+    border-radius: .75rem;
+    corner-shape: squircle;
 }
 
-.btn svg {
-    width: 1.6em;
+.circle {
+    border-radius: 100%;
 }
 
-input[type="checkbox"] + .btn {
-    background: var(--btn-background-unchecked);
-    color: #fff;
-    user-select: none;
-}
-
-input[type="checkbox"]:checked + .btn {
-    background: var(--btn-background-checked);
-    color: var(--btn-text-checked);
-    outline-color: var(--btn-outline-checked-hover);
-}
-
-@media (hover: hover) and (min-width: 600px) {
-    .btn:hover {
-        z-index: 10;
-        box-shadow: var(--main-hover-shadow);
-    }
-
-    input[type="checkbox"] + .btn:hover {
-        outline-color: var(--btn-outline-hover);
-    }
-
-    input[type="checkbox"]:checked + .btn:hover {
-        outline-color: var(--btn-outline-checked-hover);
-    }
+.hidden {
+    height: 0 !important;
+    width: 0 !important;
+    overflow: hidden !important;
+    display: none !important;
 }
