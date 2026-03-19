@@ -3,12 +3,10 @@
  * A copy of the license is available at https://github.com/tanguylegazon/custom-css/blob/main/LICENSE.
  */
 
-/* Text emphasis */
 :is(h1, h2, h3, h4, h5, h6, p, span, small, label, li, a, blockquote, code, pre).muted {
     color: var(--color-secondary);
 }
 
-/* Component variants */
 button:not(.secondary) {
     color: var(--color-on-surface);
 

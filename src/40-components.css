@@ -3,7 +3,6 @@
  * A copy of the license is available at https://github.com/tanguylegazon/custom-css/blob/main/LICENSE.
  */
 
-/* Components */
 button, div:is(.note, .info, .warning, .danger, .success), input {
     font-size: 1rem;
     display: flex;
@@ -22,7 +21,6 @@ input {
     transition: color 100ms ease, background-color 200ms ease, outline-color 50ms ease;
 }
 
-/* Not readonly focus */
 input:focus {
     outline: var(--color-secondary) 2px solid;
     outline-offset: 2px;
@@ -57,45 +55,6 @@ button {
     cursor: pointer;
     font-weight: 600;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 button:has(> svg:first-child:last-child) {
     padding: calc(.05lh + .6em);
