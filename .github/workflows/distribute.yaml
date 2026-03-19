@@ -4,13 +4,15 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - '../../custom_backup.css'
+      - 'src/tokens.css'
+      - 'src/base.css'
+      - 'src/components.css'
 
 permissions:
   contents: write
 
 jobs:
-  minify:
+  distribute:
     runs-on: ubuntu-latest
     timeout-minutes: 3
 
@@ -23,8 +25,10 @@ jobs:
         with:
           node-version: 'latest'
 
-      - name: Minify CSS files
-        run: npx csso-cli -i "custom_backup.css" -o "custom.min.css" --comments first-exclamation
+      - name: Build CSS files
+        run: |
+          cat src/tokens.css src/base.css src/components.css > custom.css
+          npx csso-cli -i "custom.css" -o "custom.min.css" --comments first-exclamation
 
       - name: Push to distribution branch
         run: |
@@ -32,6 +36,7 @@ jobs:
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout --orphan dist
           git reset
+          git add custom.css
           git add custom.min.css
-          git commit -m "[bot] Minify CSS file"
+          git commit -m "[bot] Build CSS files"
           git push --force origin dist
