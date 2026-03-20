@@ -56,6 +56,10 @@ button {
     font-weight: 600;
 }
 
+button:is(.disabled, [disabled], [aria-disabled="true"]) {
+    cursor: not-allowed;
+}
+
 button:has(> svg:first-child:last-child) {
     padding: calc(.05lh + .6em);
 }

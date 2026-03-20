@@ -15,6 +15,23 @@ look that can be used alongside other user specific CSS files.
 The source files are concatenated and minified by GitHub Actions. The generated distribution files are published on the
 `dist` branch.
 
+## Button variants
+
+Buttons expose three visual variants, with standard aliases:
+
+- `solid` or `primary`
+- `soft` or `secondary`
+- `ghost` or `tertiary`
+- `disabled` or native `disabled`
+
+```html
+<button class="solid info">Save</button>
+<button class="soft info">Preview</button>
+<button class="ghost info">Cancel</button>
+<button class="soft info disabled">Unavailable</button>
+<button class="soft info" disabled>Unavailable</button>
+```
+
 ### Setup
 
 To use this custom CSS in your project, you can either:
