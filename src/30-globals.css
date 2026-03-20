@@ -66,6 +66,5 @@ body::after {
 svg {
     fill: currentColor;
     overflow: visible;
-    height: 1.2em;
     height: .9lh;
 }
