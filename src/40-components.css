@@ -9,7 +9,7 @@ button, div:is(.note, .info, .warning, .danger, .success), input {
     justify-content: center;
     align-items: center;
     text-align: left;
-    gap: .5em;
+    gap: .6em;
     margin: 8px;
     border-radius: 0;
 }
@@ -47,7 +47,7 @@ button, input {
     border: none;
     background-color: var(--color-surface);
     max-width: 48ch;
-    padding: .6em .8em;
+    padding: .65em .9em;
     transition: color 100ms ease;
 }
 

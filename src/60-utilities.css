@@ -3,13 +3,25 @@
  * A copy of the license is available at https://github.com/tanguylegazon/custom-css/blob/main/LICENSE.
  */
 
-.big {
+.small, .sm {
+    font-size: .875rem;
+}
+
+.big, .lg {
     font-size: 1.22rem;
+    padding: .8em 1.5em;
+    gap: .9em;
 }
 
 .rounded {
-    border-radius: .75rem;
-    corner-shape: squircle;
+    border-radius: .85em;
+}
+
+@supports (corner-shape: squircle) {
+    .rounded {
+        border-radius: 2.2em;
+        corner-shape: squircle;
+    }
 }
 
 .circle {

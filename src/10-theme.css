@@ -3,127 +3,309 @@
  * A copy of the license is available at https://github.com/tanguylegazon/custom-css/blob/main/LICENSE.
  */
 
-@media (prefers-color-scheme: light) {
-    :root {
-        /* Neutral */
-        --color-neutral-primary: black;
-        --color-neutral-secondary: grey;
-        --color-neutral-surface: white;
-        --color-neutral-on: black;
-        --color-neutral-on-surface: black;
-        --color-neutral-on-primary: white;
-
-        /* Note */
-        --color-note-primary: #475569; /* slate-600 */
-        --color-note-secondary: #b5c1d0; /* slate-340 */
-        --color-note-surface: #e9eef4; /* slate-150 */
-        --color-note-on: var(--color-note-primary);
-        --color-note-on-surface: #374559; /* slate-680 */
-        --color-note-on-primary: #fbfcfd; /* slate-030 */
-
-        /* Info */
-        --color-info-primary: #2563eb; /* blue-600 */
-        --color-info-secondary: #80b8fc; /* blue-340 */
-        --color-info-surface: #e3effe; /* blue-080 */
-        --color-info-on: var(--color-info-primary);
-        --color-info-on-surface: #1f52dc; /* blue-680 */
-        --color-info-on-primary: #f5faff; /* blue-030 */
-
-        /* Warning */
-        --color-warning-primary: #d97706; /* amber-600 */
-        --color-warning-secondary: #fdaa5e; /* orange-340 */
-        --color-warning-surface: #fff6d5; /* amber-080 */
-        --color-warning-on: var(--color-warning-primary);
-        --color-warning-on-surface: #bb5a09; /* amber-680 */
-        --color-warning-on-primary: #fffdf3; /* amber-030 */
-
-        /* Danger */
-        --color-danger-primary: #dc2626; /* red-600 */
-        --color-danger-secondary: #fb9190; /* red-340 */
-        --color-danger-surface: #fee8e8; /* red-080 */
-        --color-danger-on: var(--color-danger-primary);
-        --color-danger-on-surface: #c01e1e; /* red-670 */
-        --color-danger-on-primary: #fef7f7; /* red-030 */
-
-        /* Success */
-        --color-success-primary: #16a34a; /* green-600 */
-        --color-success-secondary: #5adfab; /* emerald-340 */
-        --color-success-surface: #e4fcec; /* green-080 */
-        --color-success-on: var(--color-success-primary);
-        --color-success-on-surface: #158740; /* green-680 */
-        --color-success-on-primary: #f6fef8; /* green-030 */
-
-        /* Theme */
-        --theme-body-gradient: radial-gradient(circle at 60% 0, #fbedff /* fuchsia-080 */ 0%, #fdfdff /* violet-010 */ 42%);
-        --theme-body-pattern-color: rgba(91, 33, 182, .22); /* violet-800 */
-        --theme-body-noise-blend: multiply;
-        --theme-body-noise-opacity: 0.08;
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        /* Neutral */
-        --color-neutral-primary: white;
-        --color-neutral-secondary: grey;
-        --color-neutral-surface: black;
-        --color-neutral-on: white;
-        --color-neutral-on-surface: white;
-        --color-neutral-on-primary: black;
-
-        /* Note */
-        --color-note-primary: #36309c; /* indigo-820 */
-        --color-note-secondary: #3932ab; /* indigo-780 */
-        --color-note-surface: #0c0715; /* indigo-990 */
-        --color-note-on: #acbafc; /* indigo-280 */
-        --color-note-on-surface: #d6dfff; /* indigo-140 */
-        --color-note-on-primary: #f5f7ff; /* indigo-030 */
-
-        /* Info */
-        --color-info-primary: #065c8b; /* sky-780 */
-        --color-info-secondary: #0b4d73; /* sky-880 */
-        --color-info-surface: #070e14; /* sky-990 */
-        --color-info-on: #8bd7fc; /* sky-280 */
-        --color-info-on-surface: #d1edfe; /* sky-140 */
-        --color-info-on-primary: #f6fbff; /* sky-030 */
-
-        /* Warning */
-        --color-warning-primary: #8b510d; /* yellow-780 */
-        --color-warning-secondary: #754211; /* yellow-880 */
-        --color-warning-surface: #150901; /* yellow-990 */
-        --color-warning-on: #fdd75a; /* amber-280 */
-        --color-warning-on-surface: #fff5ac; /* yellow-140 */
-        --color-warning-on-primary: #fffdf1; /* yellow-030 */
-
-        /* Danger */
-        --color-danger-primary: #a5123a; /* rose-780 */
-        --color-danger-secondary: #8d1337; /* rose-880 */
-        --color-danger-surface: #180506; /* rose-990 */
-        --color-danger-on: #feacb6; /* rose-280 */
-        --color-danger-on-surface: #ffdbde; /* rose-140 */
-        --color-danger-on-primary: #fff7f7; /* rose-030 */
-
-        /* Success */
-        --color-success-primary: #066449; /* emerald-780 */
-        --color-success-secondary: #06513d; /* emerald-880 */
-        --color-success-surface: #030d0a; /* emerald-990 */
-        --color-success-on: #7be9bc; /* emerald-280 */
-        --color-success-on-surface: #c1f7dd; /* emerald-140 */
-        --color-success-on-primary: #f4fef9; /* emerald-030 */
-
-        /* Theme */
-        --theme-body-gradient: radial-gradient(circle at 60% 0, #210f3d /* violet-960 */ -10%, #130e21 /* indigo-980 */ 38%);
-        --theme-body-pattern-color: rgba(224, 231, 255, .2); /* indigo-100 */
-        --theme-body-noise-blend: soft-light;
-        --theme-body-noise-opacity: 0.3;
-    }
-}
-
 :root {
+    /* Light palette */
+    --theme-light-neutral-primary: black;
+    --theme-light-neutral-secondary: grey;
+    --theme-light-neutral-surface: white;
+    --theme-light-neutral-on: black;
+    --theme-light-neutral-on-surface: black;
+    --theme-light-neutral-on-primary: white;
+
+    --theme-light-note-primary: #475569;
+    --theme-light-note-secondary: #b5c1d0;
+    --theme-light-note-surface: #e9eef4;
+    --theme-light-note-on: var(--theme-light-note-primary);
+    --theme-light-note-on-surface: #374559;
+    --theme-light-note-on-primary: #fbfcfd;
+
+    --theme-light-info-primary: #2563eb;
+    --theme-light-info-secondary: #80b8fc;
+    --theme-light-info-surface: #e3effe;
+    --theme-light-info-on: var(--theme-light-info-primary);
+    --theme-light-info-on-surface: #1f52dc;
+    --theme-light-info-on-primary: #f5faff;
+
+    --theme-light-warning-primary: #d97706;
+    --theme-light-warning-secondary: #fdaa5e;
+    --theme-light-warning-surface: #fff6d5;
+    --theme-light-warning-on: var(--theme-light-warning-primary);
+    --theme-light-warning-on-surface: #bb5a09;
+    --theme-light-warning-on-primary: #fffdf3;
+
+    --theme-light-danger-primary: #dc2626;
+    --theme-light-danger-secondary: #fb9190;
+    --theme-light-danger-surface: #fee8e8;
+    --theme-light-danger-on: var(--theme-light-danger-primary);
+    --theme-light-danger-on-surface: #c01e1e;
+    --theme-light-danger-on-primary: #fef7f7;
+
+    --theme-light-success-primary: #16a34a;
+    --theme-light-success-secondary: #5adfab;
+    --theme-light-success-surface: #e4fcec;
+    --theme-light-success-on: var(--theme-light-success-primary);
+    --theme-light-success-on-surface: #158740;
+    --theme-light-success-on-primary: #f6fef8;
+
+    --theme-light-body-gradient: radial-gradient(circle at 60% 0, #fbedff 0%, #fdfdff 42%);
+    --theme-light-body-pattern-color: rgba(91, 33, 182, .22);
+    --theme-light-body-noise-blend: multiply;
+    --theme-light-body-noise-opacity: 0.08;
+
+    /* Dark palette */
+    --theme-dark-neutral-primary: white;
+    --theme-dark-neutral-secondary: grey;
+    --theme-dark-neutral-surface: black;
+    --theme-dark-neutral-on: white;
+    --theme-dark-neutral-on-surface: white;
+    --theme-dark-neutral-on-primary: black;
+
+    --theme-dark-note-primary: #36309c;
+    --theme-dark-note-secondary: #3932ab;
+    --theme-dark-note-surface: #0c0715;
+    --theme-dark-note-on: #acbafc;
+    --theme-dark-note-on-surface: #d6dfff;
+    --theme-dark-note-on-primary: #f5f7ff;
+
+    --theme-dark-info-primary: #065c8b;
+    --theme-dark-info-secondary: #0b4d73;
+    --theme-dark-info-surface: #070e14;
+    --theme-dark-info-on: #8bd7fc;
+    --theme-dark-info-on-surface: #d1edfe;
+    --theme-dark-info-on-primary: #f6fbff;
+
+    --theme-dark-warning-primary: #8b510d;
+    --theme-dark-warning-secondary: #754211;
+    --theme-dark-warning-surface: #150901;
+    --theme-dark-warning-on: #fdd75a;
+    --theme-dark-warning-on-surface: #fff5ac;
+    --theme-dark-warning-on-primary: #fffdf1;
+
+    --theme-dark-danger-primary: #a5123a;
+    --theme-dark-danger-secondary: #8d1337;
+    --theme-dark-danger-surface: #180506;
+    --theme-dark-danger-on: #feacb6;
+    --theme-dark-danger-on-surface: #ffdbde;
+    --theme-dark-danger-on-primary: #fff7f7;
+
+    --theme-dark-success-primary: #066449;
+    --theme-dark-success-secondary: #06513d;
+    --theme-dark-success-surface: #030d0a;
+    --theme-dark-success-on: #7be9bc;
+    --theme-dark-success-on-surface: #c1f7dd;
+    --theme-dark-success-on-primary: #f4fef9;
+
+    --theme-dark-body-gradient: radial-gradient(circle at 60% 0, #210f3d -10%, #130e21 38%);
+    --theme-dark-body-pattern-color: rgba(224, 231, 255, .2);
+    --theme-dark-body-noise-blend: soft-light;
+    --theme-dark-body-noise-opacity: 0.3;
+
+    /* Active theme defaults */
+    --theme-color-scheme: light;
+
+    --theme-neutral-primary: var(--theme-light-neutral-primary);
+    --theme-neutral-secondary: var(--theme-light-neutral-secondary);
+    --theme-neutral-surface: var(--theme-light-neutral-surface);
+    --theme-neutral-on: var(--theme-light-neutral-on);
+    --theme-neutral-on-surface: var(--theme-light-neutral-on-surface);
+    --theme-neutral-on-primary: var(--theme-light-neutral-on-primary);
+
+    --theme-note-primary: var(--theme-light-note-primary);
+    --theme-note-secondary: var(--theme-light-note-secondary);
+    --theme-note-surface: var(--theme-light-note-surface);
+    --theme-note-on: var(--theme-light-note-on);
+    --theme-note-on-surface: var(--theme-light-note-on-surface);
+    --theme-note-on-primary: var(--theme-light-note-on-primary);
+
+    --theme-info-primary: var(--theme-light-info-primary);
+    --theme-info-secondary: var(--theme-light-info-secondary);
+    --theme-info-surface: var(--theme-light-info-surface);
+    --theme-info-on: var(--theme-light-info-on);
+    --theme-info-on-surface: var(--theme-light-info-on-surface);
+    --theme-info-on-primary: var(--theme-light-info-on-primary);
+
+    --theme-warning-primary: var(--theme-light-warning-primary);
+    --theme-warning-secondary: var(--theme-light-warning-secondary);
+    --theme-warning-surface: var(--theme-light-warning-surface);
+    --theme-warning-on: var(--theme-light-warning-on);
+    --theme-warning-on-surface: var(--theme-light-warning-on-surface);
+    --theme-warning-on-primary: var(--theme-light-warning-on-primary);
+
+    --theme-danger-primary: var(--theme-light-danger-primary);
+    --theme-danger-secondary: var(--theme-light-danger-secondary);
+    --theme-danger-surface: var(--theme-light-danger-surface);
+    --theme-danger-on: var(--theme-light-danger-on);
+    --theme-danger-on-surface: var(--theme-light-danger-on-surface);
+    --theme-danger-on-primary: var(--theme-light-danger-on-primary);
+
+    --theme-success-primary: var(--theme-light-success-primary);
+    --theme-success-secondary: var(--theme-light-success-secondary);
+    --theme-success-surface: var(--theme-light-success-surface);
+    --theme-success-on: var(--theme-light-success-on);
+    --theme-success-on-surface: var(--theme-light-success-on-surface);
+    --theme-success-on-primary: var(--theme-light-success-on-primary);
+
+    --theme-body-gradient: var(--theme-light-body-gradient);
+    --theme-body-pattern-color: var(--theme-light-body-pattern-color);
+    --theme-body-noise-blend: var(--theme-light-body-noise-blend);
+    --theme-body-noise-opacity: var(--theme-light-body-noise-opacity);
+
+    color-scheme: var(--theme-color-scheme);
+
+    --color-neutral-primary: var(--theme-neutral-primary);
+    --color-neutral-secondary: var(--theme-neutral-secondary);
+    --color-neutral-surface: var(--theme-neutral-surface);
+    --color-neutral-on: var(--theme-neutral-on);
+    --color-neutral-on-surface: var(--theme-neutral-on-surface);
+    --color-neutral-on-primary: var(--theme-neutral-on-primary);
+
+    --color-note-primary: var(--theme-note-primary);
+    --color-note-secondary: var(--theme-note-secondary);
+    --color-note-surface: var(--theme-note-surface);
+    --color-note-on: var(--theme-note-on);
+    --color-note-on-surface: var(--theme-note-on-surface);
+    --color-note-on-primary: var(--theme-note-on-primary);
+
+    --color-info-primary: var(--theme-info-primary);
+    --color-info-secondary: var(--theme-info-secondary);
+    --color-info-surface: var(--theme-info-surface);
+    --color-info-on: var(--theme-info-on);
+    --color-info-on-surface: var(--theme-info-on-surface);
+    --color-info-on-primary: var(--theme-info-on-primary);
+
+    --color-warning-primary: var(--theme-warning-primary);
+    --color-warning-secondary: var(--theme-warning-secondary);
+    --color-warning-surface: var(--theme-warning-surface);
+    --color-warning-on: var(--theme-warning-on);
+    --color-warning-on-surface: var(--theme-warning-on-surface);
+    --color-warning-on-primary: var(--theme-warning-on-primary);
+
+    --color-danger-primary: var(--theme-danger-primary);
+    --color-danger-secondary: var(--theme-danger-secondary);
+    --color-danger-surface: var(--theme-danger-surface);
+    --color-danger-on: var(--theme-danger-on);
+    --color-danger-on-surface: var(--theme-danger-on-surface);
+    --color-danger-on-primary: var(--theme-danger-on-primary);
+
+    --color-success-primary: var(--theme-success-primary);
+    --color-success-secondary: var(--theme-success-secondary);
+    --color-success-surface: var(--theme-success-surface);
+    --color-success-on: var(--theme-success-on);
+    --color-success-on-surface: var(--theme-success-on-surface);
+    --color-success-on-primary: var(--theme-success-on-primary);
+
     --color-primary: var(--color-neutral-primary);
     --color-secondary: var(--color-neutral-secondary);
     --color-surface: var(--color-neutral-surface);
     --color-on: var(--color-neutral-on);
     --color-on-primary: var(--color-neutral-on-primary);
     --color-on-surface: var(--color-neutral-on-surface);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        --theme-color-scheme: dark;
+
+        --theme-neutral-primary: var(--theme-dark-neutral-primary);
+        --theme-neutral-secondary: var(--theme-dark-neutral-secondary);
+        --theme-neutral-surface: var(--theme-dark-neutral-surface);
+        --theme-neutral-on: var(--theme-dark-neutral-on);
+        --theme-neutral-on-surface: var(--theme-dark-neutral-on-surface);
+        --theme-neutral-on-primary: var(--theme-dark-neutral-on-primary);
+
+        --theme-note-primary: var(--theme-dark-note-primary);
+        --theme-note-secondary: var(--theme-dark-note-secondary);
+        --theme-note-surface: var(--theme-dark-note-surface);
+        --theme-note-on: var(--theme-dark-note-on);
+        --theme-note-on-surface: var(--theme-dark-note-on-surface);
+        --theme-note-on-primary: var(--theme-dark-note-on-primary);
+
+        --theme-info-primary: var(--theme-dark-info-primary);
+        --theme-info-secondary: var(--theme-dark-info-secondary);
+        --theme-info-surface: var(--theme-dark-info-surface);
+        --theme-info-on: var(--theme-dark-info-on);
+        --theme-info-on-surface: var(--theme-dark-info-on-surface);
+        --theme-info-on-primary: var(--theme-dark-info-on-primary);
+
+        --theme-warning-primary: var(--theme-dark-warning-primary);
+        --theme-warning-secondary: var(--theme-dark-warning-secondary);
+        --theme-warning-surface: var(--theme-dark-warning-surface);
+        --theme-warning-on: var(--theme-dark-warning-on);
+        --theme-warning-on-surface: var(--theme-dark-warning-on-surface);
+        --theme-warning-on-primary: var(--theme-dark-warning-on-primary);
+
+        --theme-danger-primary: var(--theme-dark-danger-primary);
+        --theme-danger-secondary: var(--theme-dark-danger-secondary);
+        --theme-danger-surface: var(--theme-dark-danger-surface);
+        --theme-danger-on: var(--theme-dark-danger-on);
+        --theme-danger-on-surface: var(--theme-dark-danger-on-surface);
+        --theme-danger-on-primary: var(--theme-dark-danger-on-primary);
+
+        --theme-success-primary: var(--theme-dark-success-primary);
+        --theme-success-secondary: var(--theme-dark-success-secondary);
+        --theme-success-surface: var(--theme-dark-success-surface);
+        --theme-success-on: var(--theme-dark-success-on);
+        --theme-success-on-surface: var(--theme-dark-success-on-surface);
+        --theme-success-on-primary: var(--theme-dark-success-on-primary);
+
+        --theme-body-gradient: var(--theme-dark-body-gradient);
+        --theme-body-pattern-color: var(--theme-dark-body-pattern-color);
+        --theme-body-noise-blend: var(--theme-dark-body-noise-blend);
+        --theme-body-noise-opacity: var(--theme-dark-body-noise-opacity);
+    }
+}
+
+html[data-theme="light"] {
+    --theme-color-scheme: light;
+}
+
+html[data-theme="dark"] {
+    --theme-color-scheme: dark;
+
+    --theme-neutral-primary: var(--theme-dark-neutral-primary);
+    --theme-neutral-secondary: var(--theme-dark-neutral-secondary);
+    --theme-neutral-surface: var(--theme-dark-neutral-surface);
+    --theme-neutral-on: var(--theme-dark-neutral-on);
+    --theme-neutral-on-surface: var(--theme-dark-neutral-on-surface);
+    --theme-neutral-on-primary: var(--theme-dark-neutral-on-primary);
+
+    --theme-note-primary: var(--theme-dark-note-primary);
+    --theme-note-secondary: var(--theme-dark-note-secondary);
+    --theme-note-surface: var(--theme-dark-note-surface);
+    --theme-note-on: var(--theme-dark-note-on);
+    --theme-note-on-surface: var(--theme-dark-note-on-surface);
+    --theme-note-on-primary: var(--theme-dark-note-on-primary);
+
+    --theme-info-primary: var(--theme-dark-info-primary);
+    --theme-info-secondary: var(--theme-dark-info-secondary);
+    --theme-info-surface: var(--theme-dark-info-surface);
+    --theme-info-on: var(--theme-dark-info-on);
+    --theme-info-on-surface: var(--theme-dark-info-on-surface);
+    --theme-info-on-primary: var(--theme-dark-info-on-primary);
+
+    --theme-warning-primary: var(--theme-dark-warning-primary);
+    --theme-warning-secondary: var(--theme-dark-warning-secondary);
+    --theme-warning-surface: var(--theme-dark-warning-surface);
+    --theme-warning-on: var(--theme-dark-warning-on);
+    --theme-warning-on-surface: var(--theme-dark-warning-on-surface);
+    --theme-warning-on-primary: var(--theme-dark-warning-on-primary);
+
+    --theme-danger-primary: var(--theme-dark-danger-primary);
+    --theme-danger-secondary: var(--theme-dark-danger-secondary);
+    --theme-danger-surface: var(--theme-dark-danger-surface);
+    --theme-danger-on: var(--theme-dark-danger-on);
+    --theme-danger-on-surface: var(--theme-dark-danger-on-surface);
+    --theme-danger-on-primary: var(--theme-dark-danger-on-primary);
+
+    --theme-success-primary: var(--theme-dark-success-primary);
+    --theme-success-secondary: var(--theme-dark-success-secondary);
+    --theme-success-surface: var(--theme-dark-success-surface);
+    --theme-success-on: var(--theme-dark-success-on);
+    --theme-success-on-surface: var(--theme-dark-success-on-surface);
+    --theme-success-on-primary: var(--theme-dark-success-on-primary);
+
+    --theme-body-gradient: var(--theme-dark-body-gradient);
+    --theme-body-pattern-color: var(--theme-dark-body-pattern-color);
+    --theme-body-noise-blend: var(--theme-dark-body-noise-blend);
+    --theme-body-noise-opacity: var(--theme-dark-body-noise-opacity);
 }
