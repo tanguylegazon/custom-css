@@ -1,0 +1,218 @@
+<!--
+This material is licensed under the terms of the MIT License.
+A copy of the license is available at https://github.com/tanguylegazon/custom-css/blob/main/LICENSE.
+
+This file includes material from Heroicons v2.2.0 by tailwindlabs, licensed under the terms of the MIT License.
+A copy of the license is available at https://github.com/tailwindlabs/heroicons/blob/v2.2.0/LICENSE.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Component Catalog</title>
+    <script src="catalog.js"></script>
+    <link rel="stylesheet" href="src/10-theme.css">
+    <link rel="stylesheet" href="src/20-tones.css">
+    <link rel="stylesheet" href="src/30-globals.css">
+    <link rel="stylesheet" href="src/40-components.css">
+    <link rel="stylesheet" href="src/50-variants.css">
+    <link rel="stylesheet" href="src/60-utilities.css">
+    <link rel="stylesheet" href="catalog.css">
+    <link rel="stylesheet" href=" https://cdn.jsdelivr.net/gh/tanguylegazon/microtip@dist/tooltip.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/tanguylegazon/microtip@dist/tooltip.min.js" defer></script>
+</head>
+<body>
+<main>
+    <section class="panel rounded">
+        <div class="panel-head">
+            <h2>Tones and Variants</h2>
+        </div>
+        <div class="tone-grid">
+            <article class="tone-card rounded">
+                <div class="tone-meta">
+                    <h3>Neutral</h3>
+                    <p class="muted">Default tone, without a semantic class.</p>
+                </div>
+                <div class="button-row">
+                    <button class="rounded solid tooltip" data-tooltip="solid"><span>Solid</span></button>
+                    <button class="rounded soft tooltip" data-tooltip="soft"><span>Soft</span></button>
+                    <button class="rounded ghost tooltip" data-tooltip="ghost"><span>Ghost</span></button>
+                    <button class="rounded disabled tooltip" data-tooltip="disabled"><span>Disabled</span></button>
+                </div>
+                <div class="showcase-row">
+                    <div class="rounded tooltip" data-tooltip="rounded">
+                        <span>Surface block</span>
+                    </div>
+                    <p class="tooltip" data-tooltip="default">Body text</p>
+                    <p class="muted tooltip" data-tooltip="muted">Muted text</p>
+                </div>
+            </article>
+
+            <article class="tone-card rounded note">
+                <div class="tone-meta">
+                    <h3>Note</h3>
+                    <p class="muted">A calm editorial tone for supporting content and structure.</p>
+                </div>
+                <div class="button-row">
+                    <button class="rounded note solid tooltip" data-tooltip="rounded note solid"><span>Solid</span></button>
+                    <button class="rounded note soft tooltip" data-tooltip="rounded note soft"><span>Soft</span></button>
+                    <button class="rounded note ghost tooltip" data-tooltip="rounded note ghost"><span>Ghost</span></button>
+                    <button class="rounded note disabled tooltip" data-tooltip="rounded note disabled"><span>Disabled</span></button>
+                </div>
+                <div class="chip-row">
+                    <div class="note rounded tooltip" data-tooltip="note rounded"><span>Inline note</span></div>
+                    <p class="note tooltip" data-tooltip="note">Tone text</p>
+                    <p class="note muted tooltip" data-tooltip="note muted">Subtle note</p>
+                </div>
+            </article>
+
+            <article class="tone-card rounded info">
+                <div class="tone-meta">
+                    <h3>Info</h3>
+                    <p class="muted">A clear informational tone for guidance and primary actions.</p>
+                </div>
+                <div class="button-row">
+                    <button class="rounded info solid tooltip" data-tooltip="rounded info solid"><span>Solid</span></button>
+                    <button class="rounded info soft tooltip" data-tooltip="rounded info soft"><span>Soft</span></button>
+                    <button class="rounded info ghost tooltip" data-tooltip="rounded info ghost"><span>Ghost</span></button>
+                    <button class="rounded info disabled tooltip" data-tooltip="rounded info disabled"><span>Disabled</span></button>
+                </div>
+                <div class="chip-row">
+                    <div class="info rounded tooltip" data-tooltip="info rounded"><span>Inline info</span></div>
+                    <p class="info tooltip" data-tooltip="info">Tone text</p>
+                    <p class="info muted tooltip" data-tooltip="info muted">Subtle info</p>
+                </div>
+            </article>
+
+            <article class="tone-card rounded warning">
+                <div class="tone-meta">
+                    <h3>Warning</h3>
+                    <p class="muted">A cautionary tone designed to draw attention without excess.</p>
+                </div>
+                <div class="button-row">
+                    <button class="rounded warning solid tooltip" data-tooltip="rounded warning solid"><span>Solid</span></button>
+                    <button class="rounded warning soft tooltip" data-tooltip="rounded warning soft"><span>Soft</span></button>
+                    <button class="rounded warning ghost tooltip" data-tooltip="rounded warning ghost"><span>Ghost</span></button>
+                    <button class="rounded warning disabled tooltip" data-tooltip="rounded warning disabled"><span>Disabled</span></button>
+                </div>
+                <div class="chip-row">
+                    <div class="warning rounded tooltip" data-tooltip="warning rounded"><span>Inline warning</span></div>
+                    <p class="warning tooltip" data-tooltip="warning">Tone text</p>
+                    <p class="warning muted tooltip" data-tooltip="warning muted">Subtle warning</p>
+                </div>
+            </article>
+
+            <article class="tone-card rounded danger">
+                <div class="tone-meta">
+                    <h3>Danger</h3>
+                    <p class="muted">A critical tone for destructive actions, blocking states, or errors.</p>
+                </div>
+                <div class="button-row">
+                    <button class="rounded danger solid tooltip" data-tooltip="rounded danger solid"><span>Solid</span></button>
+                    <button class="rounded danger soft tooltip" data-tooltip="rounded danger soft"><span>Soft</span></button>
+                    <button class="rounded danger ghost tooltip" data-tooltip="rounded danger ghost"><span>Ghost</span></button>
+                    <button class="rounded danger disabled tooltip" data-tooltip="rounded danger disabled"><span>Disabled</span></button>
+                </div>
+                <div class="chip-row">
+                    <div class="danger rounded tooltip" data-tooltip="danger rounded"><span>Inline danger</span></div>
+                    <p class="danger tooltip" data-tooltip="danger">Tone text</p>
+                    <p class="danger muted tooltip" data-tooltip="danger muted">Subtle danger</p>
+                </div>
+            </article>
+
+            <article class="tone-card rounded success">
+                <div class="tone-meta">
+                    <h3>Success</h3>
+                    <p class="muted">A positive tone for confirmation, completion, and successful outcomes.</p>
+                </div>
+                <div class="button-row">
+                    <button class="rounded success solid tooltip" data-tooltip="rounded success solid"><span>Solid</span></button>
+                    <button class="rounded success soft tooltip" data-tooltip="rounded success soft"><span>Soft</span></button>
+                    <button class="rounded success ghost tooltip" data-tooltip="rounded success ghost"><span>Ghost</span></button>
+                    <button class="rounded success disabled tooltip" data-tooltip="rounded success disabled"><span>Disabled</span></button>
+                </div>
+                <div class="chip-row">
+                    <div class="success rounded tooltip" data-tooltip="success rounded"><span>Inline success</span></div>
+                    <p class="success tooltip" data-tooltip="success">Tone text</p>
+                    <p class="success muted tooltip" data-tooltip="success muted">Subtle success</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="panel rounded">
+        <div class="panel-head">
+            <h2>Size, Shape, and Inputs</h2>
+        </div>
+        <div class="spec-grid">
+            <article class="spec-card rounded">
+                <div class="spec-copy">
+                    <h3>Button Sizes</h3>
+                    <p class="muted">Three scale options for compact, default, and prominent actions.</p>
+                </div>
+                <div class="button-row">
+                    <button class="rounded solid small tooltip" data-tooltip="rounded solid small"><span>Small</span></button>
+                    <button class="rounded solid tooltip" data-tooltip="rounded solid"><span>Default</span></button>
+                    <button class="rounded solid big tooltip" data-tooltip="rounded solid big"><span>Big</span></button>
+                </div>
+            </article>
+
+            <article class="spec-card rounded">
+                <div class="spec-copy">
+                    <h3>Shapes</h3>
+                    <p class="muted">Shape options for default controls, rounded surfaces, and circular actions.</p>
+                </div>
+                <div class="button-row">
+                    <button class="solid tooltip" data-tooltip="solid"><span>Default</span></button>
+                    <button class="rounded solid tooltip" data-tooltip="rounded solid"><span>Rounded</span></button>
+                    <button class="circle solid tooltip" data-tooltip="circle solid" aria-label="Circle action">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="2 2 12 12">
+                            <path d="M8 3a.75.75 0 0 1 .75.75v3.5h3.5a.75.75 0 0 1 0 1.5h-3.5v3.5a.75.75 0 0 1-1.5 0v-3.5h-3.5a.75.75 0 0 1 0-1.5h3.5v-3.5A.75.75 0 0 1 8 3Z"/>
+                        </svg>
+                    </button>
+                </div>
+            </article>
+
+            <article class="spec-card rounded">
+                <div class="spec-copy">
+                    <h3>Inputs</h3>
+                    <p class="muted">Text fields shown at the same size steps used across interactive controls.</p>
+                </div>
+                <div class="field-stack">
+                    <input class="rounded tooltip" data-tooltip="rounded" type="text" value="Default field">
+                    <input class="rounded sm tooltip" data-tooltip="rounded sm" type="text" value="Small field">
+                    <input class="rounded lg tooltip" data-tooltip="rounded lg" type="text" value="Large field">
+                </div>
+            </article>
+
+        </div>
+    </section>
+</main>
+<div class="theme-dock">
+    <div class="theme-switch rounded" role="group" aria-label="Theme mode" data-selected="auto">
+        <button class="theme-switch-button" type="button" data-theme-value="light" aria-pressed="false"
+                aria-label="Use light theme" title="Light">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z"/>
+            </svg>
+        </button>
+        <button class="theme-switch-button" type="button" data-theme-value="auto" aria-pressed="true"
+                aria-label="Use system theme" title="System">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd"
+                      d="M2.25 5.25a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3V15a3 3 0 0 1-3 3h-3v.257c0 .597.237 1.17.659 1.591l.621.622a.75.75 0 0 1-.53 1.28h-9a.75.75 0 0 1-.53-1.28l.621-.622a2.25 2.25 0 0 0 .659-1.59V18h-3a3 3 0 0 1-3-3V5.25Zm1.5 0v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5Z"
+                      clip-rule="evenodd"/>
+            </svg>
+        </button>
+        <button class="theme-switch-button" type="button" data-theme-value="dark" aria-pressed="false"
+                aria-label="Use dark theme" title="Dark">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path fill-rule="evenodd"
+                      d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z"
+                      clip-rule="evenodd"/>
+            </svg>
+        </button>
+    </div>
+</div>
+</body>
+</html>

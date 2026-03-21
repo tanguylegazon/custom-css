@@ -6,72 +6,39 @@
 .note {
     --tone-light: var(--tone-light-note);
     --tone-dark: var(--tone-dark-note);
+    --tone-light-accent: var(--tone-light-note);
+    --tone-dark-accent: var(--tone-dark-note);
+    --tone-dark-accent-contrast: oklch(0.985 0 0);
 }
 
 .info {
     --tone-light: var(--tone-light-info);
     --tone-dark: var(--tone-dark-info);
+    --tone-light-accent: var(--tone-light-info);
+    --tone-dark-accent: var(--tone-dark-info);
+    --tone-dark-accent-contrast: oklch(0.985 0 0);
 }
 
 .warning {
     --tone-light: var(--tone-light-warning);
     --tone-dark: var(--tone-dark-warning);
+    --tone-light-accent: var(--tone-light-warning);
+    --tone-dark-accent: var(--tone-dark-warning);
+    --tone-dark-accent-contrast: oklch(0.985 0 0);
 }
 
 .danger {
     --tone-light: var(--tone-light-danger);
     --tone-dark: var(--tone-dark-danger);
+    --tone-light-accent: var(--tone-light-danger);
+    --tone-dark-accent: var(--tone-dark-danger);
+    --tone-dark-accent-contrast: oklch(0.985 0 0);
 }
 
 .success {
     --tone-light: var(--tone-light-success);
     --tone-dark: var(--tone-dark-success);
-}
-
-.note,
-.info,
-.warning,
-.danger,
-.success {
-    --tone-accent: light-dark(var(--tone-light), var(--tone-dark));
-    --tone-surface: light-dark(
-        oklch(from var(--tone-light) 0.965 calc(c * 0.24 + 0.008) h),
-        oklch(from var(--tone-dark) 0.3 calc(c * 0.42 + 0.012) h)
-    );
-    --tone-text: light-dark(
-        oklch(from var(--tone-light) 0.44 calc(c * 0.9 + 0.012) h),
-        oklch(from var(--tone-dark) 0.9 calc(c * 0.54 + 0.014) h)
-    );
-    --tone-border: light-dark(
-        oklch(from var(--tone-light) 0.86 calc(c * 0.56 + 0.01) h),
-        oklch(from var(--tone-dark) 0.48 calc(c * 0.48 + 0.012) h)
-    );
-    --tone-accent-contrast: oklch(0.985 0 0);
-    --color-accent: var(--tone-accent);
-    --color-accent-soft: var(--tone-surface);
-    --color-accent-contrast: var(--tone-accent-contrast);
-    --color-surface: var(--tone-surface);
-    --color-surface-muted: color-mix(in oklab, var(--tone-surface) 86%, var(--tone-border) 14%);
-    --color-text: var(--tone-text);
-    --color-text-muted: color-mix(in oklab, var(--tone-text) 72%, var(--tone-surface) 28%);
-    --color-text-subtle: color-mix(in oklab, var(--tone-text) 58%, var(--tone-surface) 42%);
-    --color-border: var(--tone-border);
-    --color-border-strong: color-mix(in oklab, var(--tone-border) 72%, var(--tone-accent) 28%);
-    --color-focus-ring: var(--tone-accent);
-    --color-disabled-bg: color-mix(in oklab, var(--tone-surface) 86%, var(--tone-border) 14%);
-    --color-disabled-text: color-mix(in oklab, var(--tone-text) 44%, var(--tone-surface) 56%);
-    --color-disabled-border: color-mix(in oklab, var(--tone-border) 52%, var(--tone-surface) 48%);
-
-    /* Legacy aliases kept in sync inside tone scopes. */
-    --color-primary: var(--color-accent);
-    --color-secondary: var(--color-border-strong);
-    --color-on: var(--color-text);
-    --color-on-primary: var(--color-accent-contrast);
-    --color-on-surface: var(--color-text);
-
-    --color-tone-accent: var(--tone-accent);
-    --color-tone-surface: var(--tone-surface);
-    --color-tone-text: var(--tone-text);
-    --color-tone-border: var(--tone-border);
-    --color-tone-accent-contrast: var(--tone-accent-contrast);
+    --tone-light-accent: var(--tone-light-success);
+    --tone-dark-accent: var(--tone-dark-success);
+    --tone-dark-accent-contrast: oklch(0.985 0 0);
 }
