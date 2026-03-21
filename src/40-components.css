@@ -3,7 +3,7 @@
  * A copy of the license is available at https://github.com/tanguylegazon/custom-css/blob/main/LICENSE.
  */
 
-button, div:is(.note, .info, .warning, .danger, .success), input {
+button, input {
     font-size: 1rem;
     display: flex;
     justify-content: center;
@@ -12,17 +12,22 @@ button, div:is(.note, .info, .warning, .danger, .success), input {
     gap: .6em;
     margin: 8px;
     border-radius: 0;
+    border: none;
+    background-color: var(--color-surface);
+    max-width: 48ch;
+    padding: .65em .9em;
+    transition: color 100ms ease;
 }
 
 input {
-    color: var(--color-on-surface) !important;
+    color: var(--color-text);
     outline-color: transparent;
     width: 24.3ch;
     transition: color 100ms ease, background-color 200ms ease, outline-color 50ms ease;
 }
 
 input:focus {
-    outline: var(--color-secondary) 2px solid;
+    outline: var(--color-focus-ring) 2px solid;
     outline-offset: 2px;
     transition: outline-color 100ms ease;
 }
@@ -34,26 +39,19 @@ input[readonly] {
 
 /*:is(.note, .info, .warning, .danger, .success)::selection,
 :is(.note, .info, .warning, .danger, .success) *::selection {
-    background-color: var(--color-primary);
-    color: var(--color-on-primary);
+    background-color: var(--color-accent);
+    color: var(--color-accent-contrast);
 }*/
 
 input::selection {
-    background-color: var(--color-primary);
-    color: var(--color-on-primary);
-}
-
-button, input {
-    border: none;
-    background-color: var(--color-surface);
-    max-width: 48ch;
-    padding: .65em .9em;
-    transition: color 100ms ease;
+    background-color: var(--color-accent);
+    color: var(--color-accent-contrast);
 }
 
 button {
     cursor: pointer;
     font-weight: 600;
+    color: var(--color-text);
 }
 
 button:is(.disabled, [disabled], [aria-disabled="true"]) {

@@ -4,46 +4,69 @@
  */
 
 .note {
-    --color-primary: var(--color-note-primary);
-    --color-secondary: var(--color-note-secondary);
-    --color-surface: var(--color-note-surface);
-    --color-on: var(--color-note-on);
-    --color-on-primary: var(--color-note-on-primary);
-    --color-on-surface: var(--color-note-on-surface);
+    --tone-accent: var(--color-note-accent);
+    --tone-surface: var(--color-note-surface);
+    --tone-text: var(--color-note-text);
+    --tone-border: var(--color-note-border);
+    --tone-accent-contrast: var(--color-note-accent-contrast);
 }
 
 .info {
-    --color-primary: var(--color-info-primary);
-    --color-secondary: var(--color-info-secondary);
-    --color-surface: var(--color-info-surface);
-    --color-on: var(--color-info-on);
-    --color-on-primary: var(--color-info-on-primary);
-    --color-on-surface: var(--color-info-on-surface);
+    --tone-accent: var(--color-info-accent);
+    --tone-surface: var(--color-info-surface);
+    --tone-text: var(--color-info-text);
+    --tone-border: var(--color-info-border);
+    --tone-accent-contrast: var(--color-info-accent-contrast);
 }
 
 .warning {
-    --color-primary: var(--color-warning-primary);
-    --color-secondary: var(--color-warning-secondary);
-    --color-surface: var(--color-warning-surface);
-    --color-on: var(--color-warning-on);
-    --color-on-primary: var(--color-warning-on-primary);
-    --color-on-surface: var(--color-warning-on-surface);
+    --tone-accent: var(--color-warning-accent);
+    --tone-surface: var(--color-warning-surface);
+    --tone-text: var(--color-warning-text);
+    --tone-border: var(--color-warning-border);
+    --tone-accent-contrast: var(--color-warning-accent-contrast);
 }
 
 .danger {
-    --color-primary: var(--color-danger-primary);
-    --color-secondary: var(--color-danger-secondary);
-    --color-surface: var(--color-danger-surface);
-    --color-on: var(--color-danger-on);
-    --color-on-primary: var(--color-danger-on-primary);
-    --color-on-surface: var(--color-danger-on-surface);
+    --tone-accent: var(--color-danger-accent);
+    --tone-surface: var(--color-danger-surface);
+    --tone-text: var(--color-danger-text);
+    --tone-border: var(--color-danger-border);
+    --tone-accent-contrast: var(--color-danger-accent-contrast);
 }
 
 .success {
-    --color-primary: var(--color-success-primary);
-    --color-secondary: var(--color-success-secondary);
-    --color-surface: var(--color-success-surface);
-    --color-on: var(--color-success-on);
-    --color-on-primary: var(--color-success-on-primary);
-    --color-on-surface: var(--color-success-on-surface);
+    --tone-accent: var(--color-success-accent);
+    --tone-surface: var(--color-success-surface);
+    --tone-text: var(--color-success-text);
+    --tone-border: var(--color-success-border);
+    --tone-accent-contrast: var(--color-success-accent-contrast);
+}
+
+.note,
+.info,
+.warning,
+.danger,
+.success {
+    --color-accent: var(--tone-accent);
+    --color-accent-soft: var(--tone-surface);
+    --color-accent-contrast: var(--tone-accent-contrast);
+    --color-surface: var(--tone-surface);
+    --color-surface-muted: color-mix(in oklab, var(--tone-surface) 86%, var(--tone-border) 14%);
+    --color-text: var(--tone-text);
+    --color-text-muted: color-mix(in oklab, var(--tone-text) 72%, var(--tone-surface) 28%);
+    --color-text-subtle: color-mix(in oklab, var(--tone-text) 58%, var(--tone-surface) 42%);
+    --color-border: var(--tone-border);
+    --color-border-strong: color-mix(in oklab, var(--tone-border) 72%, var(--tone-accent) 28%);
+    --color-focus-ring: var(--tone-accent);
+    --color-disabled-bg: color-mix(in oklab, var(--tone-surface) 86%, var(--tone-border) 14%);
+    --color-disabled-text: color-mix(in oklab, var(--tone-text) 44%, var(--tone-surface) 56%);
+    --color-disabled-border: color-mix(in oklab, var(--tone-border) 52%, var(--tone-surface) 48%);
+
+    /* Legacy aliases kept in sync inside tone scopes. */
+    --color-primary: var(--color-accent);
+    --color-secondary: var(--color-border-strong);
+    --color-on: var(--color-text);
+    --color-on-primary: var(--color-accent-contrast);
+    --color-on-surface: var(--color-text);
 }

@@ -18,15 +18,17 @@ body {
     margin: 0;
     position: relative;
     box-sizing: border-box;
-    background: var(--theme-body-gradient) no-repeat;
+    background-color: var(--color-bg);
+    background-image: var(--theme-body-gradient);
+    background-repeat: no-repeat;
     background-size: auto;
     min-height: 100vh;
     overflow: hidden;
-    color: var(--color-on);
+    color: var(--color-text);
 }
 
 :is(.note, .info, .warning, .danger, .success) {
-    color: var(--color-on);
+    color: var(--color-text);
 }
 
 body::before {

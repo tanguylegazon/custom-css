@@ -5,6 +5,7 @@
 
 .small, .sm {
     font-size: .875rem;
+    padding: .55em .8em;
 }
 
 .big, .lg {
