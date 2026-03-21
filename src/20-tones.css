@@ -4,43 +4,28 @@
  */
 
 .note {
-    --tone-accent: var(--color-note-accent);
-    --tone-surface: var(--color-note-surface);
-    --tone-text: var(--color-note-text);
-    --tone-border: var(--color-note-border);
-    --tone-accent-contrast: var(--color-note-accent-contrast);
+    --tone-light: var(--tone-light-note);
+    --tone-dark: var(--tone-dark-note);
 }
 
 .info {
-    --tone-accent: var(--color-info-accent);
-    --tone-surface: var(--color-info-surface);
-    --tone-text: var(--color-info-text);
-    --tone-border: var(--color-info-border);
-    --tone-accent-contrast: var(--color-info-accent-contrast);
+    --tone-light: var(--tone-light-info);
+    --tone-dark: var(--tone-dark-info);
 }
 
 .warning {
-    --tone-accent: var(--color-warning-accent);
-    --tone-surface: var(--color-warning-surface);
-    --tone-text: var(--color-warning-text);
-    --tone-border: var(--color-warning-border);
-    --tone-accent-contrast: var(--color-warning-accent-contrast);
+    --tone-light: var(--tone-light-warning);
+    --tone-dark: var(--tone-dark-warning);
 }
 
 .danger {
-    --tone-accent: var(--color-danger-accent);
-    --tone-surface: var(--color-danger-surface);
-    --tone-text: var(--color-danger-text);
-    --tone-border: var(--color-danger-border);
-    --tone-accent-contrast: var(--color-danger-accent-contrast);
+    --tone-light: var(--tone-light-danger);
+    --tone-dark: var(--tone-dark-danger);
 }
 
 .success {
-    --tone-accent: var(--color-success-accent);
-    --tone-surface: var(--color-success-surface);
-    --tone-text: var(--color-success-text);
-    --tone-border: var(--color-success-border);
-    --tone-accent-contrast: var(--color-success-accent-contrast);
+    --tone-light: var(--tone-light-success);
+    --tone-dark: var(--tone-dark-success);
 }
 
 .note,
@@ -48,6 +33,20 @@
 .warning,
 .danger,
 .success {
+    --tone-accent: light-dark(var(--tone-light), var(--tone-dark));
+    --tone-surface: light-dark(
+        oklch(from var(--tone-light) 0.965 calc(c * 0.24 + 0.008) h),
+        oklch(from var(--tone-dark) 0.3 calc(c * 0.42 + 0.012) h)
+    );
+    --tone-text: light-dark(
+        oklch(from var(--tone-light) 0.44 calc(c * 0.9 + 0.012) h),
+        oklch(from var(--tone-dark) 0.9 calc(c * 0.54 + 0.014) h)
+    );
+    --tone-border: light-dark(
+        oklch(from var(--tone-light) 0.86 calc(c * 0.56 + 0.01) h),
+        oklch(from var(--tone-dark) 0.48 calc(c * 0.48 + 0.012) h)
+    );
+    --tone-accent-contrast: oklch(0.985 0 0);
     --color-accent: var(--tone-accent);
     --color-accent-soft: var(--tone-surface);
     --color-accent-contrast: var(--tone-accent-contrast);
@@ -69,4 +68,10 @@
     --color-on: var(--color-text);
     --color-on-primary: var(--color-accent-contrast);
     --color-on-surface: var(--color-text);
+
+    --color-tone-accent: var(--tone-accent);
+    --color-tone-surface: var(--tone-surface);
+    --color-tone-text: var(--tone-text);
+    --color-tone-border: var(--tone-border);
+    --color-tone-accent-contrast: var(--tone-accent-contrast);
 }

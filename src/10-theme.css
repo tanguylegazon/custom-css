@@ -4,215 +4,38 @@
  */
 
 :root {
-    /* Light foundation */
-    --theme-light-bg: oklch(0.985 0.008 286);
-    --theme-light-surface: oklch(0.995 0.004 286);
-    --theme-light-surface-raised: oklch(1 0 0);
-    --theme-light-surface-muted: oklch(0.968 0.008 286);
-    --theme-light-text: oklch(0.24 0.02 272);
-    --theme-light-text-muted: oklch(0.54 0.02 272);
-    --theme-light-text-subtle: oklch(0.67 0.015 272);
-    --theme-light-text-contrast: oklch(0.99 0 0);
-    --theme-light-border: oklch(0.89 0.01 280);
-    --theme-light-border-strong: oklch(0.76 0.018 274);
-    --theme-light-accent: var(--theme-light-text);
-    --theme-light-accent-soft: var(--theme-light-surface-muted);
-    --theme-light-accent-contrast: var(--theme-light-text-contrast);
-    --theme-light-focus-ring: oklch(0.64 0.16 257);
+    /* Semantic tone seeds */
+    --tone-light-neutral: #fff;
+    --tone-light-note: oklch(40.86% 0.04 257.37deg); /* slate-650 */
+    --tone-light-info: oklch(62.31% 0.19 259.81deg); /* blue-500 */
+    --tone-light-warning: oklch(76.86% 0.16 70.07deg); /* amber-500 */
+    --tone-light-danger: oklch(63.69% 0.21 25.33deg); /* red-500 */
+    --tone-light-success: oklch(57.72% 0.15 149.59deg); /* green-650 */
 
-    --theme-light-note-accent: oklch(0.49 0.03 262);
-    --theme-light-note-surface: oklch(0.95 0.012 258);
-    --theme-light-note-text: oklch(0.38 0.03 258);
-    --theme-light-note-border: oklch(0.81 0.022 258);
-    --theme-light-note-accent-contrast: oklch(0.985 0 0);
+    --tone-dark-neutral: #000;
+    --tone-dark-note: oklch(44.96% 0.22 292.71deg); /* violet-770 */
+    --tone-dark-info: oklch(50% 0.12 242.74deg); /* sky-700 */
+    --tone-dark-warning: oklch(57.92% 0.12 68.58deg); /* yellow-680 */
+    --tone-dark-danger: oklch(51.43% 0.2 16.94deg); /* rose-700 */
+    --tone-dark-success: oklch(50.81% 0.1 165.61deg); /* emerald-700 */
 
-    --theme-light-info-accent: oklch(0.59 0.16 259);
-    --theme-light-info-surface: oklch(0.94 0.03 254);
-    --theme-light-info-text: oklch(0.51 0.15 258);
-    --theme-light-info-border: oklch(0.79 0.06 255);
-    --theme-light-info-accent-contrast: oklch(0.985 0 0);
+    /* Neutral default tokens */
+    --color-surface: light-dark(oklch(from var(--tone-light-neutral) 0.995 0 0), oklch(from var(--tone-dark-neutral) 0.2 0 0));
+    --color-surface-muted: light-dark(oklch(from var(--tone-light-neutral) 0.968 0 0), oklch(from var(--tone-dark-neutral) 0.18 0 0));
+    --color-text: light-dark(oklch(from var(--tone-light-neutral) 0.24 0 0), oklch(from var(--tone-dark-neutral) 0.94 0 0));
+    --color-text-muted: light-dark(oklch(from var(--tone-light-neutral) 0.54 0 0), oklch(from var(--tone-dark-neutral) 0.74 0 0));
+    --color-text-subtle: light-dark(oklch(from var(--tone-light-neutral) 0.67 0 0), oklch(from var(--tone-dark-neutral) 0.6 0 0));
+    --color-text-contrast: light-dark(oklch(from var(--tone-light-neutral) 0.99 0 0), oklch(from var(--tone-dark-neutral) 0.17 0 0));
+    --color-border: light-dark(oklch(from var(--tone-light-neutral) 0.89 0 0), oklch(from var(--tone-dark-neutral) 0.34 0 0));
+    --color-border-strong: light-dark(oklch(from var(--tone-light-neutral) 0.76 0 0), oklch(from var(--tone-dark-neutral) 0.46 0 0));
+    --color-accent: var(--color-text);
+    --color-accent-soft: var(--color-surface-muted);
+    --color-accent-contrast: var(--color-text-contrast);
+    --color-focus-ring: light-dark(oklch(from var(--tone-light-neutral) 0.38 0 0), oklch(from var(--tone-dark-neutral) 0.82 0 0));
 
-    --theme-light-warning-accent: oklch(0.64 0.15 65);
-    --theme-light-warning-surface: oklch(0.97 0.035 90);
-    --theme-light-warning-text: oklch(0.56 0.13 65);
-    --theme-light-warning-border: oklch(0.84 0.07 85);
-    --theme-light-warning-accent-contrast: oklch(0.985 0 0);
-
-    --theme-light-danger-accent: oklch(0.6 0.2 25);
-    --theme-light-danger-surface: oklch(0.95 0.025 22);
-    --theme-light-danger-text: oklch(0.53 0.18 25);
-    --theme-light-danger-border: oklch(0.84 0.07 22);
-    --theme-light-danger-accent-contrast: oklch(0.985 0 0);
-
-    --theme-light-success-accent: oklch(0.59 0.15 153);
-    --theme-light-success-surface: oklch(0.95 0.03 155);
-    --theme-light-success-text: oklch(0.52 0.13 155);
-    --theme-light-success-border: oklch(0.83 0.06 155);
-    --theme-light-success-accent-contrast: oklch(0.985 0 0);
-
-    --theme-light-body-gradient: radial-gradient(circle at 60% 0, oklch(0.95 0.04 330) 0%, oklch(0.995 0.004 286) 42%);
-    --theme-light-body-pattern-color: rgba(91, 33, 182, 0.22);
-    --theme-light-body-noise-blend: multiply;
-    --theme-light-body-noise-opacity: 0.08;
-
-    /* Dark foundation */
-    --theme-dark-bg: oklch(0.16 0.015 280);
-    --theme-dark-surface: oklch(0.2 0.015 280);
-    --theme-dark-surface-raised: oklch(0.24 0.015 280);
-    --theme-dark-surface-muted: oklch(0.18 0.012 280);
-    --theme-dark-text: oklch(0.94 0.01 286);
-    --theme-dark-text-muted: oklch(0.74 0.015 286);
-    --theme-dark-text-subtle: oklch(0.6 0.012 286);
-    --theme-dark-text-contrast: oklch(0.17 0.01 280);
-    --theme-dark-border: oklch(0.34 0.015 280);
-    --theme-dark-border-strong: oklch(0.46 0.02 280);
-    --theme-dark-accent: var(--theme-dark-text);
-    --theme-dark-accent-soft: var(--theme-dark-surface-raised);
-    --theme-dark-accent-contrast: var(--theme-dark-text-contrast);
-    --theme-dark-focus-ring: oklch(0.75 0.12 250);
-
-    --theme-dark-note-accent: oklch(0.52 0.11 290);
-    --theme-dark-note-surface: oklch(0.2 0.03 290);
-    --theme-dark-note-text: oklch(0.87 0.05 290);
-    --theme-dark-note-border: oklch(0.34 0.06 290);
-    --theme-dark-note-accent-contrast: oklch(0.985 0 0);
-
-    --theme-dark-info-accent: oklch(0.56 0.11 250);
-    --theme-dark-info-surface: oklch(0.2 0.025 250);
-    --theme-dark-info-text: oklch(0.88 0.05 245);
-    --theme-dark-info-border: oklch(0.34 0.05 250);
-    --theme-dark-info-accent-contrast: oklch(0.985 0 0);
-
-    --theme-dark-warning-accent: oklch(0.59 0.12 70);
-    --theme-dark-warning-surface: oklch(0.2 0.025 70);
-    --theme-dark-warning-text: oklch(0.89 0.05 80);
-    --theme-dark-warning-border: oklch(0.35 0.05 70);
-    --theme-dark-warning-accent-contrast: oklch(0.985 0 0);
-
-    --theme-dark-danger-accent: oklch(0.56 0.15 25);
-    --theme-dark-danger-surface: oklch(0.21 0.025 22);
-    --theme-dark-danger-text: oklch(0.9 0.05 20);
-    --theme-dark-danger-border: oklch(0.36 0.06 22);
-    --theme-dark-danger-accent-contrast: oklch(0.985 0 0);
-
-    --theme-dark-success-accent: oklch(0.55 0.11 155);
-    --theme-dark-success-surface: oklch(0.2 0.02 155);
-    --theme-dark-success-text: oklch(0.88 0.05 160);
-    --theme-dark-success-border: oklch(0.34 0.05 160);
-    --theme-dark-success-accent-contrast: oklch(0.985 0 0);
-
-    --theme-dark-body-gradient: radial-gradient(circle at 60% 0, oklch(0.26 0.05 300) -10%, oklch(0.16 0.015 280) 38%);
-    --theme-dark-body-pattern-color: rgba(224, 231, 255, 0.2);
-    --theme-dark-body-noise-blend: soft-light;
-    --theme-dark-body-noise-opacity: 0.3;
-
-    /* Active theme defaults */
-    --theme-color-scheme: light;
-
-    --theme-bg: var(--theme-light-bg);
-    --theme-surface: var(--theme-light-surface);
-    --theme-surface-raised: var(--theme-light-surface-raised);
-    --theme-surface-muted: var(--theme-light-surface-muted);
-    --theme-text: var(--theme-light-text);
-    --theme-text-muted: var(--theme-light-text-muted);
-    --theme-text-subtle: var(--theme-light-text-subtle);
-    --theme-text-contrast: var(--theme-light-text-contrast);
-    --theme-border: var(--theme-light-border);
-    --theme-border-strong: var(--theme-light-border-strong);
-    --theme-accent: var(--theme-light-accent);
-    --theme-accent-soft: var(--theme-light-accent-soft);
-    --theme-accent-contrast: var(--theme-light-accent-contrast);
-    --theme-focus-ring: var(--theme-light-focus-ring);
-
-    --theme-note-accent: var(--theme-light-note-accent);
-    --theme-note-surface: var(--theme-light-note-surface);
-    --theme-note-text: var(--theme-light-note-text);
-    --theme-note-border: var(--theme-light-note-border);
-    --theme-note-accent-contrast: var(--theme-light-note-accent-contrast);
-
-    --theme-info-accent: var(--theme-light-info-accent);
-    --theme-info-surface: var(--theme-light-info-surface);
-    --theme-info-text: var(--theme-light-info-text);
-    --theme-info-border: var(--theme-light-info-border);
-    --theme-info-accent-contrast: var(--theme-light-info-accent-contrast);
-
-    --theme-warning-accent: var(--theme-light-warning-accent);
-    --theme-warning-surface: var(--theme-light-warning-surface);
-    --theme-warning-text: var(--theme-light-warning-text);
-    --theme-warning-border: var(--theme-light-warning-border);
-    --theme-warning-accent-contrast: var(--theme-light-warning-accent-contrast);
-
-    --theme-danger-accent: var(--theme-light-danger-accent);
-    --theme-danger-surface: var(--theme-light-danger-surface);
-    --theme-danger-text: var(--theme-light-danger-text);
-    --theme-danger-border: var(--theme-light-danger-border);
-    --theme-danger-accent-contrast: var(--theme-light-danger-accent-contrast);
-
-    --theme-success-accent: var(--theme-light-success-accent);
-    --theme-success-surface: var(--theme-light-success-surface);
-    --theme-success-text: var(--theme-light-success-text);
-    --theme-success-border: var(--theme-light-success-border);
-    --theme-success-accent-contrast: var(--theme-light-success-accent-contrast);
-
-    --theme-body-gradient: var(--theme-light-body-gradient);
-    --theme-body-pattern-color: var(--theme-light-body-pattern-color);
-    --theme-body-noise-blend: var(--theme-light-body-noise-blend);
-    --theme-body-noise-opacity: var(--theme-light-body-noise-opacity);
-
-    --theme-disabled-bg: color-mix(in oklab, var(--theme-surface) 88%, var(--theme-border) 12%);
-    --theme-disabled-text: color-mix(in oklab, var(--theme-text) 48%, var(--theme-surface) 52%);
-    --theme-disabled-border: color-mix(in oklab, var(--theme-border-strong) 44%, var(--theme-surface) 56%);
-
-    color-scheme: var(--theme-color-scheme);
-
-    /* Public semantic tokens */
-    --color-bg: var(--theme-bg);
-    --color-surface: var(--theme-surface);
-    --color-surface-raised: var(--theme-surface-raised);
-    --color-surface-muted: var(--theme-surface-muted);
-    --color-text: var(--theme-text);
-    --color-text-muted: var(--theme-text-muted);
-    --color-text-subtle: var(--theme-text-subtle);
-    --color-text-contrast: var(--theme-text-contrast);
-    --color-border: var(--theme-border);
-    --color-border-strong: var(--theme-border-strong);
-    --color-accent: var(--theme-accent);
-    --color-accent-soft: var(--theme-accent-soft);
-    --color-accent-contrast: var(--theme-accent-contrast);
-    --color-focus-ring: var(--theme-focus-ring);
-    --color-disabled-bg: var(--theme-disabled-bg);
-    --color-disabled-text: var(--theme-disabled-text);
-    --color-disabled-border: var(--theme-disabled-border);
-
-    --color-note-accent: var(--theme-note-accent);
-    --color-note-surface: var(--theme-note-surface);
-    --color-note-text: var(--theme-note-text);
-    --color-note-border: var(--theme-note-border);
-    --color-note-accent-contrast: var(--theme-note-accent-contrast);
-
-    --color-info-accent: var(--theme-info-accent);
-    --color-info-surface: var(--theme-info-surface);
-    --color-info-text: var(--theme-info-text);
-    --color-info-border: var(--theme-info-border);
-    --color-info-accent-contrast: var(--theme-info-accent-contrast);
-
-    --color-warning-accent: var(--theme-warning-accent);
-    --color-warning-surface: var(--theme-warning-surface);
-    --color-warning-text: var(--theme-warning-text);
-    --color-warning-border: var(--theme-warning-border);
-    --color-warning-accent-contrast: var(--theme-warning-accent-contrast);
-
-    --color-danger-accent: var(--theme-danger-accent);
-    --color-danger-surface: var(--theme-danger-surface);
-    --color-danger-text: var(--theme-danger-text);
-    --color-danger-border: var(--theme-danger-border);
-    --color-danger-accent-contrast: var(--theme-danger-accent-contrast);
-
-    --color-success-accent: var(--theme-success-accent);
-    --color-success-surface: var(--theme-success-surface);
-    --color-success-text: var(--theme-success-text);
-    --color-success-border: var(--theme-success-border);
-    --color-success-accent-contrast: var(--theme-success-accent-contrast);
+    --color-disabled-bg: color-mix(in oklab, var(--color-surface) 88%, var(--color-border) 12%);
+    --color-disabled-text: color-mix(in oklab, var(--color-text) 48%, var(--color-surface) 52%);
+    --color-disabled-border: color-mix(in oklab, var(--color-border-strong) 44%, var(--color-surface) 56%);
 
     /* Legacy aliases kept for compatibility */
     --color-neutral-primary: var(--color-accent);
@@ -222,153 +45,19 @@
     --color-neutral-on-surface: var(--color-text);
     --color-neutral-on-primary: var(--color-accent-contrast);
 
-    --color-note-primary: var(--color-note-accent);
-    --color-note-secondary: var(--color-note-border);
-    --color-note-on: var(--color-note-text);
-    --color-note-on-surface: var(--color-note-text);
-    --color-note-on-primary: var(--color-note-accent-contrast);
-
-    --color-info-primary: var(--color-info-accent);
-    --color-info-secondary: var(--color-info-border);
-    --color-info-on: var(--color-info-text);
-    --color-info-on-surface: var(--color-info-text);
-    --color-info-on-primary: var(--color-info-accent-contrast);
-
-    --color-warning-primary: var(--color-warning-accent);
-    --color-warning-secondary: var(--color-warning-border);
-    --color-warning-on: var(--color-warning-text);
-    --color-warning-on-surface: var(--color-warning-text);
-    --color-warning-on-primary: var(--color-warning-accent-contrast);
-
-    --color-danger-primary: var(--color-danger-accent);
-    --color-danger-secondary: var(--color-danger-border);
-    --color-danger-on: var(--color-danger-text);
-    --color-danger-on-surface: var(--color-danger-text);
-    --color-danger-on-primary: var(--color-danger-accent-contrast);
-
-    --color-success-primary: var(--color-success-accent);
-    --color-success-secondary: var(--color-success-border);
-    --color-success-on: var(--color-success-text);
-    --color-success-on-surface: var(--color-success-text);
-    --color-success-on-primary: var(--color-success-accent-contrast);
-
     --color-primary: var(--color-accent);
     --color-secondary: var(--color-border-strong);
     --color-on: var(--color-text);
     --color-on-primary: var(--color-accent-contrast);
     --color-on-surface: var(--color-text);
-}
 
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme]) {
-        --theme-color-scheme: dark;
-
-        --theme-bg: var(--theme-dark-bg);
-        --theme-surface: var(--theme-dark-surface);
-        --theme-surface-raised: var(--theme-dark-surface-raised);
-        --theme-surface-muted: var(--theme-dark-surface-muted);
-        --theme-text: var(--theme-dark-text);
-        --theme-text-muted: var(--theme-dark-text-muted);
-        --theme-text-subtle: var(--theme-dark-text-subtle);
-        --theme-text-contrast: var(--theme-dark-text-contrast);
-        --theme-border: var(--theme-dark-border);
-        --theme-border-strong: var(--theme-dark-border-strong);
-        --theme-accent: var(--theme-dark-accent);
-        --theme-accent-soft: var(--theme-dark-accent-soft);
-        --theme-accent-contrast: var(--theme-dark-accent-contrast);
-        --theme-focus-ring: var(--theme-dark-focus-ring);
-
-        --theme-note-accent: var(--theme-dark-note-accent);
-        --theme-note-surface: var(--theme-dark-note-surface);
-        --theme-note-text: var(--theme-dark-note-text);
-        --theme-note-border: var(--theme-dark-note-border);
-        --theme-note-accent-contrast: var(--theme-dark-note-accent-contrast);
-
-        --theme-info-accent: var(--theme-dark-info-accent);
-        --theme-info-surface: var(--theme-dark-info-surface);
-        --theme-info-text: var(--theme-dark-info-text);
-        --theme-info-border: var(--theme-dark-info-border);
-        --theme-info-accent-contrast: var(--theme-dark-info-accent-contrast);
-
-        --theme-warning-accent: var(--theme-dark-warning-accent);
-        --theme-warning-surface: var(--theme-dark-warning-surface);
-        --theme-warning-text: var(--theme-dark-warning-text);
-        --theme-warning-border: var(--theme-dark-warning-border);
-        --theme-warning-accent-contrast: var(--theme-dark-warning-accent-contrast);
-
-        --theme-danger-accent: var(--theme-dark-danger-accent);
-        --theme-danger-surface: var(--theme-dark-danger-surface);
-        --theme-danger-text: var(--theme-dark-danger-text);
-        --theme-danger-border: var(--theme-dark-danger-border);
-        --theme-danger-accent-contrast: var(--theme-dark-danger-accent-contrast);
-
-        --theme-success-accent: var(--theme-dark-success-accent);
-        --theme-success-surface: var(--theme-dark-success-surface);
-        --theme-success-text: var(--theme-dark-success-text);
-        --theme-success-border: var(--theme-dark-success-border);
-        --theme-success-accent-contrast: var(--theme-dark-success-accent-contrast);
-
-        --theme-body-gradient: var(--theme-dark-body-gradient);
-        --theme-body-pattern-color: var(--theme-dark-body-pattern-color);
-        --theme-body-noise-blend: var(--theme-dark-body-noise-blend);
-        --theme-body-noise-opacity: var(--theme-dark-body-noise-opacity);
-    }
+    color-scheme: light dark;
 }
 
 html[data-theme="light"] {
-    --theme-color-scheme: light;
+    color-scheme: light;
 }
 
 html[data-theme="dark"] {
-    --theme-color-scheme: dark;
-
-    --theme-bg: var(--theme-dark-bg);
-    --theme-surface: var(--theme-dark-surface);
-    --theme-surface-raised: var(--theme-dark-surface-raised);
-    --theme-surface-muted: var(--theme-dark-surface-muted);
-    --theme-text: var(--theme-dark-text);
-    --theme-text-muted: var(--theme-dark-text-muted);
-    --theme-text-subtle: var(--theme-dark-text-subtle);
-    --theme-text-contrast: var(--theme-dark-text-contrast);
-    --theme-border: var(--theme-dark-border);
-    --theme-border-strong: var(--theme-dark-border-strong);
-    --theme-accent: var(--theme-dark-accent);
-    --theme-accent-soft: var(--theme-dark-accent-soft);
-    --theme-accent-contrast: var(--theme-dark-accent-contrast);
-    --theme-focus-ring: var(--theme-dark-focus-ring);
-
-    --theme-note-accent: var(--theme-dark-note-accent);
-    --theme-note-surface: var(--theme-dark-note-surface);
-    --theme-note-text: var(--theme-dark-note-text);
-    --theme-note-border: var(--theme-dark-note-border);
-    --theme-note-accent-contrast: var(--theme-dark-note-accent-contrast);
-
-    --theme-info-accent: var(--theme-dark-info-accent);
-    --theme-info-surface: var(--theme-dark-info-surface);
-    --theme-info-text: var(--theme-dark-info-text);
-    --theme-info-border: var(--theme-dark-info-border);
-    --theme-info-accent-contrast: var(--theme-dark-info-accent-contrast);
-
-    --theme-warning-accent: var(--theme-dark-warning-accent);
-    --theme-warning-surface: var(--theme-dark-warning-surface);
-    --theme-warning-text: var(--theme-dark-warning-text);
-    --theme-warning-border: var(--theme-dark-warning-border);
-    --theme-warning-accent-contrast: var(--theme-dark-warning-accent-contrast);
-
-    --theme-danger-accent: var(--theme-dark-danger-accent);
-    --theme-danger-surface: var(--theme-dark-danger-surface);
-    --theme-danger-text: var(--theme-dark-danger-text);
-    --theme-danger-border: var(--theme-dark-danger-border);
-    --theme-danger-accent-contrast: var(--theme-dark-danger-accent-contrast);
-
-    --theme-success-accent: var(--theme-dark-success-accent);
-    --theme-success-surface: var(--theme-dark-success-surface);
-    --theme-success-text: var(--theme-dark-success-text);
-    --theme-success-border: var(--theme-dark-success-border);
-    --theme-success-accent-contrast: var(--theme-dark-success-accent-contrast);
-
-    --theme-body-gradient: var(--theme-dark-body-gradient);
-    --theme-body-pattern-color: var(--theme-dark-body-pattern-color);
-    --theme-body-noise-blend: var(--theme-dark-body-noise-blend);
-    --theme-body-noise-opacity: var(--theme-dark-body-noise-opacity);
+    color-scheme: dark;
 }

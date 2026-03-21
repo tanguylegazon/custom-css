@@ -5,7 +5,7 @@
 
 .small, .sm {
     font-size: .875rem;
-    padding: .55em .8em;
+    padding: .5em .8em;
 }
 
 .big, .lg {
@@ -20,7 +20,7 @@
 
 @supports (corner-shape: squircle) {
     .rounded {
-        border-radius: 2.2em;
+        border-radius: 10em;
         corner-shape: squircle;
     }
 }
