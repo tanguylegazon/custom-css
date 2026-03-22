@@ -26,7 +26,7 @@ main * {
     --catalog-inset: 10px;
     --catalog-panel-radius: 30px;
     --catalog-card-radius: 20px;
-    --catalog-surface-raised: light-dark(oklch(from var(--tone-light-neutral) 1 0 0), oklch(from var(--tone-dark-neutral) 0.24 0 0));
+    --catalog-surface-raised: light-dark(oklch(1 0 0), oklch(0.24 0 0));
     --catalog-tooltip-bg: color-mix(in oklab, var(--catalog-surface-raised) 94%, transparent);
     --catalog-tooltip-border: color-mix(in oklab, var(--color-border-strong) 42%, transparent);
     --catalog-body-gradient: radial-gradient(circle at 60% 0, oklch(0.95 0.04 330) 0%, oklch(0.995 0.004 286) 42%);

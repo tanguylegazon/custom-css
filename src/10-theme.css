@@ -5,25 +5,23 @@
 
 :root {
     /* Tone seeds */
-    --tone-light-neutral: #fff;
     --tone-light-note: oklch(40.86% 0.04 257.37deg); /* slate-650 */
     --tone-light-info: oklch(62.31% 0.19 259.81deg); /* blue-500 */
     --tone-light-warning: oklch(76.86% 0.16 70.07deg); /* amber-500 */
     --tone-light-danger: oklch(63.69% 0.21 25.33deg); /* red-500 */
     --tone-light-success: oklch(57.72% 0.15 149.59deg); /* green-650 */
 
-    --tone-dark-neutral: #000;
     --tone-dark-note: oklch(44.96% 0.22 292.71deg); /* violet-770 */
     --tone-dark-info: oklch(50% 0.12 242.74deg); /* sky-700 */
     --tone-dark-warning: oklch(57.92% 0.12 68.58deg); /* yellow-680 */
     --tone-dark-danger: oklch(51.43% 0.2 16.94deg); /* rose-700 */
     --tone-dark-success: oklch(50.81% 0.1 165.61deg); /* emerald-700 */
 
-    /* Default tone */
-    --tone-light: var(--tone-light-neutral);
-    --tone-dark: var(--tone-dark-neutral);
-    --tone-light-accent: oklch(from var(--tone-light) 0.24 0 0);
-    --tone-dark-accent: oklch(from var(--tone-dark) 0.32 0 0);
+    /* Active tone inputs */
+    --tone-light: #fff;
+    --tone-dark: #000;
+    --tone-light-accent: #000;
+    --tone-dark-accent: #fff;
     --tone-light-accent-contrast: oklch(0.985 0 0);
     --tone-dark-accent-contrast: oklch(0.94 0 0);
 
@@ -31,16 +29,13 @@
 }
 
 :where(:root, .note, .info, .warning, .danger, .success) {
-    --color-bg: light-dark(oklch(from var(--tone-light) 0.985 calc(c * 0.04) h), oklch(from var(--tone-dark) 0.16 calc(c * 0.06) h));
+    /* Core semantic tokens used by components */
     --color-surface: light-dark(oklch(from var(--tone-light) 0.965 calc(c * 0.24 + 0.008) h), oklch(from var(--tone-dark) 0.3 calc(c * 0.42 + 0.012) h));
-    --color-surface-muted: light-dark(oklch(from var(--tone-light) 0.92 calc(c * 0.18 + 0.006) h), oklch(from var(--tone-dark) 0.24 calc(c * 0.32 + 0.01) h));
     --color-text: light-dark(oklch(from var(--tone-light) 0.44 calc(c * 0.9 + 0.012) h), oklch(from var(--tone-dark) 0.9 calc(c * 0.54 + 0.014) h));
     --color-text-muted: color-mix(in oklab, var(--color-text) 72%, var(--color-surface) 28%);
-    --color-text-subtle: color-mix(in oklab, var(--color-text) 58%, var(--color-surface) 42%);
-    --color-text-contrast: light-dark(oklch(0.99 0 0), oklch(0.17 0 0));
     --color-border: light-dark(oklch(from var(--tone-light) 0.86 calc(c * 0.56 + 0.01) h), oklch(from var(--tone-dark) 0.48 calc(c * 0.48 + 0.012) h));
     --color-border-strong: color-mix(in oklab, var(--color-border) 72%, var(--color-accent) 28%);
-    --color-accent: light-dark(var(--tone-light-accent, var(--tone-light)), var(--tone-dark-accent, var(--tone-dark)));
+    --color-accent: light-dark(var(--tone-light-accent, #000), var(--tone-dark-accent, #fff));
     --color-accent-soft: var(--color-surface);
     --color-accent-contrast: light-dark(var(--tone-light-accent-contrast, oklch(0.985 0 0)), var(--tone-dark-accent-contrast, oklch(0.985 0 0)));
     --color-focus-ring: var(--color-accent);
@@ -48,10 +43,11 @@
     --color-disabled-text: color-mix(in oklab, var(--color-text) 44%, var(--color-surface) 56%);
     --color-disabled-border: color-mix(in oklab, var(--color-border) 52%, var(--color-surface) 48%);
 
-    /* Legacy aliases kept for compatibility */
-    --color-neutral-surface: var(--color-surface);
-    --color-neutral-on: var(--color-text);
-    --color-neutral-on-surface: var(--color-text);
+    /* Extended and compatibility tokens kept for external overrides */
+    --color-bg: light-dark(oklch(from var(--tone-light) 0.985 calc(c * 0.04) h), oklch(from var(--tone-dark) 0.16 calc(c * 0.06) h));
+    --color-surface-muted: light-dark(oklch(from var(--tone-light) 0.92 calc(c * 0.18 + 0.006) h), oklch(from var(--tone-dark) 0.24 calc(c * 0.32 + 0.01) h));
+    --color-text-subtle: color-mix(in oklab, var(--color-text) 58%, var(--color-surface) 42%);
+    --color-text-contrast: light-dark(oklch(0.99 0 0), oklch(0.17 0 0));
     --color-on: var(--color-text);
     --color-on-surface: var(--color-text);
 }

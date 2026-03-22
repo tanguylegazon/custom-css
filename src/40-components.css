@@ -13,7 +13,6 @@ button, input {
     margin: 8px;
     border-radius: 0;
     border: none;
-    background-color: var(--color-surface);
     max-width: 48ch;
     padding: .65em .9em;
     transition: color 100ms ease;
@@ -51,11 +50,14 @@ input::selection {
 button {
     cursor: pointer;
     font-weight: 600;
-    color: var(--color-text);
+    background-color: light-dark(black, white);
+    color: light-dark(white, black);
+    transition: color 100ms ease, background-color 200ms ease, box-shadow 200ms ease, text-decoration-color 200ms ease;
 }
 
-button:is(.disabled, [disabled], [aria-disabled="true"]) {
-    cursor: not-allowed;
+button:hover {
+    background-color: light-dark(color-mix(in oklab, black 88%, var(--color-surface) 12%), color-mix(in oklab, white 88%, var(--color-surface) 12%));
+    color: light-dark(white, black);
 }
 
 button:has(> svg:first-child:last-child) {

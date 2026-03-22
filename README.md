@@ -5,7 +5,7 @@ look that can be used alongside other user specific CSS files.
 
 ## Project structure
 
-- `src/10-theme.css`: Theme tokens and default tone.
+- `src/10-theme.css`: Theme tokens and default values.
 - `src/20-tones.css`: Semantic tones.
 - `src/30-globals.css`: Global HTML and document styles.
 - `src/40-components.css`: Components.
@@ -15,13 +15,24 @@ look that can be used alongside other user specific CSS files.
 The source files are concatenated and minified by GitHub Actions. The generated distribution files are published on the
 `dist` branch.
 
+## Color tokens
+
+The color system uses:
+
+- default active values in `:root` for the unthemed baseline
+- tone overrides in `src/20-tones.css` for `.note`, `.info`, `.warning`, `.danger`, `.success`
+- semantic component tokens: `--color-surface`, `--color-text`, `--color-text-muted`, `--color-border`, `--color-accent`, `--color-accent-contrast`
+
+In practice, default components use the `:root` values directly through the semantic `--color-*` tokens, and semantic
+tone classes override only the active tone inputs when needed.
+
 ## Button variants
 
-Buttons expose three visual variants, with standard aliases:
+Buttons expose three visual variants:
 
-- `solid` or `primary`
-- `soft` or `secondary`
-- `ghost` or `tertiary`
+- `solid`
+- `soft`
+- `ghost`
 - `disabled` or native `disabled`
 
 ```html
