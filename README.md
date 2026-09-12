@@ -41,22 +41,30 @@ tone classes override only the active tone inputs when needed.
 
 ## Button variants
 
-Buttons expose three visual variants:
+Buttons use a solid appearance by default and expose two visual variants:
 
-- `solid`
 - `soft`
 - `ghost`
-- `disabled` or native `disabled`
+
+Disabled controls use the native `disabled` attribute.
 
 ```html
-<button class="solid info">Save</button>
+<button class="info">Save</button>
 <button class="soft info">Preview</button>
 <button class="ghost info">Cancel</button>
-<button class="soft info disabled">Unavailable</button>
 <button class="soft info" disabled>Unavailable</button>
 ```
 
-### Setup
+## Utilities
+
+- `small` or `sm`
+- `large` or `lg`
+- `rounded`
+- `rounded-full`
+- `muted`
+- `hidden`
+
+## Setup
 
 To use this custom CSS in your project, you can either:
 1. Import the CSS file in your HTML file head using a CDN link.
@@ -64,7 +72,7 @@ To use this custom CSS in your project, you can either:
    <meta name="color-scheme" content="light dark">
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tanguylegazon/custom-css@dist/custom.min.css">
    ```
-2. Clone this repository and include `dist:custom.min.css` in your project.
+2. Download `custom.min.css` from the `dist` branch and include it in your project.
    ```html
    <link rel="stylesheet" href="relative/path/to/custom.min.css">
    ```

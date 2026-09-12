@@ -6,11 +6,17 @@
 @layer utilities {
     .small, .sm {
         font-size: var(--font-size-sm);
+    }
+
+    :is(button, input, textarea, select):is(.small, .sm) {
         padding: .5em .8em;
     }
 
-    .big, .lg {
+    .large, .lg {
         font-size: var(--font-size-lg);
+    }
+
+    :is(button, input, textarea, select):is(.large, .lg) {
         padding: .8em 1.5em;
         gap: .9em;
     }
@@ -26,14 +32,11 @@
         }
     }
 
-    .circle {
-        border-radius: var(--radius-circle);
+    .rounded-full {
+        border-radius: var(--radius-full);
     }
 
     .hidden {
-        height: 0 !important;
-        width: 0 !important;
-        overflow: hidden !important;
         display: none !important;
     }
 }

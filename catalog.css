@@ -5,21 +5,17 @@
 
 body {
     padding: 40px 28px 120px;
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow-x: clip;
+    background-image: var(--catalog-body-gradient);
+    background-repeat: no-repeat;
 }
 
 main {
-    width: 100%;
-    max-width: 1400px;
+    inline-size: 100%;
+    max-inline-size: 1400px;
     margin-inline: auto;
     display: grid;
     gap: 28px;
-}
-
-main,
-main * {
-    box-sizing: border-box;
 }
 
 :root {
@@ -58,12 +54,6 @@ html[data-theme="dark"] {
     --catalog-body-noise-opacity: 0.3;
 }
 
-body {
-    background-image: var(--catalog-body-gradient);
-    background-repeat: no-repeat;
-    background-size: auto;
-}
-
 body::before {
     content: "";
     position: absolute;
@@ -97,8 +87,11 @@ body::after {
 }
 
 .panel {
-    width: 100%;
-    max-width: 100%;
+    inline-size: 100%;
+    max-inline-size: 100%;
+    padding: 24px;
+    display: grid;
+    gap: 18px;
     background: color-mix(in oklab, var(--catalog-surface-raised) 52%, transparent);
     border: 1px solid color-mix(in oklab, var(--color-border) 24%, transparent);
     backdrop-filter: blur(18px) saturate(140%);
@@ -229,12 +222,8 @@ html[data-theme="light"] .theme-switch::before {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-}
-
-.panel {
-    padding: 24px;
-    display: grid;
     gap: 18px;
+    padding-inline: var(--catalog-inset);
 }
 
 .panel-head {
@@ -246,40 +235,7 @@ html[data-theme="light"] .theme-switch::before {
     padding-inline: var(--catalog-inset);
 }
 
-.tone-grid {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
-    gap: 18px;
-}
-
-.tone-card {
-    flex: 1 1 380px;
-    padding: 20px;
-    display: grid;
-    gap: 16px;
-    background: color-mix(in oklab, var(--color-surface) 54%, transparent);
-    border: 1px solid color-mix(in oklab, var(--color-border) 24%, transparent);
-    backdrop-filter: blur(16px) saturate(120%);
-    -webkit-backdrop-filter: blur(16px) saturate(120%);
-    max-width: 100%;
-    min-width: 0;
-    border-radius: var(--catalog-card-radius);
-}
-
-.tone-meta {
-    display: grid;
-    gap: 8px;
-    padding-inline: var(--catalog-inset);
-}
-
-.button-row,
-.showcase-row,
-.chip-row {
-    gap: 18px;
-    padding-inline: var(--catalog-inset);
-}
-
+.tone-grid,
 .spec-grid {
     display: flex;
     flex-wrap: wrap;
@@ -287,8 +243,8 @@ html[data-theme="light"] .theme-switch::before {
     gap: 18px;
 }
 
+.tone-card,
 .spec-card {
-    flex: 1 1 260px;
     padding: 20px;
     display: grid;
     gap: 16px;
@@ -296,16 +252,32 @@ html[data-theme="light"] .theme-switch::before {
     border: 1px solid color-mix(in oklab, var(--color-border) 24%, transparent);
     backdrop-filter: blur(16px) saturate(120%);
     -webkit-backdrop-filter: blur(16px) saturate(120%);
-    max-width: 100%;
-    min-width: 0;
-    align-content: start;
+    max-inline-size: 100%;
+    min-inline-size: 0;
     border-radius: var(--catalog-card-radius);
 }
 
+.tone-card {
+    flex: 1 1 380px;
+}
+
+.tone-meta,
 .spec-copy {
     display: grid;
-    gap: 6px;
     padding-inline: var(--catalog-inset);
+}
+
+.tone-meta {
+    gap: 8px;
+}
+
+.spec-card {
+    flex: 1 1 260px;
+    align-content: start;
+}
+
+.spec-copy {
+    gap: 6px;
 }
 
 .field-stack {
@@ -314,15 +286,10 @@ html[data-theme="light"] .theme-switch::before {
     padding: 4px var(--catalog-inset) 0;
 }
 
-.field-stack > input {
-    margin: 0;
-}
-
 .chip-row > *,
 .button-row > *,
 .showcase-row > * {
-    margin: 0;
-    min-width: 0;
+    min-inline-size: 0;
 }
 
 h1, h2, h3, p {

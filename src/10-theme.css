@@ -44,7 +44,7 @@
         --space-flow: 1rem;
         --radius-control: 0;
         --radius-rounded: .85em;
-        --radius-circle: 100%;
+        --radius-full: 100%;
 
         /* Motion */
         --duration-fast: 100ms;
