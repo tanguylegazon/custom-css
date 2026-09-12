@@ -3,35 +3,37 @@
  * A copy of the license is available at https://github.com/tanguylegazon/custom-css/blob/main/LICENSE.
  */
 
-.small, .sm {
-    font-size: .875rem;
-    padding: .5em .8em;
-}
-
-.big, .lg {
-    font-size: 1.22rem;
-    padding: .8em 1.5em;
-    gap: .9em;
-}
-
-.rounded {
-    border-radius: .85em;
-}
-
-@supports (corner-shape: squircle) {
-    .rounded {
-        border-radius: 10em;
-        corner-shape: squircle;
+@layer utilities {
+    .small, .sm {
+        font-size: var(--font-size-sm);
+        padding: .5em .8em;
     }
-}
 
-.circle {
-    border-radius: 100%;
-}
+    .big, .lg {
+        font-size: var(--font-size-lg);
+        padding: .8em 1.5em;
+        gap: .9em;
+    }
 
-.hidden {
-    height: 0 !important;
-    width: 0 !important;
-    overflow: hidden !important;
-    display: none !important;
+    .rounded {
+        border-radius: var(--radius-rounded);
+    }
+
+    @supports (corner-shape: squircle) {
+        .rounded {
+            border-radius: 10em;
+            corner-shape: squircle;
+        }
+    }
+
+    .circle {
+        border-radius: var(--radius-circle);
+    }
+
+    .hidden {
+        height: 0 !important;
+        width: 0 !important;
+        overflow: hidden !important;
+        display: none !important;
+    }
 }

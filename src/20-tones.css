@@ -3,42 +3,44 @@
  * A copy of the license is available at https://github.com/tanguylegazon/custom-css/blob/main/LICENSE.
  */
 
-.note {
-    --tone-light: var(--tone-light-note);
-    --tone-dark: var(--tone-dark-note);
-    --tone-light-accent: var(--tone-light-note);
-    --tone-dark-accent: var(--tone-dark-note);
-    --tone-dark-accent-contrast: oklch(0.985 0 0);
-}
+@layer theme {
+    .note {
+        --tone-light: var(--tone-light-note);
+        --tone-dark: var(--tone-dark-note);
+        --tone-light-accent: var(--tone-light-note);
+        --tone-dark-accent: var(--tone-dark-note);
+        --tone-dark-accent-contrast: oklch(0.985 0 0);
+    }
 
-.info {
-    --tone-light: var(--tone-light-info);
-    --tone-dark: var(--tone-dark-info);
-    --tone-light-accent: var(--tone-light-info);
-    --tone-dark-accent: var(--tone-dark-info);
-    --tone-dark-accent-contrast: oklch(0.985 0 0);
-}
+    .info {
+        --tone-light: var(--tone-light-info);
+        --tone-dark: var(--tone-dark-info);
+        --tone-light-accent: var(--tone-light-info);
+        --tone-dark-accent: var(--tone-dark-info);
+        --tone-dark-accent-contrast: oklch(0.985 0 0);
+    }
 
-.warning {
-    --tone-light: var(--tone-light-warning);
-    --tone-dark: var(--tone-dark-warning);
-    --tone-light-accent: var(--tone-light-warning);
-    --tone-dark-accent: var(--tone-dark-warning);
-    --tone-dark-accent-contrast: oklch(0.985 0 0);
-}
+    .warning {
+        --tone-light: var(--tone-light-warning);
+        --tone-dark: var(--tone-dark-warning);
+        --tone-light-accent: var(--tone-light-warning);
+        --tone-dark-accent: var(--tone-dark-warning);
+        --tone-dark-accent-contrast: oklch(0.985 0 0);
+    }
 
-.danger {
-    --tone-light: var(--tone-light-danger);
-    --tone-dark: var(--tone-dark-danger);
-    --tone-light-accent: var(--tone-light-danger);
-    --tone-dark-accent: var(--tone-dark-danger);
-    --tone-dark-accent-contrast: oklch(0.985 0 0);
-}
+    .danger {
+        --tone-light: var(--tone-light-danger);
+        --tone-dark: var(--tone-dark-danger);
+        --tone-light-accent: var(--tone-light-danger);
+        --tone-dark-accent: var(--tone-dark-danger);
+        --tone-dark-accent-contrast: oklch(0.985 0 0);
+    }
 
-.success {
-    --tone-light: var(--tone-light-success);
-    --tone-dark: var(--tone-dark-success);
-    --tone-light-accent: var(--tone-light-success);
-    --tone-dark-accent: var(--tone-dark-success);
-    --tone-dark-accent-contrast: oklch(0.985 0 0);
+    .success {
+        --tone-light: var(--tone-light-success);
+        --tone-dark: var(--tone-dark-success);
+        --tone-light-accent: var(--tone-light-success);
+        --tone-dark-accent: var(--tone-dark-success);
+        --tone-dark-accent-contrast: oklch(0.985 0 0);
+    }
 }

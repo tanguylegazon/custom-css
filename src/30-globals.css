@@ -3,66 +3,159 @@
  * A copy of the license is available at https://github.com/tanguylegazon/custom-css/blob/main/LICENSE.
  */
 
-* {
-    max-width: 100vw;
-    font-family: ui-sans-serif, sans-serif;
-}
+@layer base {
+    html {
+        overflow-wrap: break-word;
+        scroll-behavior: smooth;
+    }
 
-html {
-    width: auto;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-}
+    body {
+        position: relative;
+        min-block-size: 100vh;
+        min-block-size: 100svh;
+        background-color: var(--color-bg);
+        color: var(--color-text);
+        font-family: var(--font-sans);
+        font-size: var(--font-size-md);
+        line-height: var(--line-height-body);
+        text-rendering: optimizeLegibility;
+    }
 
-body {
-    margin: 0;
-    position: relative;
-    box-sizing: border-box;
-    min-height: 100vh;
-    overflow: hidden;
-    color: var(--color-text);
-}
+    main {
+        inline-size: min(calc(100% - 2rem), var(--content-width));
+        margin-inline: auto;
+        padding-block: clamp(1rem, 4vw, 4rem);
+    }
 
-body::before {
-     content: "";
-     position: absolute;
-     inset: 0;
-     pointer-events: none;
-     mix-blend-mode: var(--theme-body-noise-blend);
-     opacity: var(--theme-body-noise-opacity);
-     background: url("data:image/svg+xml;utf8,\
-                    <svg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'>\
-                      <filter id='n'>\
-                        <feTurbulence type='fractalNoise' baseFrequency='0.4' numOctaves='3' stitchTiles='stitch'/>\
-                      </filter>\
-                      <rect width='100%' height='100%' filter='url(%23n)'/>\
-                    </svg>") repeat;
-     background-size: 200px 200px;
-     z-index: -1;
- }
+    :is(h1, h2, h3, h4, h5, h6) {
+        max-inline-size: 30ch;
+        color: var(--color-text);
+        line-height: var(--line-height-heading);
+        text-wrap: balance;
+    }
 
-body::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
+    h1 {
+        font-size: var(--font-size-h1);
+    }
 
-    background-image: radial-gradient(circle at center, var(--theme-body-pattern-color) 1px, transparent 0);
-    background-size: 50px 50px;
-    background-repeat: repeat;
+    h2 {
+        font-size: var(--font-size-h2);
+    }
 
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, .2) 100%);
-    mask-repeat: no-repeat;
-    mask-size: 100% 100%;
-    mask-mode: alpha;
-}
+    h3 {
+        font-size: var(--font-size-h3);
+    }
 
-.note, .info, .warning, .danger, .success {
-    color: var(--color-text);
-}
+    :is(h4, h5, h6) {
+        font-size: var(--font-size-lg);
+    }
 
-svg {
-    fill: currentColor;
-    overflow: visible;
-    height: .9lh;
+    :is(h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, pre, table) {
+        margin-block-end: var(--space-flow);
+    }
+
+    :is(p, li, dd, blockquote) {
+        max-inline-size: var(--reading-width);
+        text-wrap: pretty;
+    }
+
+    a {
+        color: var(--color-accent);
+        text-decoration-thickness: .08em;
+        text-underline-offset: .18em;
+    }
+
+    a:hover {
+        text-decoration-thickness: .12em;
+    }
+
+    hr {
+        border: 0;
+        border-block-start: 1px solid var(--color-border);
+    }
+
+    blockquote {
+        padding-inline-start: 1em;
+        border-inline-start: .25em solid var(--color-border-strong);
+        color: var(--color-text-muted);
+    }
+
+    :is(code, kbd, samp, pre) {
+        font-family: var(--font-mono);
+    }
+
+    :is(code, kbd, samp) {
+        padding: .12em .32em;
+        border-radius: .25em;
+        background-color: var(--color-surface-muted);
+        font-size: .9em;
+    }
+
+    pre {
+        max-inline-size: 100%;
+        overflow: auto;
+        padding: 1em;
+        border: 1px solid var(--color-border);
+        background-color: var(--color-surface);
+    }
+
+    pre code {
+        padding: 0;
+        background: none;
+        font-size: inherit;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-variant-numeric: tabular-nums;
+    }
+
+    :is(th, td) {
+        padding: .65em .8em;
+        border-block-end: 1px solid var(--color-border);
+        text-align: start;
+    }
+
+    th {
+        color: var(--color-text);
+        font-weight: 600;
+    }
+
+    small {
+        font-size: var(--font-size-sm);
+    }
+
+    .note, .info, .warning, .danger, .success {
+        color: var(--color-text);
+    }
+
+    ::selection {
+        background-color: var(--color-accent);
+        color: var(--color-accent-contrast);
+    }
+
+    :focus-visible {
+        outline: 2px solid var(--color-focus-ring);
+        outline-offset: 2px;
+    }
+
+    svg {
+        fill: currentColor;
+        overflow: visible;
+        height: .9lh;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+
+        *, *::before, *::after {
+            scroll-behavior: auto !important;
+            transition-duration: .01ms !important;
+            animation-duration: .01ms !important;
+            animation-iteration-count: 1 !important;
+        }
+    }
 }

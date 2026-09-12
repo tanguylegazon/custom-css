@@ -5,8 +5,10 @@ look that can be used alongside other user specific CSS files.
 
 ## Project structure
 
+- `src/00-layers.css`: Cascade layer order.
 - `src/10-theme.css`: Theme tokens and default values.
 - `src/20-tones.css`: Semantic tones.
+- `src/25-reset.css`: Browser normalization and resilient defaults.
 - `src/30-globals.css`: Global HTML and document styles.
 - `src/40-components.css`: Components.
 - `src/50-variants.css`: Text emphasis and component variants.
@@ -14,6 +16,17 @@ look that can be used alongside other user specific CSS files.
 
 The source files are concatenated and minified by GitHub Actions. The generated distribution files are published on the
 `dist` branch.
+
+## Cascade layers
+
+The stylesheet uses ordered cascade layers:
+
+```css
+@layer reset, theme, base, components, variants, utilities;
+```
+
+Unlayered site styles take precedence over normal declarations in the theme, making local overrides possible without
+increasing selector specificity. The layers themselves progress from foundational rules to explicit utilities.
 
 ## Color tokens
 
@@ -48,12 +61,15 @@ Buttons expose three visual variants:
 To use this custom CSS in your project, you can either:
 1. Import the CSS file in your HTML file head using a CDN link.
    ```html
+   <meta name="color-scheme" content="light dark">
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tanguylegazon/custom-css@dist/custom.min.css">
    ```
 2. Clone this repository and include `dist:custom.min.css` in your project.
    ```html
    <link rel="stylesheet" href="relative/path/to/custom.min.css">
    ```
+
+For stable production styling, replace `dist` with a specific tag or commit.
 
 ## License
 

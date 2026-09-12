@@ -3,63 +3,86 @@
  * A copy of the license is available at https://github.com/tanguylegazon/custom-css/blob/main/LICENSE.
  */
 
-button, input {
-    font-size: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: left;
-    gap: .6em;
-    margin: 8px;
-    border-radius: 0;
-    border: none;
-    max-width: 48ch;
-    padding: .65em .9em;
-    transition: color 100ms ease;
-}
+@layer components {
+    :where(button, input[type="button"], input[type="reset"], input[type="submit"]) {
+        display: inline-flex;
+        min-block-size: 2.75em;
+        align-items: center;
+        justify-content: center;
+        gap: .6em;
+        padding: .65em .9em;
+        border: none;
+        border-radius: var(--radius-control);
+        background-color: var(--color-accent);
+        color: var(--color-accent-contrast);
+        font-weight: 600;
+        line-height: 1.2;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        transition: color var(--duration-fast) var(--ease-standard),
+                    background-color var(--duration-normal) var(--ease-standard),
+                    box-shadow var(--duration-normal) var(--ease-standard),
+                    text-decoration-color var(--duration-normal) var(--ease-standard);
+    }
 
-input {
-    color: var(--color-text);
-    outline-color: transparent;
-    width: 24.3ch;
-    transition: color 100ms ease, background-color 200ms ease, outline-color 50ms ease;
-}
+    :where(button, input[type="button"], input[type="reset"], input[type="submit"]):hover {
+        background-color: color-mix(in oklab, var(--color-accent) 88%, var(--color-surface) 12%);
+        color: var(--color-accent-contrast);
+    }
 
-input:focus {
-    outline: var(--color-focus-ring) 2px solid;
-    outline-offset: 2px;
-    transition: outline-color 100ms ease;
-}
+    :where(input:not([type="button"], [type="checkbox"], [type="color"], [type="file"], [type="hidden"], [type="image"], [type="radio"], [type="range"], [type="reset"], [type="submit"]), textarea, select) {
+        max-inline-size: 100%;
+        padding: .65em .9em;
+        border: 1px solid var(--color-border);
+        border-radius: var(--radius-control);
+        background-color: var(--color-surface);
+        color: var(--color-text);
+        line-height: 1.4;
+        transition: color var(--duration-fast) var(--ease-standard),
+                    background-color var(--duration-normal) var(--ease-standard),
+                    border-color var(--duration-fast) var(--ease-standard),
+                    box-shadow var(--duration-fast) var(--ease-standard);
+    }
 
-input[readonly] {
-    outline: none;
-    user-select: none;
-}
+    :where(input, textarea)::placeholder {
+        color: var(--color-text-subtle);
+        opacity: 1;
+    }
 
-/*:is(.note, .info, .warning, .danger, .success)::selection,
-:is(.note, .info, .warning, .danger, .success) *::selection {
-    background-color: var(--color-accent);
-    color: var(--color-accent-contrast);
-}*/
+    :where(input, textarea, select):focus-visible {
+        border-color: var(--color-focus-ring);
+        box-shadow: 0 0 0 1px var(--color-focus-ring);
+    }
 
-input::selection {
-    background-color: var(--color-accent);
-    color: var(--color-accent-contrast);
-}
+    :where(input[type="checkbox"], input[type="radio"], input[type="range"], progress) {
+        accent-color: var(--color-accent);
+    }
 
-button {
-    cursor: pointer;
-    font-weight: 600;
-    background-color: light-dark(black, white);
-    color: light-dark(white, black);
-    transition: color 100ms ease, background-color 200ms ease, box-shadow 200ms ease, text-decoration-color 200ms ease;
-}
+    :where(input[readonly], textarea[readonly]) {
+        background-color: var(--color-surface-muted);
+        cursor: default;
+    }
 
-button:hover {
-    background-color: light-dark(color-mix(in oklab, black 88%, var(--color-surface) 12%), color-mix(in oklab, white 88%, var(--color-surface) 12%));
-    color: light-dark(white, black);
-}
+    :where(input, textarea, select):disabled {
+        border-color: var(--color-disabled-border);
+        background-color: var(--color-disabled-bg);
+        color: var(--color-disabled-text);
+        cursor: not-allowed;
+    }
 
-button:has(> svg:first-child:last-child) {
-    padding: calc(.05lh + .6em);
+    :where(fieldset) {
+        padding: 1em;
+        border: 1px solid var(--color-border);
+    }
+
+    :where(legend) {
+        padding-inline: .4em;
+        color: var(--color-text-muted);
+        font-weight: 600;
+    }
+
+    button:has(> svg:first-child:last-child) {
+        padding: calc(.05lh + .6em);
+    }
 }
