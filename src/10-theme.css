@@ -5,75 +5,84 @@
 
 @layer theme {
     :root {
-        /* Tone seeds */
-        --tone-light-note: oklch(40.86% 0.04 257.37deg); /* slate-650 */
-        --tone-light-info: oklch(62.31% 0.19 259.81deg); /* blue-500 */
-        --tone-light-warning: oklch(76.86% 0.16 70.07deg); /* amber-500 */
-        --tone-light-danger: oklch(63.69% 0.21 25.33deg); /* red-500 */
-        --tone-light-success: oklch(57.72% 0.15 149.59deg); /* green-650 */
-
-        --tone-dark-note: oklch(44.96% 0.22 292.71deg); /* violet-770 */
-        --tone-dark-info: oklch(50% 0.12 242.74deg); /* sky-700 */
-        --tone-dark-warning: oklch(57.92% 0.12 68.58deg); /* yellow-680 */
-        --tone-dark-danger: oklch(51.43% 0.2 16.94deg); /* rose-700 */
-        --tone-dark-success: oklch(50.81% 0.1 165.61deg); /* emerald-700 */
-
-        /* Active tone inputs */
-        --tone-light: #fff;
-        --tone-dark: #000;
-        --tone-light-accent: #000;
-        --tone-dark-accent: #fff;
-        --tone-light-accent-contrast: oklch(0.985 0 0);
-        --tone-dark-accent-contrast: oklch(0.94 0 0);
+        /* Status */
+        --color-error: light-dark(var(--palette-light-danger-9), var(--palette-dark-danger-9));
+        --color-positive: light-dark(var(--palette-light-success-9), var(--palette-dark-success-9));
+        --color-caution: light-dark(var(--palette-light-warning-9), var(--palette-dark-warning-9));
 
         /* Typography */
-        --font-sans: ui-sans-serif, system-ui, sans-serif;
-        --font-mono: ui-monospace, "Cascadia Code", "Source Code Pro", monospace;
+        --font-sans: system-ui, sans-serif;
+        --font-mono: ui-monospace, monospace;
         --font-size-sm: .875rem;
         --font-size-md: 1rem;
-        --font-size-lg: 1.22rem;
-        --font-size-h1: clamp(2.25rem, 1.5rem + 3vw, 4.5rem);
-        --font-size-h2: clamp(1.75rem, 1.35rem + 1.6vw, 3rem);
-        --font-size-h3: clamp(1.35rem, 1.2rem + .7vw, 2rem);
+        --font-size-lg: 1.125rem;
+        --font-size-h1: clamp(2.5rem, 1.5rem + 3vw, 5rem);
+        --font-size-h2: clamp(1.875rem, 1.4rem + 1.6vw, 3rem);
+        --font-size-h3: clamp(1.25rem, 1.1rem + .6vw, 1.75rem);
         --line-height-body: 1.6;
-        --line-height-heading: 1.15;
+        --line-height-heading: 1.08;
 
         /* Layout and shape */
-        --content-width: 72rem;
-        --reading-width: 70ch;
-        --space-flow: 1rem;
-        --radius-control: 0;
-        --radius-rounded: .85em;
-        --radius-full: 100%;
+        --content-width: 75rem;
+        --reading-width: 65ch;
+        --space-flow: 1.25rem;
+        --scroll-offset: 0px;
+        --radius-control: .1875rem;
+        --radius-rounded: .625rem;
+        --radius-full: calc(infinity * 1px);
 
         /* Motion */
-        --duration-fast: 100ms;
+        --duration-fast: 150ms;
         --duration-normal: 200ms;
-        --ease-standard: ease;
+        --ease-standard: cubic-bezier(.4, .14, .3, 1);
+        --ease-functional: cubic-bezier(.2, 0, .38, .9);
 
         color-scheme: light dark;
+
+        /* Default palette */
+        --tone-1: light-dark(var(--palette-light-neutral-1), var(--palette-dark-neutral-1));
+        --tone-2: light-dark(var(--palette-light-neutral-2), var(--palette-dark-neutral-2));
+        --tone-3: light-dark(var(--palette-light-neutral-3), var(--palette-dark-neutral-3));
+        --tone-4: light-dark(var(--palette-light-neutral-4), var(--palette-dark-neutral-4));
+        --tone-5: light-dark(var(--palette-light-neutral-5), var(--palette-dark-neutral-5));
+        --tone-6: light-dark(var(--palette-light-neutral-6), var(--palette-dark-neutral-6));
+        --tone-7: light-dark(var(--palette-light-neutral-7), var(--palette-dark-neutral-7));
+        --tone-8: light-dark(var(--palette-light-neutral-8), var(--palette-dark-neutral-8));
+        --tone-9: light-dark(var(--palette-light-neutral-9), var(--palette-dark-neutral-9));
+        --tone-10: light-dark(var(--palette-light-neutral-10), var(--palette-dark-neutral-10));
+        --tone-11: light-dark(var(--palette-light-neutral-11), var(--palette-dark-neutral-11));
+        --tone-12: light-dark(var(--palette-light-neutral-12), var(--palette-dark-neutral-12));
     }
 
-    :where(:root, .note, .info, .warning, .danger, .success) {
-        /* Core semantic tokens used by components */
-        --color-surface: light-dark(oklch(from var(--tone-light) 0.965 calc(c * 0.24 + 0.008) h), oklch(from var(--tone-dark) 0.3 calc(c * 0.42 + 0.012) h));
-        --color-text: light-dark(oklch(from var(--tone-light) 0.44 calc(c * 0.9 + 0.012) h), oklch(from var(--tone-dark) 0.9 calc(c * 0.54 + 0.014) h));
-        --color-text-muted: color-mix(in oklab, var(--color-text) 72%, var(--color-surface) 28%);
-        --color-border: light-dark(oklch(from var(--tone-light) 0.86 calc(c * 0.56 + 0.01) h), oklch(from var(--tone-dark) 0.48 calc(c * 0.48 + 0.012) h));
-        --color-border-strong: color-mix(in oklab, var(--color-border) 72%, var(--color-accent) 28%);
-        --color-accent: light-dark(var(--tone-light-accent, #000), var(--tone-dark-accent, #fff));
-        --color-accent-soft: var(--color-surface);
-        --color-accent-contrast: light-dark(var(--tone-light-accent-contrast, oklch(0.985 0 0)), var(--tone-dark-accent-contrast, oklch(0.985 0 0)));
-        --color-focus-ring: var(--color-accent);
-        --color-disabled-bg: color-mix(in oklab, var(--color-surface) 86%, var(--color-border) 14%);
-        --color-disabled-text: color-mix(in oklab, var(--color-text) 44%, var(--color-surface) 56%);
-        --color-disabled-border: color-mix(in oklab, var(--color-border) 52%, var(--color-surface) 48%);
+    :where(:root, .note, .info, .warning, .danger, .success, label:has(> :is(input, select, textarea, progress, meter):is(.note, .info, .warning, .danger, .success))) {
+        /* Semantic roles */
+        --color-bg: var(--tone-1);
+        --color-surface: var(--tone-2);
+        --color-surface-muted: var(--tone-3);
+        --color-accent-soft: var(--tone-3);
+        --color-accent-soft-hover: var(--tone-4);
+        --color-border: var(--tone-5);
+        --color-border-strong: var(--tone-7);
+        --color-accent: var(--tone-9);
+        --color-accent-hover: var(--tone-10);
+        --color-link-hover: light-dark(var(--tone-11), var(--tone-10));
+        --color-button: var(--palette-light-neutral-9);
+        --color-button-hover: var(--palette-light-neutral-10);
+        --color-field-surface: color-mix(in oklab, var(--tone-2) 86%, light-dark(oklch(.99 0 0), oklch(.16 0 0)) 14%);
+        --color-field-border: color-mix(in oklab, var(--tone-7) 82%, light-dark(oklch(.5 0 0), oklch(.62 0 0)) 18%);
+        --color-field-text: color-mix(in oklab, var(--tone-12) 90%, light-dark(oklch(.12 0 0), oklch(.96 0 0)) 10%);
+        --color-field-muted: color-mix(in oklab, var(--tone-11) 85%, light-dark(oklch(.3 0 0), oklch(.78 0 0)) 15%);
+        --color-field-focus: color-mix(in oklab, var(--tone-9) 90%, light-dark(oklch(.35 0 0), oklch(.78 0 0)) 10%);
+        --color-text-muted: color-mix(in oklab, var(--tone-11) 12%, light-dark(var(--palette-light-neutral-9), var(--palette-dark-neutral-9)));
+        --color-text: var(--tone-12);
+        --color-accent-contrast: #fff;
+        --color-focus-ring: var(--tone-9);
+        --color-disabled-bg: color-mix(in oklab, var(--tone-3) 20%, light-dark(var(--palette-light-neutral-3), var(--palette-dark-neutral-3)));
+        --color-disabled-text: color-mix(in oklab, var(--tone-7) 20%, light-dark(var(--palette-light-neutral-7), var(--palette-dark-neutral-7)));
+        --color-disabled-border: color-mix(in oklab, var(--tone-5) 20%, light-dark(var(--palette-light-neutral-5), var(--palette-dark-neutral-5)));
 
-        /* Extended and compatibility tokens kept for external overrides */
-        --color-bg: light-dark(oklch(from var(--tone-light) 0.985 calc(c * 0.04) h), oklch(from var(--tone-dark) 0.16 calc(c * 0.06) h));
-        --color-surface-muted: light-dark(oklch(from var(--tone-light) 0.92 calc(c * 0.18 + 0.006) h), oklch(from var(--tone-dark) 0.24 calc(c * 0.32 + 0.01) h));
-        --color-text-subtle: color-mix(in oklab, var(--color-text) 58%, var(--color-surface) 42%);
-        --color-text-contrast: light-dark(oklch(0.99 0 0), oklch(0.17 0 0));
+        /* Compatibility */
+        --color-text-contrast: var(--color-accent-contrast);
         --color-on: var(--color-text);
         --color-on-surface: var(--color-text);
     }

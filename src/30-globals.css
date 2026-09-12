@@ -7,6 +7,7 @@
     html {
         overflow-wrap: break-word;
         scroll-behavior: smooth;
+        scroll-padding-block-start: var(--scroll-offset);
     }
 
     body {
@@ -30,6 +31,8 @@
         max-inline-size: 30ch;
         color: var(--color-text);
         line-height: var(--line-height-heading);
+        font-weight: 600;
+        letter-spacing: -.035em;
         text-wrap: balance;
     }
 
@@ -61,16 +64,19 @@
     a {
         color: var(--color-accent);
         text-decoration-thickness: .08em;
-        text-underline-offset: .18em;
+        text-underline-offset: .16em;
+        transition: color var(--duration-fast) var(--ease-functional);
     }
 
     @media (hover: hover) {
         a:hover {
-            text-decoration-thickness: .12em;
+            color: var(--color-link-hover);
         }
     }
 
     hr {
+        block-size: 0;
+        margin: 0;
         border: 0;
         border-block-start: 1px solid var(--color-border);
     }
@@ -123,6 +129,13 @@
         font-weight: 600;
     }
 
+    abbr[title] {
+        text-decoration: underline dotted;
+        text-decoration-thickness: .08em;
+        text-underline-offset: .16em;
+        cursor: help;
+    }
+
     small {
         font-size: var(--font-size-sm);
     }
@@ -131,8 +144,17 @@
         color: var(--color-text);
     }
 
+    label:has(> :is(input, select, textarea, progress, meter):is(.note, .info, .warning, .danger, .success)) {
+        color: var(--color-text);
+    }
+
+    label:has(:disabled) {
+        color: var(--color-disabled-text);
+        cursor: not-allowed;
+    }
+
     ::selection {
-        background-color: var(--color-accent);
+        background-color: var(--color-button);
         color: var(--color-accent-contrast);
     }
 

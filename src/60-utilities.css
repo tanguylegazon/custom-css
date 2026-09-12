@@ -8,32 +8,60 @@
         font-size: var(--font-size-sm);
     }
 
-    :is(button, input, textarea, select):is(.small, .sm) {
+    :where(button, input:not([type="checkbox"], [type="radio"], [type="range"], [type="color"], [type="hidden"], [type="image"]), textarea, select, details, fieldset):is(.small, .sm) {
         padding: .5em .8em;
+    }
+
+    :where(button, input:is([type="button"], [type="reset"], [type="submit"])):is(.small, .sm) {
+        min-block-size: 2.5em;
+        padding: .45em .7em;
+    }
+
+    :where(select:not([multiple], [size]), select[size="1"]):is(.small, .sm) {
+        padding-inline-end: 2.4em;
     }
 
     .large, .lg {
         font-size: var(--font-size-lg);
     }
 
-    :is(button, input, textarea, select):is(.large, .lg) {
+    :where(button, input:not([type="checkbox"], [type="radio"], [type="range"], [type="color"], [type="hidden"], [type="image"]), textarea, select, details, fieldset):is(.large, .lg) {
         padding: .8em 1.5em;
         gap: .9em;
     }
 
-    .rounded {
-        border-radius: var(--radius-rounded);
+    :where(input:not([type="button"], [type="submit"], [type="reset"], [type="checkbox"], [type="radio"], [type="range"], [type="color"], [type="hidden"], [type="image"]), textarea, select):is(.large, .lg) {
+        padding: .6em .85em;
     }
 
-    @supports (corner-shape: squircle) {
-        .rounded {
-            border-radius: 10em;
-            corner-shape: squircle;
-        }
+    :where(select:not([multiple], [size]), select[size="1"]):is(.large, .lg) {
+        padding-inline-end: 2.4em;
+    }
+
+    :where(dialog, [popover]):is(.small, .sm) {
+        --overlay-padding: 1em;
+    }
+
+    :where(details, fieldset):is(.large, .lg) {
+        padding: 1em 1.5em;
+    }
+
+    :where(dialog, [popover]):is(.large, .lg) {
+        --overlay-padding: 2em;
+    }
+
+    .rounded {
+        border-radius: var(--radius-rounded);
+        corner-shape: squircle;
     }
 
     .rounded-full {
         border-radius: var(--radius-full);
+        corner-shape: round;
+    }
+
+    :where(dialog, [popover]).rounded:not(.rounded-full) {
+        border-radius: calc(var(--radius-rounded) + var(--overlay-padding));
     }
 
     .hidden {

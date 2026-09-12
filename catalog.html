@@ -14,6 +14,7 @@ A copy of the license is available at https://github.com/tailwindlabs/heroicons/
     <title>Component Catalog</title>
     <script src="catalog.js"></script>
     <link rel="stylesheet" href="src/00-layers.css">
+    <link rel="stylesheet" href="src/05-palette.css">
     <link rel="stylesheet" href="src/10-theme.css">
     <link rel="stylesheet" href="src/20-tones.css">
     <link rel="stylesheet" href="src/25-reset.css">
@@ -27,196 +28,259 @@ A copy of the license is available at https://github.com/tailwindlabs/heroicons/
 </head>
 <body>
 <main>
-    <section class="panel rounded">
-        <div class="panel-head">
-            <h2>Tones and Variants</h2>
+    <header class="catalog-header floating">
+        <a class="catalog-brand" href="#">Custom CSS</a>
+        <nav aria-label="Catalog">
+            <a href="#components">Components</a>
+            <a href="#specs">Details</a>
+            <a href="#content">Content</a>
+        </nav>
+
+<div class="theme-control">
+    <svg class="theme-icon-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <symbol id="theme-light" viewBox="0 0 24 24">
+            <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z"/>
+        </symbol>
+        <symbol id="theme-auto" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M2.25 5.25a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3V15a3 3 0 0 1-3 3h-3v.257c0 .597.237 1.17.659 1.591l.621.622a.75.75 0 0 1-.53 1.28h-9a.75.75 0 0 1-.53-1.28l.621-.622a2.25 2.25 0 0 0 .659-1.59V18h-3a3 3 0 0 1-3-3V5.25Zm1.5 0v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5Z" clip-rule="evenodd"/>
+        </symbol>
+        <symbol id="theme-dark" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z" clip-rule="evenodd"/>
+        </symbol>
+    </svg>
+    <details class="theme-switch" data-selected="auto">
+        <summary class="theme-switch-summary" aria-label="Choose theme">
+            <svg data-theme-icon="light" aria-hidden="true"><use href="#theme-light"/></svg>
+            <svg data-theme-icon="auto" aria-hidden="true"><use href="#theme-auto"/></svg>
+            <svg data-theme-icon="dark" aria-hidden="true"><use href="#theme-dark"/></svg>
+            <span class="theme-current-label">Auto</span>
+            <svg class="theme-chevron" aria-hidden="true" viewBox="0 0 16 16">
+                <path d="m4 6 4 4 4-4"/>
+            </svg>
+        </summary>
+        <div class="theme-switch-menu" role="group" aria-label="Theme mode">
+            <button class="theme-switch-button" type="button" data-theme-value="light" aria-pressed="false">
+                <svg aria-hidden="true"><use href="#theme-light"/></svg><span>Light</span>
+            </button>
+            <button class="theme-switch-button" type="button" data-theme-value="auto" aria-pressed="true">
+                <svg aria-hidden="true"><use href="#theme-auto"/></svg><span>Auto</span>
+            </button>
+            <button class="theme-switch-button" type="button" data-theme-value="dark" aria-pressed="false">
+                <svg aria-hidden="true"><use href="#theme-dark"/></svg><span>Dark</span>
+            </button>
         </div>
-        <div class="tone-grid">
-            <article class="tone-card rounded">
-                <div class="tone-meta">
-                    <h3>Default</h3>
-                    <p class="muted">Baseline styling, without a semantic class.</p>
-                </div>
+    </details>
+</div>
+    </header>
+    <div class="catalog-intro">
+        <h1>Everyday elements.<br>Considered together.</h1>
+        <p>A quiet foundation for your sites. Explore the palette, try the controls, and see them in context.</p>
+    </div>
+    <hr>
+    <section class="panel" id="components">
+        <div class="panel-head"><h2>A tone for every intention.</h2></div>
+        <div class="tone-list">
+            <div class="tone-row ">
+                <h3>Default</h3>
                 <div class="button-row">
-                    <button class="rounded tooltip" data-tooltip="default"><span>Default</span></button>
-                    <button class="rounded soft tooltip" data-tooltip="soft"><span>Soft</span></button>
-                    <button class="rounded ghost tooltip" data-tooltip="ghost"><span>Ghost</span></button>
-                    <button class="rounded tooltip" data-tooltip="disabled" disabled><span>Disabled</span></button>
+                    <button class="rounded tooltip">Continue</button>
+                    <button class="rounded soft tooltip">Preview</button>
+                    <button class="rounded ghost tooltip">Details</button>
+                    <button class="rounded tooltip" disabled>Unavailable</button>
                 </div>
-                <div class="showcase-row">
-                    <div class="rounded tooltip" data-tooltip="rounded">
-                        <span>Surface block</span>
-                    </div>
-                    <p class="tooltip" data-tooltip="default">Body text</p>
-                    <p class="muted tooltip" data-tooltip="muted">Muted text</p>
-                </div>
-            </article>
-
-            <article class="tone-card rounded note">
-                <div class="tone-meta">
-                    <h3>Note</h3>
-                    <p class="muted">A calm editorial tone for supporting content and structure.</p>
-                </div>
+                <label><input type="checkbox" class="tooltip" checked> Enable</label>
+                <a class="tooltip" href="#content">Learn more</a>
+            </div>
+            <div class="tone-row note">
+                <h3>Note</h3>
                 <div class="button-row">
-                    <button class="rounded note tooltip" data-tooltip="rounded note"><span>Default</span></button>
-                    <button class="rounded note soft tooltip" data-tooltip="rounded note soft"><span>Soft</span></button>
-                    <button class="rounded note ghost tooltip" data-tooltip="rounded note ghost"><span>Ghost</span></button>
-                    <button class="rounded note tooltip" data-tooltip="rounded note disabled" disabled><span>Disabled</span></button>
+                    <button class="rounded note tooltip">Continue</button>
+                    <button class="rounded soft note tooltip">Preview</button>
+                    <button class="rounded ghost note tooltip">Details</button>
+                    <button class="rounded note tooltip" disabled>Unavailable</button>
                 </div>
-                <div class="chip-row">
-                    <div class="note rounded tooltip" data-tooltip="note rounded"><span>Inline note</span></div>
-                    <p class="note tooltip" data-tooltip="note">Tone text</p>
-                    <p class="note muted tooltip" data-tooltip="note muted">Subtle note</p>
-                </div>
-            </article>
-
-            <article class="tone-card rounded info">
-                <div class="tone-meta">
-                    <h3>Info</h3>
-                    <p class="muted">A clear informational tone for guidance and primary actions.</p>
-                </div>
+                <label><input type="checkbox" class="note tooltip" checked> Enable</label>
+                <a class="note tooltip" href="#content">Learn more</a>
+            </div>
+            <div class="tone-row info">
+                <h3>Info</h3>
                 <div class="button-row">
-                    <button class="rounded info tooltip" data-tooltip="rounded info"><span>Default</span></button>
-                    <button class="rounded info soft tooltip" data-tooltip="rounded info soft"><span>Soft</span></button>
-                    <button class="rounded info ghost tooltip" data-tooltip="rounded info ghost"><span>Ghost</span></button>
-                    <button class="rounded info tooltip" data-tooltip="rounded info disabled" disabled><span>Disabled</span></button>
+                    <button class="rounded info tooltip">Continue</button>
+                    <button class="rounded soft info tooltip">Preview</button>
+                    <button class="rounded ghost info tooltip">Details</button>
+                    <button class="rounded info tooltip" disabled>Unavailable</button>
                 </div>
-                <div class="chip-row">
-                    <div class="info rounded tooltip" data-tooltip="info rounded"><span>Inline info</span></div>
-                    <p class="info tooltip" data-tooltip="info">Tone text</p>
-                    <p class="info muted tooltip" data-tooltip="info muted">Subtle info</p>
-                </div>
-            </article>
-
-            <article class="tone-card rounded warning">
-                <div class="tone-meta">
-                    <h3>Warning</h3>
-                    <p class="muted">A cautionary tone designed to draw attention without excess.</p>
-                </div>
+                <label><input type="checkbox" class="info tooltip" checked> Enable</label>
+                <a class="info tooltip" href="#content">Learn more</a>
+            </div>
+            <div class="tone-row warning">
+                <h3>Warning</h3>
                 <div class="button-row">
-                    <button class="rounded warning tooltip" data-tooltip="rounded warning"><span>Default</span></button>
-                    <button class="rounded warning soft tooltip" data-tooltip="rounded warning soft"><span>Soft</span></button>
-                    <button class="rounded warning ghost tooltip" data-tooltip="rounded warning ghost"><span>Ghost</span></button>
-                    <button class="rounded warning tooltip" data-tooltip="rounded warning disabled" disabled><span>Disabled</span></button>
+                    <button class="rounded warning tooltip">Continue</button>
+                    <button class="rounded soft warning tooltip">Preview</button>
+                    <button class="rounded ghost warning tooltip">Details</button>
+                    <button class="rounded warning tooltip" disabled>Unavailable</button>
                 </div>
-                <div class="chip-row">
-                    <div class="warning rounded tooltip" data-tooltip="warning rounded"><span>Inline warning</span></div>
-                    <p class="warning tooltip" data-tooltip="warning">Tone text</p>
-                    <p class="warning muted tooltip" data-tooltip="warning muted">Subtle warning</p>
-                </div>
-            </article>
-
-            <article class="tone-card rounded danger">
-                <div class="tone-meta">
-                    <h3>Danger</h3>
-                    <p class="muted">A critical tone for destructive actions, blocking states, or errors.</p>
-                </div>
+                <label><input type="checkbox" class="warning tooltip" checked> Enable</label>
+                <a class="warning tooltip" href="#content">Learn more</a>
+            </div>
+            <div class="tone-row danger">
+                <h3>Danger</h3>
                 <div class="button-row">
-                    <button class="rounded danger tooltip" data-tooltip="rounded danger"><span>Default</span></button>
-                    <button class="rounded danger soft tooltip" data-tooltip="rounded danger soft"><span>Soft</span></button>
-                    <button class="rounded danger ghost tooltip" data-tooltip="rounded danger ghost"><span>Ghost</span></button>
-                    <button class="rounded danger tooltip" data-tooltip="rounded danger disabled" disabled><span>Disabled</span></button>
+                    <button class="rounded danger tooltip">Continue</button>
+                    <button class="rounded soft danger tooltip">Preview</button>
+                    <button class="rounded ghost danger tooltip">Details</button>
+                    <button class="rounded danger tooltip" disabled>Unavailable</button>
                 </div>
-                <div class="chip-row">
-                    <div class="danger rounded tooltip" data-tooltip="danger rounded"><span>Inline danger</span></div>
-                    <p class="danger tooltip" data-tooltip="danger">Tone text</p>
-                    <p class="danger muted tooltip" data-tooltip="danger muted">Subtle danger</p>
-                </div>
-            </article>
-
-            <article class="tone-card rounded success">
-                <div class="tone-meta">
-                    <h3>Success</h3>
-                    <p class="muted">A positive tone for confirmation, completion, and successful outcomes.</p>
-                </div>
+                <label><input type="checkbox" class="danger tooltip" checked> Enable</label>
+                <a class="danger tooltip" href="#content">Learn more</a>
+            </div>
+            <div class="tone-row success">
+                <h3>Success</h3>
                 <div class="button-row">
-                    <button class="rounded success tooltip" data-tooltip="rounded success"><span>Default</span></button>
-                    <button class="rounded success soft tooltip" data-tooltip="rounded success soft"><span>Soft</span></button>
-                    <button class="rounded success ghost tooltip" data-tooltip="rounded success ghost"><span>Ghost</span></button>
-                    <button class="rounded success tooltip" data-tooltip="rounded success disabled" disabled><span>Disabled</span></button>
+                    <button class="rounded success tooltip">Continue</button>
+                    <button class="rounded soft success tooltip">Preview</button>
+                    <button class="rounded ghost success tooltip">Details</button>
+                    <button class="rounded success tooltip" disabled>Unavailable</button>
                 </div>
-                <div class="chip-row">
-                    <div class="success rounded tooltip" data-tooltip="success rounded"><span>Inline success</span></div>
-                    <p class="success tooltip" data-tooltip="success">Tone text</p>
-                    <p class="success muted tooltip" data-tooltip="success muted">Subtle success</p>
-                </div>
-            </article>
+                <label><input type="checkbox" class="success tooltip" checked> Enable</label>
+                <a class="success tooltip" href="#content">Learn more</a>
+            </div>
         </div>
     </section>
-
-    <section class="panel rounded">
-        <div class="panel-head">
-            <h2>Size, Shape, and Inputs</h2>
+    <hr>
+    <section class="panel" id="specs">
+        <div class="panel-head"><h2>A few useful details.</h2></div>
+        <div class="details-scene">
+            <div class="details-copy">
+                <h3>Just enough choice.</h3>
+                <p class="muted">Three sizes, familiar shapes, and controls that feel at home together.</p>
+                <div class="button-row">
+                    <button class="rounded sm tooltip">Small</button>
+                    <button class="rounded tooltip">Default</button>
+                    <button class="rounded lg tooltip">Large</button>
+                </div>
+                <div class="button-row">
+                    <button class="tooltip">Default</button>
+                    <button class="rounded tooltip">Rounded</button>
+                    <button class="rounded-full tooltip" aria-label="Add item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 4h2v7h7v2h-7v7h-2v-7H4v-2h7z"/></svg></button>
+                </div>
+            </div>
+            <form class="catalog-form preferences" onsubmit="event.preventDefault()">
+                <h3>Your workspace.</h3>
+                <label>Workspace name<input class="rounded tooltip" value="Personal workspace"></label>
+                <fieldset>
+                    <legend>Access</legend>
+                    <label><input type="radio" name="access" checked> Only me</label>
+                    <label><input type="radio" name="access"> My team</label>
+                    <label><input type="radio" name="access" disabled> Public access unavailable</label>
+                </fieldset>
+                <label><input type="checkbox" checked> Remember my preferences</label>
+            </form>
         </div>
-        <div class="spec-grid">
-            <article class="spec-card rounded">
-                <div class="spec-copy">
-                    <h3>Button Sizes</h3>
-                    <p class="muted">Three scale options for compact, default, and prominent actions.</p>
+    </section>
+    <hr>
+    <section class="panel content-panel" id="content">
+        <div class="panel-head">
+            <h2>Content, naturally.</h2>
+            <label class="tone-picker" for="content-tone">Tone
+                <select id="content-tone" name="content-tone">
+                    <option value="default">Default</option>
+                    <option value="note">Note</option>
+                    <option value="info">Info</option>
+                    <option value="warning">Warning</option>
+                    <option value="danger">Danger</option>
+                    <option value="success">Success</option>
+                </select>
+            </label>
+        </div>
+        <div class="content-scene">
+            <article class="reading-card">
+                <p class="scene-kicker">PROJECT BRIEF · 04 APRIL</p>
+                <h3>A little room to think.</h3>
+                <p>A good interface makes space for what matters. Clear type, comfortable line lengths and a deliberate rhythm help the content speak for itself.</p>
+                <p>Use <a href="#components">familiar components</a>, keep the hierarchy clear, and let colour carry meaning. Our <abbr title="Content Management System">CMS</abbr> keeps the writing simple.</p>
+                <blockquote>Good defaults make the next decision easier.</blockquote>
+                <ul class="brief-points">
+                    <li>Responsive by default</li>
+                    <li>Comfortable in light and dark</li>
+                    <li>Built around <code>system-ui</code></li>
+                </ul>
+                <div class="project-status">
+                    <label>Checklist · 3 of 5 tasks<progress value="3" max="5">3 of 5 tasks</progress></label>
+                    <label>Preview · rebuilding<progress>Rebuilding preview</progress></label>
+                    <details>
+                        <summary>Storage by collection</summary>
+                        <div>
+                            <label>Images · 18 of 100 MB used<meter min="0" max="100" low="40" high="80" optimum="10" value="18">18 of 100 MB</meter></label>
+                            <label>Documents · 54 of 100 MB used<meter min="0" max="100" low="40" high="80" optimum="10" value="54">54 of 100 MB</meter></label>
+                            <label>Archives · 91 of 100 MB used<meter min="0" max="100" low="40" high="80" optimum="10" value="91">91 of 100 MB</meter></label>
+                        </div>
+                    </details>
                 </div>
+                <div class="reading-meta">
+                    <span>Editorial system</span>
+                    <button type="button" class="ghost sm rounded" onclick="document.getElementById('sharing-help').showModal()">Sharing help</button>
+                    <button type="button" class="ghost sm rounded" popovertarget="review-schedule">Review schedule</button>
+                </div>
+            </article>
+            <form class="catalog-form scene-form" onsubmit="event.preventDefault(); document.getElementById('project-review').showModal()">
+                <div class="form-head">
+                    <p class="scene-kicker">START SOMETHING</p>
+                    <h3>Made for everyday work.</h3>
+                    <p class="muted">A small, considered form for the next project.</p>
+                </div>
+                <label>Contact email<input type="email" name="email" autocomplete="email" placeholder="you@example.com" required></label>
+                <div class="form-row">
+                    <label>Visibility<select name="visibility"><option>Private</option><option>Public</option></select></label>
+                    <label>Type<select name="type"><option>Website</option><option>Product</option></select></label>
+                </div>
+                <fieldset class="choice-row">
+                    <legend>Publishing</legend>
+                    <label><input type="radio" name="publishing" checked> Review first</label>
+                    <label><input type="radio" name="publishing"> Publish directly</label>
+                </fieldset>
+                <label>Description<textarea name="description" rows="3" placeholder="A few words about your project"></textarea></label>
+                <label>Cover image<input type="file" name="cover" accept="image/*"></label>
+                <label><input type="checkbox" name="updates" checked> Receive project updates</label>
                 <div class="button-row">
-                    <button class="rounded small tooltip" data-tooltip="rounded small"><span>Small</span></button>
-                    <button class="rounded tooltip" data-tooltip="rounded"><span>Default</span></button>
-                    <button class="rounded large tooltip" data-tooltip="rounded large"><span>Large</span></button>
+                    <button type="submit" class="rounded">Create project</button>
+                    <button type="button" class="ghost rounded">Save draft</button>
+                    <button type="button" class="soft rounded" disabled>Unavailable</button>
                 </div>
-            </article>
-
-            <article class="spec-card rounded">
-                <div class="spec-copy">
-                    <h3>Shapes</h3>
-                    <p class="muted">Shape options for default controls, rounded surfaces, and circular actions.</p>
-                </div>
-                <div class="button-row">
-                    <button class="tooltip" data-tooltip="default"><span>Default</span></button>
-                    <button class="rounded tooltip" data-tooltip="rounded"><span>Rounded</span></button>
-                    <button class="rounded-full tooltip" data-tooltip="rounded-full" aria-label="Rounded full action">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="2 2 12 12">
-                            <path d="M8 3a.75.75 0 0 1 .75.75v3.5h3.5a.75.75 0 0 1 0 1.5h-3.5v3.5a.75.75 0 0 1-1.5 0v-3.5h-3.5a.75.75 0 0 1 0-1.5h3.5v-3.5A.75.75 0 0 1 8 3Z"/>
-                        </svg>
-                    </button>
-                </div>
-            </article>
-
-            <article class="spec-card rounded">
-                <div class="spec-copy">
-                    <h3>Inputs</h3>
-                    <p class="muted">Text fields shown at the same size steps used across interactive controls.</p>
-                </div>
-                <div class="field-stack">
-                    <input class="rounded tooltip" data-tooltip="rounded" type="text" value="Default field">
-                    <input class="rounded sm tooltip" data-tooltip="rounded sm" type="text" value="Small field">
-                    <input class="rounded lg tooltip" data-tooltip="rounded lg" type="text" value="Large field">
-                </div>
-            </article>
-
+                <label><input type="checkbox" disabled> Advanced updates unavailable</label>
+            </form>
+        </div>
+        <dialog id="project-review" class="scene-dialog rounded" aria-labelledby="review-title" aria-describedby="review-description">
+            <h3 id="review-title">Ready for review.</h3>
+            <p id="review-description">Your required fields are complete. This is a local demonstration: no project is created and no files are uploaded.</p>
+            <form method="dialog">
+                <button class="rounded" autofocus>Back to the project</button>
+            </form>
+        </dialog>
+        <dialog id="sharing-help" class="scene-dialog rounded" aria-labelledby="sharing-title" aria-describedby="sharing-description">
+            <h3 id="sharing-title">A little help with sharing.</h3>
+            <p id="sharing-description">Private projects are visible to your team. A public project can be shared with a link after review.</p>
+            <form method="dialog"><button class="soft rounded" autofocus>Got it</button></form>
+        </dialog>
+        <div id="review-schedule" class="scene-popover rounded" popover aria-labelledby="schedule-title">
+            <h3 id="schedule-title">Next review.</h3>
+            <p>Monday at 10:00. Bring your draft and a few questions for the team.</p>
+            <button type="button" class="soft rounded" popovertarget="review-schedule" popovertargetaction="hide">Close</button>
         </div>
     </section>
 </main>
-<div class="theme-dock">
-    <div class="theme-switch rounded" role="group" aria-label="Theme mode" data-selected="auto">
-        <button class="theme-switch-button" type="button" data-theme-value="light" aria-pressed="false"
-                aria-label="Use light theme" title="Light">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z"/>
-            </svg>
-        </button>
-        <button class="theme-switch-button" type="button" data-theme-value="auto" aria-pressed="true"
-                aria-label="Use system theme" title="System">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path fill-rule="evenodd"
-                      d="M2.25 5.25a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3V15a3 3 0 0 1-3 3h-3v.257c0 .597.237 1.17.659 1.591l.621.622a.75.75 0 0 1-.53 1.28h-9a.75.75 0 0 1-.53-1.28l.621-.622a2.25 2.25 0 0 0 .659-1.59V18h-3a3 3 0 0 1-3-3V5.25Zm1.5 0v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5Z"
-                      clip-rule="evenodd"/>
-            </svg>
-        </button>
-        <button class="theme-switch-button" type="button" data-theme-value="dark" aria-pressed="false"
-                aria-label="Use dark theme" title="Dark">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path fill-rule="evenodd"
-                      d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z"
-                      clip-rule="evenodd"/>
-            </svg>
-        </button>
+<footer class="catalog-footer">
+    <div class="footer-brand">
+        <strong>Custom CSS</strong>
+        <p>Thoughtful defaults for the everyday web.</p>
     </div>
-</div>
+        <a class="catalog-github" href="https://github.com/tanguylegazon/custom-css" target="_blank" rel="noopener noreferrer" aria-label="View Custom CSS on GitHub (opens in a new tab)">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 .75a11.25 11.25 0 0 0-3.56 21.92c.56.1.77-.24.77-.54v-2.16c-3.13.68-3.79-1.33-3.79-1.33-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 1.72 2.63 1.22 3.27.93.1-.73.39-1.22.71-1.5-2.5-.28-5.13-1.25-5.13-5.56 0-1.23.44-2.23 1.16-3.02-.12-.28-.5-1.43.11-2.98 0 0 .95-.3 3.09 1.15a10.7 10.7 0 0 1 5.63 0c2.14-1.45 3.08-1.15 3.08-1.15.62 1.55.23 2.7.12 2.98.72.79 1.16 1.79 1.16 3.02 0 4.32-2.64 5.27-5.15 5.55.4.35.76 1.04.76 2.1v3.15c0 .3.21.65.78.54A11.25 11.25 0 0 0 12 .75Z"/>
+            </svg>
+            <span>GitHub</span>
+        </a>
+</footer>
 </body>
 </html>

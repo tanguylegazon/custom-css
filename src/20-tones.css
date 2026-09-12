@@ -4,43 +4,88 @@
  */
 
 @layer theme {
-    .note {
-        --tone-light: var(--tone-light-note);
-        --tone-dark: var(--tone-dark-note);
-        --tone-light-accent: var(--tone-light-note);
-        --tone-dark-accent: var(--tone-dark-note);
-        --tone-dark-accent-contrast: oklch(0.985 0 0);
+    .note, label:has(> :is(input, select, textarea, progress, meter).note) {
+        --color-button: var(--palette-light-note-9);
+        --color-button-hover: var(--palette-light-note-10);
+        --tone-1: light-dark(var(--palette-light-note-1), var(--palette-dark-note-1));
+        --tone-2: light-dark(var(--palette-light-note-2), var(--palette-dark-note-2));
+        --tone-3: light-dark(var(--palette-light-note-3), var(--palette-dark-note-3));
+        --tone-4: light-dark(var(--palette-light-note-4), var(--palette-dark-note-4));
+        --tone-5: light-dark(var(--palette-light-note-5), var(--palette-dark-note-5));
+        --tone-6: light-dark(var(--palette-light-note-6), var(--palette-dark-note-6));
+        --tone-7: light-dark(var(--palette-light-note-7), var(--palette-dark-note-7));
+        --tone-8: light-dark(var(--palette-light-note-8), var(--palette-dark-note-8));
+        --tone-9: light-dark(var(--palette-light-note-9), var(--palette-dark-note-9));
+        --tone-10: light-dark(var(--palette-light-note-10), var(--palette-dark-note-10));
+        --tone-11: light-dark(var(--palette-light-note-11), var(--palette-dark-note-11));
+        --tone-12: light-dark(var(--palette-light-note-12), var(--palette-dark-note-12));
     }
 
-    .info {
-        --tone-light: var(--tone-light-info);
-        --tone-dark: var(--tone-dark-info);
-        --tone-light-accent: var(--tone-light-info);
-        --tone-dark-accent: var(--tone-dark-info);
-        --tone-dark-accent-contrast: oklch(0.985 0 0);
+    .info, label:has(> :is(input, select, textarea, progress, meter).info) {
+        --color-button: var(--palette-light-info-9);
+        --color-button-hover: var(--palette-light-info-10);
+        --tone-1: light-dark(var(--palette-light-info-1), var(--palette-dark-info-1));
+        --tone-2: light-dark(var(--palette-light-info-2), var(--palette-dark-info-2));
+        --tone-3: light-dark(var(--palette-light-info-3), var(--palette-dark-info-3));
+        --tone-4: light-dark(var(--palette-light-info-4), var(--palette-dark-info-4));
+        --tone-5: light-dark(var(--palette-light-info-5), var(--palette-dark-info-5));
+        --tone-6: light-dark(var(--palette-light-info-6), var(--palette-dark-info-6));
+        --tone-7: light-dark(var(--palette-light-info-7), var(--palette-dark-info-7));
+        --tone-8: light-dark(var(--palette-light-info-8), var(--palette-dark-info-8));
+        --tone-9: light-dark(var(--palette-light-info-9), var(--palette-dark-info-9));
+        --tone-10: light-dark(var(--palette-light-info-10), var(--palette-dark-info-10));
+        --tone-11: light-dark(var(--palette-light-info-11), var(--palette-dark-info-11));
+        --tone-12: light-dark(var(--palette-light-info-12), var(--palette-dark-info-12));
     }
 
-    .warning {
-        --tone-light: var(--tone-light-warning);
-        --tone-dark: var(--tone-dark-warning);
-        --tone-light-accent: var(--tone-light-warning);
-        --tone-dark-accent: var(--tone-dark-warning);
-        --tone-dark-accent-contrast: oklch(0.985 0 0);
+    .warning, label:has(> :is(input, select, textarea, progress, meter).warning) {
+        --color-button: var(--palette-light-warning-9);
+        --color-button-hover: var(--palette-light-warning-10);
+        --tone-1: light-dark(var(--palette-light-warning-1), var(--palette-dark-warning-1));
+        --tone-2: light-dark(var(--palette-light-warning-2), var(--palette-dark-warning-2));
+        --tone-3: light-dark(var(--palette-light-warning-3), var(--palette-dark-warning-3));
+        --tone-4: light-dark(var(--palette-light-warning-4), var(--palette-dark-warning-4));
+        --tone-5: light-dark(var(--palette-light-warning-5), var(--palette-dark-warning-5));
+        --tone-6: light-dark(var(--palette-light-warning-6), var(--palette-dark-warning-6));
+        --tone-7: light-dark(var(--palette-light-warning-7), var(--palette-dark-warning-7));
+        --tone-8: light-dark(var(--palette-light-warning-8), var(--palette-dark-warning-8));
+        --tone-9: light-dark(var(--palette-light-warning-9), var(--palette-dark-warning-9));
+        --tone-10: light-dark(var(--palette-light-warning-10), var(--palette-dark-warning-10));
+        --tone-11: light-dark(var(--palette-light-warning-11), var(--palette-dark-warning-11));
+        --tone-12: light-dark(var(--palette-light-warning-12), var(--palette-dark-warning-12));
     }
 
-    .danger {
-        --tone-light: var(--tone-light-danger);
-        --tone-dark: var(--tone-dark-danger);
-        --tone-light-accent: var(--tone-light-danger);
-        --tone-dark-accent: var(--tone-dark-danger);
-        --tone-dark-accent-contrast: oklch(0.985 0 0);
+    .danger, label:has(> :is(input, select, textarea, progress, meter).danger) {
+        --color-button: var(--palette-light-danger-9);
+        --color-button-hover: var(--palette-light-danger-10);
+        --tone-1: light-dark(var(--palette-light-danger-1), var(--palette-dark-danger-1));
+        --tone-2: light-dark(var(--palette-light-danger-2), var(--palette-dark-danger-2));
+        --tone-3: light-dark(var(--palette-light-danger-3), var(--palette-dark-danger-3));
+        --tone-4: light-dark(var(--palette-light-danger-4), var(--palette-dark-danger-4));
+        --tone-5: light-dark(var(--palette-light-danger-5), var(--palette-dark-danger-5));
+        --tone-6: light-dark(var(--palette-light-danger-6), var(--palette-dark-danger-6));
+        --tone-7: light-dark(var(--palette-light-danger-7), var(--palette-dark-danger-7));
+        --tone-8: light-dark(var(--palette-light-danger-8), var(--palette-dark-danger-8));
+        --tone-9: light-dark(var(--palette-light-danger-9), var(--palette-dark-danger-9));
+        --tone-10: light-dark(var(--palette-light-danger-10), var(--palette-dark-danger-10));
+        --tone-11: light-dark(var(--palette-light-danger-11), var(--palette-dark-danger-11));
+        --tone-12: light-dark(var(--palette-light-danger-12), var(--palette-dark-danger-12));
     }
 
-    .success {
-        --tone-light: var(--tone-light-success);
-        --tone-dark: var(--tone-dark-success);
-        --tone-light-accent: var(--tone-light-success);
-        --tone-dark-accent: var(--tone-dark-success);
-        --tone-dark-accent-contrast: oklch(0.985 0 0);
+    .success, label:has(> :is(input, select, textarea, progress, meter).success) {
+        --color-button: var(--palette-light-success-9);
+        --color-button-hover: var(--palette-light-success-10);
+        --tone-1: light-dark(var(--palette-light-success-1), var(--palette-dark-success-1));
+        --tone-2: light-dark(var(--palette-light-success-2), var(--palette-dark-success-2));
+        --tone-3: light-dark(var(--palette-light-success-3), var(--palette-dark-success-3));
+        --tone-4: light-dark(var(--palette-light-success-4), var(--palette-dark-success-4));
+        --tone-5: light-dark(var(--palette-light-success-5), var(--palette-dark-success-5));
+        --tone-6: light-dark(var(--palette-light-success-6), var(--palette-dark-success-6));
+        --tone-7: light-dark(var(--palette-light-success-7), var(--palette-dark-success-7));
+        --tone-8: light-dark(var(--palette-light-success-8), var(--palette-dark-success-8));
+        --tone-9: light-dark(var(--palette-light-success-9), var(--palette-dark-success-9));
+        --tone-10: light-dark(var(--palette-light-success-10), var(--palette-dark-success-10));
+        --tone-11: light-dark(var(--palette-light-success-11), var(--palette-dark-success-11));
+        --tone-12: light-dark(var(--palette-light-success-12), var(--palette-dark-success-12));
     }
 }
