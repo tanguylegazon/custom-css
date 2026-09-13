@@ -395,9 +395,9 @@
             block-size: 0;
             overflow: clip;
             padding-block-start: 0;
-            transition: block-size 300ms var(--ease-standard),
-                        padding-block-start 300ms var(--ease-standard),
-                        content-visibility 300ms allow-discrete;
+            transition: block-size var(--duration-slow) var(--ease-standard),
+                        padding-block-start var(--duration-slow) var(--ease-standard),
+                        content-visibility var(--duration-slow) allow-discrete;
         }
 
         details[open]::details-content {

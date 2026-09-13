@@ -62,6 +62,23 @@ Stepper inputs reserve four character widths for their content by default.
 Override `--stepper-input-width` on the stepper when a wider numeric range is needed.
 Fields, selects, file inputs, toggles and steppers use the same scale. Multiline content remains content-sized.
 
+## Motion
+
+Use the shared duration and easing tokens instead of defining component-specific curves.
+
+- `--duration-instant` (0 ms): focus and states that must update immediately.
+- `--duration-quick` (100 ms): frequent presses and very small feedback.
+- `--duration-fast` (150 ms): hover and compact controls.
+- `--duration-normal` (200 ms): ordinary component transitions.
+- `--duration-slow` (300 ms): disclosures and medium spatial changes.
+- `--duration-slower` (400 ms): large, infrequent transitions.
+
+Use `--ease-standard` while an element remains visible, `--ease-enter` when it
+appears, `--ease-exit` when it leaves and `--ease-emphasized` for occasional
+larger movements. `--ease-functional` remains an alias of `--ease-standard`.
+The global reduced-motion rule makes transitions effectively immediate when the
+user requests less motion.
+
 Use `.toggle` on a checkbox inside its label to display a selectable button with a native check indicator:
 
 ```html
@@ -201,9 +218,6 @@ Use `aria-current="location"` for the current destination when tracking sections
     <a href="#examples"><span>03</span> Examples</a>
 </nav>
 ```
-
-The catalogue is deployed from the `design` branch through GitHub Pages.
-Select GitHub Actions as the publishing source in the repository's Pages settings.
 
 Textareas resize vertically. Checkboxes and radios share the theme's colors and focus treatment,
 with native controls restored in forced-colors mode.

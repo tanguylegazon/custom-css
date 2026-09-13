@@ -33,10 +33,17 @@
         --radius-full: calc(infinity * 1px);
 
         /* Motion */
+        --duration-instant: 0ms;
+        --duration-quick: 100ms;
         --duration-fast: 150ms;
         --duration-normal: 200ms;
-        --ease-standard: cubic-bezier(.4, .14, .3, 1);
-        --ease-functional: cubic-bezier(.2, 0, .38, .9);
+        --duration-slow: 300ms;
+        --duration-slower: 400ms;
+        --ease-standard: cubic-bezier(.2, 0, .38, .9);
+        --ease-enter: cubic-bezier(0, 0, .38, .9);
+        --ease-exit: cubic-bezier(.2, 0, 1, .9);
+        --ease-emphasized: cubic-bezier(.4, .14, .3, 1);
+        --ease-functional: var(--ease-standard);
 
         color-scheme: light dark;
 

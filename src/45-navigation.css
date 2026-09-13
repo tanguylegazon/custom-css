@@ -22,9 +22,9 @@
     }
 
     .navbar.is-ready {
-        transition: inline-size var(--duration-normal) var(--ease-standard),
-                    margin-inline var(--duration-normal) var(--ease-standard),
-                    padding-inline var(--duration-normal) var(--ease-standard);
+        transition: inline-size var(--duration-normal) var(--ease-emphasized),
+                    margin-inline var(--duration-normal) var(--ease-emphasized),
+                    padding-inline var(--duration-normal) var(--ease-emphasized);
     }
 
     .navbar[data-scrolled] {
@@ -41,8 +41,8 @@
     }
 
     .navbar.is-ready::before {
-        transition: opacity var(--duration-normal) var(--ease-standard),
-                    box-shadow var(--duration-normal) var(--ease-standard);
+        transition: opacity var(--duration-normal) var(--ease-enter),
+                    box-shadow var(--duration-normal) var(--ease-enter);
     }
 
     .navbar[data-scrolled]::before {
