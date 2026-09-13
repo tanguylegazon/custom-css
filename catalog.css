@@ -158,23 +158,14 @@ main {
     background-color: var(--color-bg);
 }
 
-.tone-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
-.tone-heading h3, .spec-card h3 {
+
+.tone-card h3, .spec-card h3 {
     margin: 0;
     font-size: 1.125rem;
 }
 
-.tone-dot {
-    inline-size: .625rem;
-    block-size: .625rem;
-    border-radius: 50%;
-    background-color: var(--color-accent);
-}
+
 
 .tone-card > p, .spec-card > p {
     margin-block: .5rem 1.25rem;
@@ -276,27 +267,30 @@ main {
     margin-block-start: -.5rem;
 }
 
-.review-setting {
+.preview-settings {
+    display: grid;
+    gap: 1rem;
+}
+
+.preview-settings > p {
+    margin: 0;
+    font-size: .875rem;
+}
+
+.preview-options {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    align-items: end;
+    gap: 1rem 1.5rem;
+}
+
+.preview-expiry, .preview-permissions {
+    display: grid;
     gap: .5rem;
 }
 
-.form-settings {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: .75rem;
-    padding: 0;
-    border: 0;
-}
-
-.form-settings > legend {
-    position: absolute;
-    inline-size: 1px;
-    block-size: 1px;
-    overflow: hidden;
-    clip-path: inset(50%);
+.preview-expiry .button-row > span {
+    font-size: .875rem;
 }
 
 .choice-stack {

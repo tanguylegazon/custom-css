@@ -30,7 +30,7 @@
     }
 
     .stepper > input {
-        inline-size: 5.5ch;
+        inline-size: 4ch;
         min-inline-size: 0;
         block-size: var(--stepper-inner-height);
         min-block-size: 0;

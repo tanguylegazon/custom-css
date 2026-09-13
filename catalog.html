@@ -12,7 +12,7 @@ A copy of the license is available at https://github.com/tailwindlabs/heroicons/
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
     <title>Component Catalog</title>
-    <script src="catalog.js"></script>
+    <script src="catalog.js" defer></script>
     <link rel="stylesheet" href="src/00-layers.css">
     <link rel="stylesheet" href="src/05-palette.css">
     <link rel="stylesheet" href="src/10-theme.css">
@@ -84,7 +84,7 @@ A copy of the license is available at https://github.com/tailwindlabs/heroicons/
             <a href="#components"><span>01</span> Find your tone <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 8-8M4 4h8v8"/></svg></a>
             <a href="#specs"><span>02</span> Try the controls <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 8-8M4 4h8v8"/></svg></a>
             <a href="#content"><span>03</span> See it come together <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 8-8M4 4h8v8"/></svg></a>
-            <small class="muted">Hover or focus a component to see its HTML and classes.</small>
+            <small class="muted">Hover a component to see its HTML and classes.</small>
         </nav>
     </div>
     <hr>
@@ -95,7 +95,7 @@ A copy of the license is available at https://github.com/tailwindlabs/heroicons/
         </div>
         <div class="tone-grid">
             <article class="tone-card ">
-                <div class="tone-heading"><h3>Default</h3><span class="tone-dot" aria-hidden="true"></span></div>
+                <h3>Default</h3>
                 <p class="muted">The everyday starting point.</p>
                 <div class="tone-scale" aria-hidden="true"><span style="background: var(--tone-3)"></span><span style="background: var(--tone-5)"></span><span style="background: var(--tone-7)"></span><span style="background: var(--tone-9)"></span><span style="background: var(--tone-11)"></span></div>
                 <div class="button-row">
@@ -109,7 +109,7 @@ A copy of the license is available at https://github.com/tailwindlabs/heroicons/
                 </div>
             </article>
             <article class="tone-card note">
-                <div class="tone-heading"><h3>Note</h3><span class="tone-dot" aria-hidden="true"></span></div>
+                <h3>Note</h3>
                 <p class="muted">A little extra emphasis.</p>
                 <div class="tone-scale" aria-hidden="true"><span style="background: var(--tone-3)"></span><span style="background: var(--tone-5)"></span><span style="background: var(--tone-7)"></span><span style="background: var(--tone-9)"></span><span style="background: var(--tone-11)"></span></div>
                 <div class="button-row">
@@ -123,7 +123,7 @@ A copy of the license is available at https://github.com/tailwindlabs/heroicons/
                 </div>
             </article>
             <article class="tone-card info">
-                <div class="tone-heading"><h3>Info</h3><span class="tone-dot" aria-hidden="true"></span></div>
+                <h3>Info</h3>
                 <p class="muted">Useful context, clearly shared.</p>
                 <div class="tone-scale" aria-hidden="true"><span style="background: var(--tone-3)"></span><span style="background: var(--tone-5)"></span><span style="background: var(--tone-7)"></span><span style="background: var(--tone-9)"></span><span style="background: var(--tone-11)"></span></div>
                 <div class="button-row">
@@ -137,7 +137,7 @@ A copy of the license is available at https://github.com/tailwindlabs/heroicons/
                 </div>
             </article>
             <article class="tone-card warning">
-                <div class="tone-heading"><h3>Warning</h3><span class="tone-dot" aria-hidden="true"></span></div>
+                <h3>Warning</h3>
                 <p class="muted">Something deserves a closer look.</p>
                 <div class="tone-scale" aria-hidden="true"><span style="background: var(--tone-3)"></span><span style="background: var(--tone-5)"></span><span style="background: var(--tone-7)"></span><span style="background: var(--tone-9)"></span><span style="background: var(--tone-11)"></span></div>
                 <div class="button-row">
@@ -151,7 +151,7 @@ A copy of the license is available at https://github.com/tailwindlabs/heroicons/
                 </div>
             </article>
             <article class="tone-card danger">
-                <div class="tone-heading"><h3>Danger</h3><span class="tone-dot" aria-hidden="true"></span></div>
+                <h3>Danger</h3>
                 <p class="muted">Pause before moving forward.</p>
                 <div class="tone-scale" aria-hidden="true"><span style="background: var(--tone-3)"></span><span style="background: var(--tone-5)"></span><span style="background: var(--tone-7)"></span><span style="background: var(--tone-9)"></span><span style="background: var(--tone-11)"></span></div>
                 <div class="button-row">
@@ -165,7 +165,7 @@ A copy of the license is available at https://github.com/tailwindlabs/heroicons/
                 </div>
             </article>
             <article class="tone-card success">
-                <div class="tone-heading"><h3>Success</h3><span class="tone-dot" aria-hidden="true"></span></div>
+                <h3>Success</h3>
                 <p class="muted">Everything is moving along.</p>
                 <div class="tone-scale" aria-hidden="true"><span style="background: var(--tone-3)"></span><span style="background: var(--tone-5)"></span><span style="background: var(--tone-7)"></span><span style="background: var(--tone-9)"></span><span style="background: var(--tone-11)"></span></div>
                 <div class="button-row">
@@ -253,8 +253,8 @@ A copy of the license is available at https://github.com/tailwindlabs/heroicons/
             <article class="spec-card">
                 <h3>A little guidance.</h3>
                 <p class="muted">Feedback, right where it matters.</p>
-                <label class="spec-field">Contact email<input class="small rounded" type="email" value="alex@" required aria-describedby="sample-error"></label>
-                <small id="sample-error" class="danger">Enter a complete email address.</small>
+                <label class="spec-field">Contact email<input class="small rounded" type="email" pattern="[^@]+@[^@]+[.][^@]+" title="Use an address such as alex@example.com" value="alex@" required aria-describedby="sample-error"></label>
+                <small id="sample-error" class="danger">Use an address such as alex@example.com.</small>
                 <label class="spec-field">Workspace ID<input class="small rounded" value="workspace-042" disabled></label>
             </article>
         </div>
@@ -310,7 +310,7 @@ A copy of the license is available at https://github.com/tailwindlabs/heroicons/
                     <h3>Made for everyday work.</h3>
                     <p class="muted">A small, considered form for the next project.</p>
                 </div>
-                <label>Contact email<input type="email" name="email" autocomplete="email" placeholder="you@example.com" required></label>
+                <label>Contact email<input type="email" pattern="[^@]+@[^@]+[.][^@]+" title="Use an address such as alex@example.com" name="email" autocomplete="email" placeholder="you@example.com" required></label>
                 <div class="form-row">
                     <label>Visibility<select name="visibility"><option>Private</option><option>Public</option></select></label>
                     <label>Type<select name="type"><option>Website</option><option>Product</option></select></label>
@@ -321,18 +321,29 @@ A copy of the license is available at https://github.com/tailwindlabs/heroicons/
                     <label><input type="radio" name="publishing"> Publish directly</label>
                 </fieldset>
                 <label>Description<textarea name="description" rows="3" placeholder="A few words about your project"></textarea></label>
-                <fieldset class="form-settings">
-                    <legend>Project settings</legend>
-                    <div class="review-setting">
-                        <label for="project-reviewers">Reviewers</label>
-                        <div class="stepper small rounded">
-                            <button type="button" class="ghost" data-step="-1" aria-label="Remove a reviewer"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3.5 8h9"/></svg></button>
-                            <input id="project-reviewers" type="number" min="1" max="8" value="2">
-                            <button type="button" class="ghost" data-step="1" aria-label="Add a reviewer"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3.5 8h9M8 3.5v9"/></svg></button>
+                <fieldset class="preview-settings">
+                    <legend>Preview link</legend>
+                    <p class="muted">Give guests time to explore and share their feedback.</p>
+                    <div class="preview-options">
+                        <div class="preview-expiry">
+                            <label for="preview-days">Expires after</label>
+                            <div class="button-row">
+                                <div class="stepper small rounded">
+                                    <button type="button" class="ghost" data-step="-1" aria-label="Shorten preview access"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3.5 8h9"/></svg></button>
+                                    <input id="preview-days" type="number" name="preview-days" min="1" max="30" value="7" aria-describedby="preview-unit">
+                                    <button type="button" class="ghost" data-step="1" aria-label="Extend preview access"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3.5 8h9M8 3.5v9"/></svg></button>
+                                </div>
+                                <span id="preview-unit" class="muted">days</span>
+                            </div>
+                        </div>
+                        <div class="preview-permissions" role="group" aria-labelledby="preview-permissions-label">
+                            <span id="preview-permissions-label">Guests can</span>
+                            <div class="button-row">
+                                <label><input type="checkbox" class="toggle small rounded" name="comments" checked> Comment</label>
+                                <label><input type="checkbox" class="toggle small rounded" name="downloads"> Download</label>
+                            </div>
                         </div>
                     </div>
-                    <label><input type="checkbox" class="toggle small rounded" name="updates" checked> Updates</label>
-                    <label><input type="checkbox" class="toggle small rounded" name="digest"> Weekly digest</label>
                 </fieldset>
                 <label>Cover image<input type="file" name="cover" accept="image/*"></label>
                 <div class="button-row">
@@ -340,7 +351,7 @@ A copy of the license is available at https://github.com/tailwindlabs/heroicons/
                     <button type="button" class="ghost rounded">Save draft</button>
                     <button type="button" class="soft rounded" disabled>Unavailable</button>
                 </div>
-                <label><input type="checkbox" disabled> Advanced updates unavailable</label>
+                <label><input type="checkbox" disabled> Password protection · Pro plan</label>
             </form>
         </div>
         <dialog id="project-review" class="scene-dialog rounded" aria-labelledby="review-title" aria-describedby="review-description">

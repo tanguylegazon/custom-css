@@ -188,6 +188,7 @@ For a footer, set `--theme-menu-top: auto` and
 ## Table of contents
 
 Use `toc` on a labelled navigation element. Numbering and icons are optional.
+It fills the available width; constrain its parent or its own width to suit the layout.
 Size and shape utilities apply to the container; links inherit their shape.
 Use `aria-current="location"` for the current destination when tracking sections.
 
