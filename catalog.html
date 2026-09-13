@@ -31,9 +31,9 @@ A copy of the license is available at https://github.com/tailwindlabs/heroicons/
     <header class="catalog-header floating">
         <a class="catalog-brand" href="#">Custom CSS</a>
         <nav aria-label="Catalog">
-            <a href="#components">Components</a>
-            <a href="#specs">Details</a>
-            <a href="#content">Content</a>
+            <a href="#components">Palette</a>
+            <a href="#specs">Controls</a>
+            <a href="#content">In context</a>
         </nav>
 
 <div class="theme-control">
@@ -73,118 +73,197 @@ A copy of the license is available at https://github.com/tailwindlabs/heroicons/
 </div>
     </header>
     <div class="catalog-intro">
-        <h1>Everyday elements.<br>Considered together.</h1>
-        <p>A quiet foundation for your sites. Explore the palette, try the controls, and see them in context.</p>
+        <div>
+            <p class="intro-label">THE COMPONENT CATALOG</p>
+            <h1>Good defaults.<br>Room to make it yours.</h1>
+            <p>A quiet, adaptable foundation for the everyday web.</p>
+        </div>
+        <div class="intro-guide">
+            <p>Explore the details.</p>
+            <a href="#components"><span>01</span> Find your tone <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 8-8M4 4h8v8"/></svg></a>
+            <a href="#specs"><span>02</span> Try the controls <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 8-8M4 4h8v8"/></svg></a>
+            <a href="#content"><span>03</span> See it come together <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 8-8M4 4h8v8"/></svg></a>
+            <small class="muted">Hover or focus a component to see its HTML and classes.</small>
+        </div>
     </div>
     <hr>
     <section class="panel" id="components">
-        <div class="panel-head"><h2>A tone for every intention.</h2></div>
-        <div class="tone-list">
-            <div class="tone-row ">
-                <h3>Default</h3>
+        <div class="panel-head">
+            <div><span class="section-number">01 / PALETTE</span><h2>A tone for every intention.</h2></div>
+            <p>Six tones. One shared language.</p>
+        </div>
+        <div class="tone-grid">
+            <article class="tone-card ">
+                <div class="tone-heading"><h3>Default</h3><span class="tone-dot" aria-hidden="true"></span></div>
+                <p class="muted">The everyday starting point.</p>
+                <div class="tone-scale" aria-hidden="true"><span style="background: var(--tone-3)"></span><span style="background: var(--tone-5)"></span><span style="background: var(--tone-7)"></span><span style="background: var(--tone-9)"></span><span style="background: var(--tone-11)"></span></div>
                 <div class="button-row">
-                    <button class="rounded tooltip">Continue</button>
-                    <button class="rounded soft tooltip">Preview</button>
-                    <button class="rounded ghost tooltip">Details</button>
-                    <button class="rounded tooltip" disabled>Unavailable</button>
+                    <button class="small rounded ">Continue</button>
+                    <button class="small rounded soft ">Preview</button>
+                    <button class="small rounded ghost " disabled>Later</button>
                 </div>
-                <label><input type="checkbox" class="tooltip" checked> Enable</label>
-                <a class="tooltip" href="#content">Learn more</a>
-            </div>
-            <div class="tone-row note">
-                <h3>Note</h3>
+                <div class="tone-actions">
+                    <label><input type="checkbox" class="" checked> Enabled</label>
+                    <a class="" href="#content">Learn more</a>
+                </div>
+            </article>
+            <article class="tone-card note">
+                <div class="tone-heading"><h3>Note</h3><span class="tone-dot" aria-hidden="true"></span></div>
+                <p class="muted">A little extra emphasis.</p>
+                <div class="tone-scale" aria-hidden="true"><span style="background: var(--tone-3)"></span><span style="background: var(--tone-5)"></span><span style="background: var(--tone-7)"></span><span style="background: var(--tone-9)"></span><span style="background: var(--tone-11)"></span></div>
                 <div class="button-row">
-                    <button class="rounded note tooltip">Continue</button>
-                    <button class="rounded soft note tooltip">Preview</button>
-                    <button class="rounded ghost note tooltip">Details</button>
-                    <button class="rounded note tooltip" disabled>Unavailable</button>
+                    <button class="small rounded note">Continue</button>
+                    <button class="small rounded soft note">Preview</button>
+                    <button class="small rounded ghost note" disabled>Later</button>
                 </div>
-                <label><input type="checkbox" class="note tooltip" checked> Enable</label>
-                <a class="note tooltip" href="#content">Learn more</a>
-            </div>
-            <div class="tone-row info">
-                <h3>Info</h3>
+                <div class="tone-actions">
+                    <label><input type="checkbox" class="note" checked> Enabled</label>
+                    <a class="note" href="#content">Learn more</a>
+                </div>
+            </article>
+            <article class="tone-card info">
+                <div class="tone-heading"><h3>Info</h3><span class="tone-dot" aria-hidden="true"></span></div>
+                <p class="muted">Useful context, clearly shared.</p>
+                <div class="tone-scale" aria-hidden="true"><span style="background: var(--tone-3)"></span><span style="background: var(--tone-5)"></span><span style="background: var(--tone-7)"></span><span style="background: var(--tone-9)"></span><span style="background: var(--tone-11)"></span></div>
                 <div class="button-row">
-                    <button class="rounded info tooltip">Continue</button>
-                    <button class="rounded soft info tooltip">Preview</button>
-                    <button class="rounded ghost info tooltip">Details</button>
-                    <button class="rounded info tooltip" disabled>Unavailable</button>
+                    <button class="small rounded info">Continue</button>
+                    <button class="small rounded soft info">Preview</button>
+                    <button class="small rounded ghost info" disabled>Later</button>
                 </div>
-                <label><input type="checkbox" class="info tooltip" checked> Enable</label>
-                <a class="info tooltip" href="#content">Learn more</a>
-            </div>
-            <div class="tone-row warning">
-                <h3>Warning</h3>
+                <div class="tone-actions">
+                    <label><input type="checkbox" class="info" checked> Enabled</label>
+                    <a class="info" href="#content">Learn more</a>
+                </div>
+            </article>
+            <article class="tone-card warning">
+                <div class="tone-heading"><h3>Warning</h3><span class="tone-dot" aria-hidden="true"></span></div>
+                <p class="muted">Something deserves a closer look.</p>
+                <div class="tone-scale" aria-hidden="true"><span style="background: var(--tone-3)"></span><span style="background: var(--tone-5)"></span><span style="background: var(--tone-7)"></span><span style="background: var(--tone-9)"></span><span style="background: var(--tone-11)"></span></div>
                 <div class="button-row">
-                    <button class="rounded warning tooltip">Continue</button>
-                    <button class="rounded soft warning tooltip">Preview</button>
-                    <button class="rounded ghost warning tooltip">Details</button>
-                    <button class="rounded warning tooltip" disabled>Unavailable</button>
+                    <button class="small rounded warning">Continue</button>
+                    <button class="small rounded soft warning">Preview</button>
+                    <button class="small rounded ghost warning" disabled>Later</button>
                 </div>
-                <label><input type="checkbox" class="warning tooltip" checked> Enable</label>
-                <a class="warning tooltip" href="#content">Learn more</a>
-            </div>
-            <div class="tone-row danger">
-                <h3>Danger</h3>
+                <div class="tone-actions">
+                    <label><input type="checkbox" class="warning" checked> Enabled</label>
+                    <a class="warning" href="#content">Learn more</a>
+                </div>
+            </article>
+            <article class="tone-card danger">
+                <div class="tone-heading"><h3>Danger</h3><span class="tone-dot" aria-hidden="true"></span></div>
+                <p class="muted">Pause before moving forward.</p>
+                <div class="tone-scale" aria-hidden="true"><span style="background: var(--tone-3)"></span><span style="background: var(--tone-5)"></span><span style="background: var(--tone-7)"></span><span style="background: var(--tone-9)"></span><span style="background: var(--tone-11)"></span></div>
                 <div class="button-row">
-                    <button class="rounded danger tooltip">Continue</button>
-                    <button class="rounded soft danger tooltip">Preview</button>
-                    <button class="rounded ghost danger tooltip">Details</button>
-                    <button class="rounded danger tooltip" disabled>Unavailable</button>
+                    <button class="small rounded danger">Continue</button>
+                    <button class="small rounded soft danger">Preview</button>
+                    <button class="small rounded ghost danger" disabled>Later</button>
                 </div>
-                <label><input type="checkbox" class="danger tooltip" checked> Enable</label>
-                <a class="danger tooltip" href="#content">Learn more</a>
-            </div>
-            <div class="tone-row success">
-                <h3>Success</h3>
+                <div class="tone-actions">
+                    <label><input type="checkbox" class="danger" checked> Enabled</label>
+                    <a class="danger" href="#content">Learn more</a>
+                </div>
+            </article>
+            <article class="tone-card success">
+                <div class="tone-heading"><h3>Success</h3><span class="tone-dot" aria-hidden="true"></span></div>
+                <p class="muted">Everything is moving along.</p>
+                <div class="tone-scale" aria-hidden="true"><span style="background: var(--tone-3)"></span><span style="background: var(--tone-5)"></span><span style="background: var(--tone-7)"></span><span style="background: var(--tone-9)"></span><span style="background: var(--tone-11)"></span></div>
                 <div class="button-row">
-                    <button class="rounded success tooltip">Continue</button>
-                    <button class="rounded soft success tooltip">Preview</button>
-                    <button class="rounded ghost success tooltip">Details</button>
-                    <button class="rounded success tooltip" disabled>Unavailable</button>
+                    <button class="small rounded success">Continue</button>
+                    <button class="small rounded soft success">Preview</button>
+                    <button class="small rounded ghost success" disabled>Later</button>
                 </div>
-                <label><input type="checkbox" class="success tooltip" checked> Enable</label>
-                <a class="success tooltip" href="#content">Learn more</a>
-            </div>
+                <div class="tone-actions">
+                    <label><input type="checkbox" class="success" checked> Enabled</label>
+                    <a class="success" href="#content">Learn more</a>
+                </div>
+            </article>
         </div>
     </section>
     <hr>
     <section class="panel" id="specs">
-        <div class="panel-head"><h2>A few useful details.</h2></div>
-        <div class="details-scene">
-            <div class="details-copy">
-                <h3>Just enough choice.</h3>
-                <p class="muted">Three sizes, familiar shapes, and controls that feel at home together.</p>
+        <div class="panel-head">
+            <div><span class="section-number">02 / CONTROLS</span><h2>Small details. A shared rhythm.</h2></div>
+            <p>Same size, whichever control you choose.</p>
+        </div>
+        <div class="size-bench">
+            <div class="size-head" aria-hidden="true"><span>Size</span><span>Action</span><span>Text</span><span>Choice</span><span>Quantity</span></div>
+                <div class="size-row">
+                    <h3>Small</h3>
+                    <button class="small rounded">Continue</button>
+                    <input class="small rounded" value="Workspace" aria-label="Small workspace">
+                    <select class="small rounded" aria-label="Small visibility"><option>Private</option><option>Public</option></select>
+                    <div class="stepper small rounded">
+                        <button type="button" class="ghost" data-step="-1" aria-label="Decrease Small seats"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3.5 8h9"/></svg></button>
+                        <input type="number" min="1" max="12" value="3" aria-label="Small seats">
+                        <button type="button" class="ghost" data-step="1" aria-label="Increase Small seats"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3.5 8h9M8 3.5v9"/></svg></button>
+                    </div>
+                </div>
+                <div class="size-row">
+                    <h3>Default</h3>
+                    <button class=" rounded">Continue</button>
+                    <input class=" rounded" value="Workspace" aria-label="Default workspace">
+                    <select class=" rounded" aria-label="Default visibility"><option>Private</option><option>Public</option></select>
+                    <div class="stepper  rounded">
+                        <button type="button" class="ghost" data-step="-1" aria-label="Decrease Default seats"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3.5 8h9"/></svg></button>
+                        <input type="number" min="1" max="12" value="3" aria-label="Default seats">
+                        <button type="button" class="ghost" data-step="1" aria-label="Increase Default seats"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3.5 8h9M8 3.5v9"/></svg></button>
+                    </div>
+                </div>
+                <div class="size-row">
+                    <h3>Large</h3>
+                    <button class="large rounded">Continue</button>
+                    <input class="large rounded" value="Workspace" aria-label="Large workspace">
+                    <select class="large rounded" aria-label="Large visibility"><option>Private</option><option>Public</option></select>
+                    <div class="stepper large rounded">
+                        <button type="button" class="ghost" data-step="-1" aria-label="Decrease Large seats"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3.5 8h9"/></svg></button>
+                        <input type="number" min="1" max="12" value="3" aria-label="Large seats">
+                        <button type="button" class="ghost" data-step="1" aria-label="Increase Large seats"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3.5 8h9M8 3.5v9"/></svg></button>
+                    </div>
+                </div>
+        </div>
+        <div class="spec-grid">
+            <article class="spec-card">
+                <h3>A softer edge.</h3>
+                <p class="muted">Choose the shape that fits.</p>
                 <div class="button-row">
-                    <button class="rounded sm tooltip">Small</button>
-                    <button class="rounded tooltip">Default</button>
-                    <button class="rounded lg tooltip">Large</button>
+                    <button class="small">Default</button>
+                    <button class="small rounded">Rounded</button>
+                    <button class="small rounded-full">Full</button>
                 </div>
                 <div class="button-row">
-                    <button class="tooltip">Default</button>
-                    <button class="rounded tooltip">Rounded</button>
-                    <button class="rounded-full tooltip" aria-label="Add item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 4h2v7h7v2h-7v7h-2v-7H4v-2h7z"/></svg></button>
+                    <button class="small soft rounded" aria-label="Add item"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3.5 8h9M8 3.5v9"/></svg></button>
+                    <button class="small soft rounded-full" aria-label="Add another item"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3.5 8h9M8 3.5v9"/></svg></button>
                 </div>
-            </div>
-            <form class="catalog-form preferences" onsubmit="event.preventDefault()">
-                <h3>Your workspace.</h3>
-                <label>Workspace name<input class="rounded tooltip" value="Personal workspace"></label>
-                <fieldset>
-                    <legend>Access</legend>
+            </article>
+            <article class="spec-card">
+                <h3>Make a selection.</h3>
+                <p class="muted">Independent choices, clear states.</p>
+                <div class="button-row">
+                    <label><input type="checkbox" class="toggle small rounded" checked> Email</label>
+                    <label><input type="checkbox" class="toggle small rounded"> Digest</label>
+                    <label><input type="checkbox" class="toggle small rounded" disabled> Reports</label>
+                </div>
+                <div class="choice-stack" role="group" aria-label="Workspace access">
                     <label><input type="radio" name="access" checked> Only me</label>
                     <label><input type="radio" name="access"> My team</label>
                     <label><input type="radio" name="access" disabled> Public access unavailable</label>
-                </fieldset>
-                <label><input type="checkbox" checked> Remember my preferences</label>
-            </form>
+                </div>
+            </article>
+            <article class="spec-card">
+                <h3>A little guidance.</h3>
+                <p class="muted">Feedback, right where it matters.</p>
+                <label class="spec-field">Contact email<input class="small rounded" type="email" value="alex@" required aria-describedby="sample-error"></label>
+                <small id="sample-error" class="danger">Enter a complete email address.</small>
+                <label class="spec-field">Workspace ID<input class="small rounded" value="workspace-042" disabled></label>
+            </article>
         </div>
     </section>
     <hr>
     <section class="panel content-panel" id="content">
         <div class="panel-head">
-            <h2>Content, naturally.</h2>
+            <div><span class="section-number">03 / IN CONTEXT</span><h2>Better together.</h2></div>
             <label class="tone-picker" for="content-tone">Tone
-                <select id="content-tone" name="content-tone">
+                <select id="content-tone" class="small rounded" name="content-tone">
                     <option value="default">Default</option>
                     <option value="note">Note</option>
                     <option value="info">Info</option>
@@ -241,8 +320,19 @@ A copy of the license is available at https://github.com/tailwindlabs/heroicons/
                     <label><input type="radio" name="publishing"> Publish directly</label>
                 </fieldset>
                 <label>Description<textarea name="description" rows="3" placeholder="A few words about your project"></textarea></label>
+                <div class="review-setting">
+                    <label for="project-reviewers">Reviewers</label>
+                    <div class="stepper small rounded">
+                        <button type="button" class="ghost" data-step="-1" aria-label="Remove a reviewer"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3.5 8h9"/></svg></button>
+                        <input id="project-reviewers" type="number" min="1" max="8" value="2">
+                        <button type="button" class="ghost" data-step="1" aria-label="Add a reviewer"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3.5 8h9M8 3.5v9"/></svg></button>
+                    </div>
+                </div>
                 <label>Cover image<input type="file" name="cover" accept="image/*"></label>
-                <label><input type="checkbox" name="updates" checked> Receive project updates</label>
+                <div class="button-row">
+                    <label><input type="checkbox" class="toggle small rounded" name="updates" checked> Project updates</label>
+                    <label><input type="checkbox" class="toggle small rounded" name="digest"> Weekly digest</label>
+                </div>
                 <div class="button-row">
                     <button type="submit" class="rounded">Create project</button>
                     <button type="button" class="ghost rounded">Save draft</button>

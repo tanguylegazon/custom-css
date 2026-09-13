@@ -80,6 +80,7 @@
         const update = () => {
             frame = null;
             const height = navigation.offsetHeight;
+            navigation.style.setProperty("--catalog-scroll", Math.min(1, Math.max(0, scrollY / 64)));
             root.style.setProperty("--scroll-offset", height + "px");
             let active = -1;
             sections.forEach((section, index) => {
@@ -102,17 +103,55 @@
     };
 
     const setupTooltips = () => {
-        const classes = ["note", "info", "warning", "danger", "success", "soft", "ghost", "rounded", "rounded-full", "small", "sm", "large", "lg", "muted"];
+        const classes = ["note", "info", "warning", "danger", "success", "soft", "ghost", "rounded", "rounded-full", "small", "sm", "large", "lg", "muted", "toggle", "stepper"];
         const scope = document.querySelectorAll(":is(#components, #specs) .tooltip");
         scope.forEach((element) => {
             element.classList.remove("tooltip");
             delete element.dataset.tooltip;
         });
-        document.querySelectorAll(":is(#components, #specs) :is(button, input, select, textarea, a, code, kbd)").forEach((element) => {
-            const names = classes.filter(name => element.classList.contains(name));
-            if (!names.length) return;
+        document.querySelectorAll(":is(#components, #specs) :is(button, input, select, textarea, a, code, kbd, .stepper)").forEach((element) => {
+            const names = Array.from(element.classList).filter(name => classes.includes(name));
+            const type = element.localName === "input" ? 'input[type="' + element.type + '"]' : element.localName;
+            const state = element.matches(":disabled") ? " disabled" : "";
+            const description = type + state + (names.length ? " · " + names.join(" ") : "");
             element.classList.add("tooltip");
-            element.dataset.tooltip = names.join(" ");
+            element.dataset.tooltip = description;
+            if (element.matches('input[type="checkbox"], input[type="radio"]')) {
+                const label = element.closest("label");
+                if (label) {
+                    label.classList.add("tooltip");
+                    label.dataset.tooltip = description;
+                }
+            }
+        });
+    };
+
+    const setupValidation = () => {
+        const input = document.querySelector('[aria-describedby="sample-error"]');
+        const message = document.querySelector("#sample-error");
+        if (!input || !message) return;
+        const update = () => {
+            const invalid = !input.validity.valid;
+            input.setAttribute("aria-invalid", String(invalid));
+            message.hidden = !invalid;
+        };
+        input.addEventListener("input", update);
+        update();
+    };
+
+    const setupSteppers = () => {
+        document.querySelectorAll(".stepper").forEach((group) => {
+            const input = group.querySelector('input[type="number"]');
+            if (!input) return;
+            group.querySelectorAll("button[data-step]").forEach((button) => {
+                button.addEventListener("click", () => {
+                    if (input.disabled || input.readOnly) return;
+                    if (Number(button.dataset.step) > 0) input.stepUp();
+                    else input.stepDown();
+                    input.dispatchEvent(new Event("input", { bubbles: true }));
+                    input.dispatchEvent(new Event("change", { bubbles: true }));
+                });
+            });
         });
     };
 
@@ -137,11 +176,15 @@
             setupThemeSwitch();
             setupTonePicker();
             setupTooltips();
+            setupSteppers();
+            setupValidation();
         });
     } else {
         setupNavigation();
         setupThemeSwitch();
         setupTonePicker();
         setupTooltips();
+        setupSteppers();
+        setupValidation();
     }
 })();

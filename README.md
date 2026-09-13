@@ -57,6 +57,31 @@ Filled buttons use light palette levels 9 and 10 in both modes, with white text 
 
 ## Form labels
 
+Single-line controls share the button height through `--control-height`: 2.5em in small, 2.625em by default and 2.667em in large.
+Fields, selects, file inputs, toggles and steppers use the same scale. Multiline content remains content-sized.
+
+Use `.toggle` on a checkbox inside its label to display a selectable button with a native check indicator:
+
+```html
+<label><input type="checkbox" class="toggle small rounded info" checked> Notifications</label>
+```
+
+The label follows the checkbox's tone, size, rounding and disabled state. No inner span or JavaScript is required.
+Use a wrapping label; CSS cannot follow an arbitrary separate label's `for` attribute.
+
+Use `.stepper` for a compact value control:
+
+```html
+<div class="stepper small rounded">
+    <button class="ghost" aria-label="Decrease">−</button>
+    <input type="text" inputmode="numeric" aria-label="Quantity" value="16">
+    <button class="ghost" aria-label="Increase">+</button>
+</div>
+```
+
+Apply size and rounding to the group. Buttons stay square and their inner radii follow the outer radius.
+The application handles value changes; use native `disabled` or a disabled fieldset to disable controls.
+
 Put a tone on a wrapping label to style the whole field, or directly on its child input, select or textarea:
 
 ```html
@@ -112,14 +137,18 @@ Its width and page alignment remain controlled by the site layout. Use `<strong>
 
 Use `class="floating"` on a header or navigation container for a sticky, raised surface.
 Its surface appears on scroll through CSS scroll-driven animations where supported.
-Otherwise, or with reduced motion, the raised surface remains visible.
+Otherwise, the raised surface remains visible. With reduced motion, it switches without interpolation.
 An opaque background remains available without blur support or when reduced transparency is requested.
 Reserve sufficient scroll padding or anchor margins for the navigation height in your site layout.
 Set `--scroll-offset` to the navigation height, optionally adding the space wanted above anchored content.
 The theme applies it through `scroll-padding-block-start`, so native anchor navigation and smooth scrolling share the same offset.
 Links inside `.floating nav` receive a subtle active indicator when marked with `aria-current="location"`.
 The catalogue uses a small scroll observer to mark the visible section with `aria-current="location"`.
-The floating surface animation itself remains CSS-only.
+The catalogue also uses this observer to drive its expanding header consistently across browsers.
+The library itself remains CSS-only.
+
+The catalogue is deployed from the `design` branch through GitHub Pages.
+Select GitHub Actions as the publishing source in the repository's Pages settings.
 
 Textareas resize vertically. Checkboxes and radios share the theme's colors and focus treatment,
 with native controls restored in forced-colors mode.

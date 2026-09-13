@@ -16,6 +16,7 @@
         --font-size-sm: .875rem;
         --font-size-md: 1rem;
         --font-size-lg: 1.125rem;
+        --control-height: 2.625em;
         --font-size-h1: clamp(2.5rem, 1.5rem + 3vw, 5rem);
         --font-size-h2: clamp(1.875rem, 1.4rem + 1.6vw, 3rem);
         --font-size-h3: clamp(1.25rem, 1.1rem + .6vw, 1.75rem);
