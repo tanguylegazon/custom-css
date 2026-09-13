@@ -22,16 +22,18 @@
 
     const setupThemeSwitch = () => {
         const buttons = Array.from(document.querySelectorAll(".theme-switch-button"));
-        const switchGroup = document.querySelector(".theme-switch");
-        const currentLabel = document.querySelector(".theme-current-label");
-        if (!switchGroup || !buttons.length) return;
+        const groups = Array.from(document.querySelectorAll(".theme-switch"));
+        if (!groups.length || !buttons.length) return;
         const labels = { light: "Light", auto: "Auto", dark: "Dark" };
 
         const syncTheme = (theme) => {
             applyTheme(theme);
             const selected = root.dataset.theme || "auto";
-            switchGroup.dataset.selected = selected;
-            if (currentLabel) currentLabel.textContent = labels[selected];
+            groups.forEach((group) => {
+                group.dataset.selected = selected;
+                const label = group.querySelector(".theme-current-label");
+                if (label) label.textContent = labels[selected];
+            });
             buttons.forEach((button) => {
                 button.setAttribute("aria-pressed", String(button.dataset.themeValue === selected));
             });
@@ -39,6 +41,7 @@
 
         buttons.forEach((button) => {
             button.addEventListener("click", () => {
+                const switchGroup = button.closest(".theme-switch");
                 const theme = button.dataset.themeValue;
                 syncTheme(theme);
                 switchGroup.open = false;
@@ -57,14 +60,18 @@
         });
 
         document.addEventListener("click", (event) => {
-            if (!switchGroup.contains(event.target)) switchGroup.open = false;
+            groups.forEach((group) => {
+                if (!group.contains(event.target)) group.open = false;
+            });
         });
 
-        switchGroup.addEventListener("keydown", (event) => {
-            if (event.key === "Escape") {
-                switchGroup.open = false;
-                switchGroup.querySelector("summary").focus();
-            }
+        groups.forEach((group) => {
+            group.addEventListener("keydown", (event) => {
+                if (event.key === "Escape") {
+                    group.open = false;
+                    group.querySelector("summary").focus();
+                }
+            });
         });
 
         syncTheme(readTheme());

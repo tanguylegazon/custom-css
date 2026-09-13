@@ -1,0 +1,293 @@
+/*!
+ * This material is licensed under the terms of the MIT License.
+ * A copy of the license is available at https://github.com/tanguylegazon/custom-css/blob/main/LICENSE.
+
+ */
+
+@layer components {
+    .navbar {
+        display: flex;
+        inset-block-start: 0;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1em;
+        flex-wrap: wrap;
+        inline-size: 100%;
+        margin-inline: 0;
+        padding: .625em var(--navbar-padding, 0px);
+        border: 1px solid transparent;
+        border-block-color: color-mix(in oklab, var(--color-border) 48%, transparent);
+        border-radius: var(--radius-control);
+        border-block-start-color: transparent;
+    }
+
+    .navbar.is-ready {
+        transition: inline-size var(--duration-normal) var(--ease-standard),
+                    margin-inline var(--duration-normal) var(--ease-standard),
+                    padding-inline var(--duration-normal) var(--ease-standard);
+    }
+
+    .navbar[data-scrolled] {
+        inline-size: var(--navbar-expanded-width, 100%);
+        margin-inline: var(--navbar-expanded-margin, 0px);
+        padding-inline: var(--navbar-expanded-padding, var(--navbar-padding, 0px));
+    }
+
+    .navbar::before {
+        animation: none;
+        border: 0;
+        border-block-end: 1px solid var(--color-border);
+        opacity: 0;
+    }
+
+    .navbar.is-ready::before {
+        transition: opacity var(--duration-normal) var(--ease-standard),
+                    box-shadow var(--duration-normal) var(--ease-standard);
+    }
+
+    .navbar[data-scrolled]::before {
+        opacity: 1;
+    }
+
+    .navbar nav {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: .75em 1.5em;
+        margin-inline-start: auto;
+    }
+
+    .navbar nav a {
+        color: var(--color-text-muted);
+        font-weight: 500;
+        border-radius: inherit;
+        text-decoration: none;
+    }
+
+    .navbar nav a:is(:hover, :focus-visible) {
+        color: var(--color-text);
+    }
+
+    .navbar .theme-switch {
+        --theme-menu-start: auto;
+        --theme-menu-end: 0px;
+    }
+
+    .theme-switch {
+        --theme-switch-radius: var(--radius-control);
+        position: relative;
+        inline-size: fit-content;
+        max-inline-size: 100%;
+        border-radius: var(--theme-switch-radius);
+        padding: 0;
+        border: 0;
+        background: transparent;
+    }
+
+    .theme-switch > summary, .theme-switch[open] > summary {
+        margin: 0;
+        border-radius: var(--theme-switch-radius);
+    }
+
+    .theme-switch > summary::before {
+        content: none;
+    }
+
+    .theme-switch::details-content, .theme-switch[open]::details-content {
+        block-size: auto;
+        overflow: visible;
+        padding: 0;
+        transition: none;
+    }
+
+    .theme-icon-defs {
+        position: absolute;
+        inline-size: 0;
+        block-size: 0;
+    }
+
+    .theme-switch-summary {
+        display: flex;
+        min-inline-size: 7em;
+        min-block-size: var(--control-height);
+        align-items: center;
+        gap: .45em;
+        padding: calc((var(--control-height) - 1.4em) / 2) .75em;
+        border: 0;
+        border-radius: var(--theme-switch-radius);
+        background-color: transparent;
+        color: var(--color-text-muted);
+        font-size: inherit;
+        font-weight: 600;
+        line-height: 1.4;
+        list-style: none;
+        cursor: pointer;
+        box-shadow: none;
+        transition: color var(--duration-fast) var(--ease-functional),
+                    background-color var(--duration-fast) var(--ease-functional);
+    }
+
+    .theme-switch-summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .theme-switch-summary:hover,
+    .theme-switch[open] .theme-switch-summary {
+        background-color: var(--color-surface-muted);
+        color: var(--color-text);
+    }
+
+    .theme-switch-summary > svg,
+    .theme-switch-button svg {
+        inline-size: 1.1em;
+        block-size: 1.1em;
+        flex: none;
+    }
+
+    .theme-switch-summary > [data-theme-icon] {
+        display: none;
+    }
+
+    .theme-switch[data-selected="light"] [data-theme-icon="light"],
+    .theme-switch[data-selected="auto"] [data-theme-icon="auto"],
+    .theme-switch[data-selected="dark"] [data-theme-icon="dark"] {
+        display: block;
+    }
+
+    .theme-switch-summary .theme-chevron {
+        inline-size: .75em;
+        margin-inline-start: .1em;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        transition: transform var(--duration-normal) var(--ease-standard);
+    }
+
+    .theme-switch[open] .theme-chevron {
+        transform: rotate(180deg);
+    }
+
+    .theme-switch-menu {
+        position: absolute;
+        inset-inline-start: var(--theme-menu-start, 0px);
+        inset-inline-end: var(--theme-menu-end, auto);
+        inset-block-start: var(--theme-menu-top, calc(100% + .75em));
+        inset-block-end: var(--theme-menu-bottom, auto);
+        display: grid;
+        z-index: 40;
+        inline-size: max(100%, 10em);
+        max-inline-size: calc(100vw - 2em);
+        max-block-size: min(20em, calc(100dvh - 2em));
+        overflow-y: auto;
+        gap: .125em;
+        padding: .4em;
+        border: 1px solid var(--color-border);
+        border-radius: min(var(--theme-switch-radius), 1em);
+        background-color: var(--color-surface);
+        box-shadow: 0 8px 24px #00000014;
+    }
+
+    .theme-switch-button {
+        min-block-size: var(--control-height);
+        justify-content: flex-start;
+        gap: .6em;
+        padding: calc((var(--control-height) - 1.4em) / 2) .6em;
+        line-height: 1.4;
+        border-radius: inherit;
+        background: transparent;
+        color: var(--color-text-muted);
+        font-size: inherit;
+        font-weight: 500;
+        box-shadow: none;
+        transition: color var(--duration-fast) var(--ease-functional),
+                    background-color var(--duration-fast) var(--ease-functional);
+    }
+
+    .theme-switch-button:hover:not(:disabled) {
+        background: var(--color-surface-muted);
+        color: var(--color-text);
+    }
+
+    .theme-switch-button[aria-pressed="true"]:not(:disabled) {
+        color: var(--color-text);
+        font-weight: 600;
+    }
+
+    .theme-switch-button::after {
+        content: "";
+        flex: none;
+        inline-size: .3em;
+        block-size: .3em;
+        margin-inline-start: auto;
+        border-radius: 50%;
+        background-color: currentColor;
+        opacity: 0;
+    }
+
+    .theme-switch-button[aria-pressed="true"]::after {
+        opacity: .8;
+    }
+
+    .toc {
+        display: grid;
+        gap: 1em;
+        min-inline-size: 0;
+        border-radius: var(--radius-control);
+    }
+
+    .toc > a {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+        min-block-size: var(--control-height);
+        padding-block: .4em .75em;
+        border-radius: inherit;
+        border-block-end: 1px solid var(--color-border);
+        text-decoration: none;
+        color: var(--color-text);
+    }
+
+    .toc > a span:first-child {
+        color: var(--color-text-muted);
+        font-variant-numeric: tabular-nums;
+    }
+
+    .toc > a svg {
+        margin-inline-start: auto;
+        inline-size: 1em;
+        block-size: 1em;
+        fill: none;
+        flex: none;
+        color: var(--color-text-muted);
+        transition: color var(--duration-fast) var(--ease-functional),
+                    transform var(--duration-fast) var(--ease-functional);
+    }
+
+    .toc > a:is(:hover, :focus-visible, [aria-current]:not([aria-current="false"])) {
+        color: var(--color-link-hover);
+    }
+
+    .toc > a:is(:hover, :focus-visible, [aria-current]:not([aria-current="false"])) svg {
+        color: currentColor;
+        transform: translate(.1em, -.1em);
+    }
+
+    .toc > :is(p, small) {
+        margin: 0;
+        color: var(--color-text-muted);
+    }
+
+    .theme-switch-button:disabled {
+        background: transparent;
+        color: var(--color-disabled-text);
+        cursor: not-allowed;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .navbar.is-ready, .navbar.is-ready::before, .toc > a svg {
+            transition: none;
+        }
+    }
+}

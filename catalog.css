@@ -20,68 +20,20 @@ main {
 }
 
 .catalog-header {
-    display: flex;
-    inset-block-start: 0;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    font-size: 1rem;
-    inline-size: 100%;
-    margin-inline: 0;
-    padding-inline: 0;
-    border-inline-color: transparent;
-    border-block-color: color-mix(in oklab, var(--color-border) 48%, transparent);
+    --navbar-expanded-width: 100vw;
+    --navbar-expanded-margin: calc(50% - 50vw);
+    --navbar-expanded-padding: max(1.25rem, calc((100vw - var(--content-width)) / 2));
     border-radius: 0;
 }
 
-.catalog-header.is-ready {
-    transition: inline-size var(--duration-normal) var(--ease-standard),
-                margin-inline var(--duration-normal) var(--ease-standard),
-                padding-inline var(--duration-normal) var(--ease-standard);
-}
-
-.catalog-header[data-scrolled] {
-    inline-size: 100vw;
-    margin-inline: calc(50% - 50vw);
-    padding-inline: max(1.25rem, calc((100vw - var(--content-width)) / 2));
-}
-
-.catalog-header::before {
-    animation: none;
-    border: 0;
-    border-block-end: 1px solid var(--color-border);
-    opacity: 0;
-}
-
-.catalog-header.is-ready::before {
-    transition: opacity var(--duration-normal) var(--ease-standard),
-                box-shadow var(--duration-normal) var(--ease-standard);
-}
-
-.catalog-header[data-scrolled]::before {
-    opacity: 1;
+.catalog-header .theme-switch {
+    font-size: .8125rem;
 }
 
 .catalog-brand {
     color: var(--color-text);
     font-weight: 600;
     text-decoration: none;
-}
-
-.catalog-header nav {
-    display: flex;
-    gap: 1.5rem;
-    margin-inline-start: auto;
-}
-
-.catalog-header nav a {
-    color: var(--color-text-muted);
-    font-weight: 500;
-    text-decoration: none;
-}
-
-.catalog-header nav a:is(:hover, :focus-visible) {
-    color: var(--color-text);
 }
 
 .catalog-footer {
@@ -155,38 +107,6 @@ main {
     font-size: .75rem;
     letter-spacing: .09em;
     color: var(--color-text-muted);
-}
-
-.intro-guide {
-    display: grid;
-    gap: 1rem;
-    font-size: .875rem;
-}
-
-.intro-guide a {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding-block-end: .75rem;
-    border-block-end: 1px solid var(--color-border);
-    text-decoration: none;
-    color: var(--color-text);
-}
-
-.intro-guide a span:first-child {
-    color: var(--color-text-muted);
-    font-variant-numeric: tabular-nums;
-}
-
-.intro-guide a svg {
-    margin-inline-start: auto;
-    inline-size: 1em;
-    block-size: 1em;
-    fill: none;
-}
-
-.intro-guide a:hover {
-    color: var(--color-link-hover);
 }
 
 .panel {
@@ -392,8 +312,6 @@ main {
     gap: .625rem;
 }
 
-
-
 .content-scene {
     display: grid;
     grid-template-columns: minmax(0, 1.1fr) minmax(18rem, .9fr);
@@ -536,29 +454,6 @@ main {
     flex: none;
 }
 
-.theme-switch {
-    position: relative;
-    inline-size: max-content;
-    padding: 0;
-    border: 0;
-    background: transparent;
-}
-
-.theme-switch > summary {
-    margin: 0;
-}
-
-.theme-switch > summary::before {
-    content: none;
-}
-
-.theme-switch::details-content {
-    block-size: auto;
-    overflow: visible;
-    padding: 0;
-    transition: none;
-}
-
 .project-status {
     display: grid;
     gap: 1rem;
@@ -583,128 +478,6 @@ main {
 .scene-dialog h3,
 .scene-popover h3 {
     font-size: var(--font-size-h3);
-}
-
-.theme-icon-defs {
-    position: absolute;
-    inline-size: 0;
-    block-size: 0;
-}
-
-.theme-switch-summary {
-    display: flex;
-    inline-size: 6rem;
-    min-block-size: 2.25rem;
-    align-items: center;
-    gap: .45rem;
-    padding: .4rem .6rem;
-    border: 0;
-    border-radius: var(--radius-control);
-    background-color: transparent;
-    color: var(--color-text-muted);
-    font-size: .8125rem;
-    font-weight: 600;
-    line-height: 1;
-    list-style: none;
-    cursor: pointer;
-    box-shadow: none;
-    transition: color var(--duration-fast) var(--ease-functional),
-                background-color var(--duration-fast) var(--ease-functional);
-}
-
-.theme-switch-summary::-webkit-details-marker {
-    display: none;
-}
-
-.theme-switch-summary:hover,
-.theme-switch[open] .theme-switch-summary {
-    background-color: var(--color-surface-muted);
-    color: var(--color-text);
-}
-
-.theme-switch-summary > svg,
-.theme-switch-button svg {
-    inline-size: 1rem;
-    block-size: 1rem;
-    flex: none;
-}
-
-.theme-switch-summary > [data-theme-icon] {
-    display: none;
-}
-
-.theme-switch[data-selected="light"] [data-theme-icon="light"],
-.theme-switch[data-selected="auto"] [data-theme-icon="auto"],
-.theme-switch[data-selected="dark"] [data-theme-icon="dark"] {
-    display: block;
-}
-
-.theme-switch-summary .theme-chevron {
-    inline-size: .75rem;
-    margin-inline-start: .1rem;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 1.5;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    transition: transform var(--duration-normal) var(--ease-standard);
-}
-
-.theme-switch[open] .theme-chevron {
-    transform: rotate(180deg);
-}
-
-.theme-switch-menu {
-    position: absolute;
-    inset-inline-end: 0;
-    inset-block-start: calc(100% + .75rem);
-    display: grid;
-    inline-size: 8.5rem;
-    padding: .4rem;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-rounded);
-    background-color: var(--color-surface);
-    box-shadow: 0 8px 24px #00000014;
-}
-
-.theme-switch-button {
-    min-block-size: 2.25rem;
-    justify-content: flex-start;
-    gap: .6rem;
-    padding: .45rem .6rem;
-    border-radius: var(--radius-control);
-    background: transparent;
-    color: var(--color-text-muted);
-    font-size: .8125rem;
-    font-weight: 500;
-    box-shadow: none;
-    transition: color var(--duration-fast) var(--ease-functional),
-                background-color var(--duration-fast) var(--ease-functional);
-}
-
-.theme-switch-button:hover {
-    background: var(--color-surface-muted);
-    color: var(--color-text);
-}
-
-.theme-switch-button[aria-pressed="true"] {
-    color: var(--color-text);
-    font-weight: 600;
-}
-
-.theme-switch-button::after {
-    content: "";
-    flex: none;
-    inline-size: .3rem;
-    block-size: .3rem;
-    margin-inline-start: auto;
-    border-radius: 50%;
-    background-color: currentColor;
-    opacity: 0;
-}
-
-.theme-switch-button[aria-pressed="true"]::after {
-    opacity: .8;
 }
 
 @media (min-width: 48.01rem) and (max-width: 65rem) {

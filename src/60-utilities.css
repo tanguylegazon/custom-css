@@ -96,6 +96,18 @@
         border-radius: var(--radius-full);
     }
 
+    .theme-switch:is(.small, .sm, .large, .lg) {
+        padding: 0;
+    }
+
+    .theme-switch.rounded {
+        --theme-switch-radius: var(--radius-rounded);
+    }
+
+    .theme-switch.rounded-full {
+        --theme-switch-radius: var(--radius-full);
+    }
+
     .stepper.rounded {
         --stepper-radius: var(--radius-rounded);
     }

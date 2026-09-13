@@ -147,6 +147,58 @@ The catalogue uses a small scroll observer to mark the visible section with `ari
 The catalogue also uses this observer to drive its expanding header consistently across browsers.
 The library itself remains CSS-only.
 
+Use `navbar floating` for the scroll-aware header. Add `data-scrolled` when the
+page crosses your threshold, and `is-ready` after setting its initial state to
+enable transitions without animating scroll restoration.
+The optional `--navbar-expanded-width`, `--navbar-expanded-margin` and
+`--navbar-expanded-padding` properties control expansion within your layout.
+
+## Theme switch
+
+Apply sizes and shapes to the outer `details`: `small` / `sm`, `large` / `lg`,
+`rounded` or `rounded-full`. The trigger and options share the control height.
+The menu radius is capped so a pill-shaped trigger keeps a usable menu.
+
+```html
+<details class="theme-switch rounded" data-selected="auto">
+    <summary class="theme-switch-summary">
+        <span class="theme-current-label">Auto</span>
+        <svg class="theme-chevron" viewBox="0 0 16 16" aria-hidden="true">
+            <path d="m4 6 4 4 4-4"/>
+        </svg>
+    </summary>
+    <div class="theme-switch-menu" role="group" aria-label="Theme">
+        <button type="button" class="theme-switch-button" data-theme-value="light" aria-pressed="false">Light</button>
+        <button type="button" class="theme-switch-button" data-theme-value="auto" aria-pressed="true">Auto</button>
+        <button type="button" class="theme-switch-button" data-theme-value="dark" aria-pressed="false">Dark</button>
+    </div>
+</details>
+```
+
+Opening the menu is native. Theme selection, persistence, Escape and outside-click
+handling belong to the host site's script; `catalog.js` provides an example.
+Update `data-selected`, `aria-pressed` and the current label together.
+Use native `disabled` on unavailable options; `details` has no native disabled state.
+Place the menu away from clipping containers and viewport edges.
+The menu opens from the start edge, or the end edge inside a navbar.
+Override `--theme-menu-start` / `--theme-menu-end` for horizontal alignment.
+For a footer, set `--theme-menu-top: auto` and
+`--theme-menu-bottom: calc(100% + .75em)` to open it upward.
+
+## Table of contents
+
+Use `toc` on a labelled navigation element. Numbering and icons are optional.
+Size and shape utilities apply to the container; links inherit their shape.
+Use `aria-current="location"` for the current destination when tracking sections.
+
+```html
+<nav class="toc small" aria-label="On this page">
+    <a href="#overview"><span>01</span> Overview</a>
+    <a href="#details"><span>02</span> Details</a>
+    <a href="#examples"><span>03</span> Examples</a>
+</nav>
+```
+
 The catalogue is deployed from the `design` branch through GitHub Pages.
 Select GitHub Actions as the publishing source in the repository's Pages settings.
 

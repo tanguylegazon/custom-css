@@ -20,6 +20,7 @@ A copy of the license is available at https://github.com/tailwindlabs/heroicons/
     <link rel="stylesheet" href="src/25-reset.css">
     <link rel="stylesheet" href="src/30-globals.css">
     <link rel="stylesheet" href="src/40-components.css">
+    <link rel="stylesheet" href="src/45-navigation.css">
     <link rel="stylesheet" href="src/50-variants.css">
     <link rel="stylesheet" href="src/60-utilities.css">
     <link rel="stylesheet" href="catalog.css">
@@ -28,7 +29,7 @@ A copy of the license is available at https://github.com/tailwindlabs/heroicons/
 </head>
 <body>
 <main>
-    <header class="catalog-header floating">
+    <header class="catalog-header navbar floating">
         <a class="catalog-brand" href="#">Custom CSS</a>
         <nav aria-label="Catalog">
             <a href="#components">Palette</a>
@@ -48,7 +49,7 @@ A copy of the license is available at https://github.com/tailwindlabs/heroicons/
             <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z" clip-rule="evenodd"/>
         </symbol>
     </svg>
-    <details class="theme-switch" data-selected="auto">
+    <details class="theme-switch small" data-selected="auto">
         <summary class="theme-switch-summary" aria-label="Choose theme">
             <svg data-theme-icon="light" aria-hidden="true"><use href="#theme-light"/></svg>
             <svg data-theme-icon="auto" aria-hidden="true"><use href="#theme-auto"/></svg>
@@ -78,13 +79,13 @@ A copy of the license is available at https://github.com/tailwindlabs/heroicons/
             <h1>Good defaults.<br>Room to make it yours.</h1>
             <p>A quiet, adaptable foundation for the everyday web.</p>
         </div>
-        <div class="intro-guide">
+        <nav class="intro-guide toc small" aria-label="Explore the catalogue">
             <p>Explore the details.</p>
             <a href="#components"><span>01</span> Find your tone <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 8-8M4 4h8v8"/></svg></a>
             <a href="#specs"><span>02</span> Try the controls <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 8-8M4 4h8v8"/></svg></a>
             <a href="#content"><span>03</span> See it come together <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 8-8M4 4h8v8"/></svg></a>
             <small class="muted">Hover or focus a component to see its HTML and classes.</small>
-        </div>
+        </nav>
     </div>
     <hr>
     <section class="panel" id="components">
