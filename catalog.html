@@ -263,7 +263,7 @@ A copy of the license is available at https://github.com/tailwindlabs/heroicons/
         <div class="panel-head">
             <div><span class="section-number">03 / IN CONTEXT</span><h2>Better together.</h2></div>
             <label class="tone-picker" for="content-tone">Tone
-                <select id="content-tone" class="small rounded" name="content-tone">
+                <select id="content-tone" class="small" name="content-tone">
                     <option value="default">Default</option>
                     <option value="note">Note</option>
                     <option value="info">Info</option>
@@ -320,19 +320,20 @@ A copy of the license is available at https://github.com/tailwindlabs/heroicons/
                     <label><input type="radio" name="publishing"> Publish directly</label>
                 </fieldset>
                 <label>Description<textarea name="description" rows="3" placeholder="A few words about your project"></textarea></label>
-                <div class="review-setting">
-                    <label for="project-reviewers">Reviewers</label>
-                    <div class="stepper small rounded">
-                        <button type="button" class="ghost" data-step="-1" aria-label="Remove a reviewer"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3.5 8h9"/></svg></button>
-                        <input id="project-reviewers" type="number" min="1" max="8" value="2">
-                        <button type="button" class="ghost" data-step="1" aria-label="Add a reviewer"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3.5 8h9M8 3.5v9"/></svg></button>
+                <fieldset class="form-settings">
+                    <legend>Project settings</legend>
+                    <div class="review-setting">
+                        <label for="project-reviewers">Reviewers</label>
+                        <div class="stepper small rounded">
+                            <button type="button" class="ghost" data-step="-1" aria-label="Remove a reviewer"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3.5 8h9"/></svg></button>
+                            <input id="project-reviewers" type="number" min="1" max="8" value="2">
+                            <button type="button" class="ghost" data-step="1" aria-label="Add a reviewer"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M3.5 8h9M8 3.5v9"/></svg></button>
+                        </div>
                     </div>
-                </div>
-                <label>Cover image<input type="file" name="cover" accept="image/*"></label>
-                <div class="button-row">
-                    <label><input type="checkbox" class="toggle small rounded" name="updates" checked> Project updates</label>
+                    <label><input type="checkbox" class="toggle small rounded" name="updates" checked> Updates</label>
                     <label><input type="checkbox" class="toggle small rounded" name="digest"> Weekly digest</label>
-                </div>
+                </fieldset>
+                <label>Cover image<input type="file" name="cover" accept="image/*"></label>
                 <div class="button-row">
                     <button type="submit" class="rounded">Create project</button>
                     <button type="button" class="ghost rounded">Save draft</button>

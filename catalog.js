@@ -80,7 +80,7 @@
         const update = () => {
             frame = null;
             const height = navigation.offsetHeight;
-            navigation.style.setProperty("--catalog-scroll", Math.min(1, Math.max(0, scrollY / 64)));
+            navigation.toggleAttribute("data-scrolled", scrollY >= 24);
             root.style.setProperty("--scroll-offset", height + "px");
             let active = -1;
             sections.forEach((section, index) => {
@@ -100,6 +100,7 @@
         window.addEventListener("scroll", schedule, { passive: true });
         window.addEventListener("pageshow", schedule);
         update();
+        requestAnimationFrame(() => navigation.classList.add("is-ready"));
     };
 
     const setupTooltips = () => {

@@ -26,45 +26,40 @@ main {
     align-items: center;
     gap: 1rem;
     font-size: 1rem;
-    inline-size: 100vw;
-    margin-inline: calc(50% - 50vw);
-    padding-inline: max(1.25rem, calc((100vw - var(--content-width)) / 2));
+    inline-size: 100%;
+    margin-inline: 0;
+    padding-inline: 0;
     border-inline-color: transparent;
     border-block-color: color-mix(in oklab, var(--color-border) 48%, transparent);
     border-radius: 0;
 }
 
-.catalog-header {
-    animation: catalog-reveal 1s linear both paused;
-    animation-delay: calc(var(--catalog-scroll, 0) * -1s);
-    border-block-start-color: transparent;
+.catalog-header.is-ready {
+    transition: inline-size var(--duration-normal) var(--ease-standard),
+                margin-inline var(--duration-normal) var(--ease-standard),
+                padding-inline var(--duration-normal) var(--ease-standard);
+}
+
+.catalog-header[data-scrolled] {
+    inline-size: 100vw;
+    margin-inline: calc(50% - 50vw);
+    padding-inline: max(1.25rem, calc((100vw - var(--content-width)) / 2));
 }
 
 .catalog-header::before {
     animation: none;
-    opacity: var(--catalog-scroll, 0);
-    border-block-start-color: transparent;
+    border: 0;
+    border-block-end: 1px solid var(--color-border);
+    opacity: 0;
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .catalog-header {
-        animation-timing-function: steps(1, end);
-    }
+.catalog-header.is-ready::before {
+    transition: opacity var(--duration-normal) var(--ease-standard),
+                box-shadow var(--duration-normal) var(--ease-standard);
 }
 
-@keyframes catalog-reveal {
-    from {
-        inline-size: 100%;
-        margin-inline: 0;
-        padding-inline: 0;
-        border-block-end-color: var(--color-border);
-    }
-    to {
-        inline-size: 100vw;
-        margin-inline: calc(50% - 50vw);
-        padding-inline: max(1.25rem, calc((100vw - var(--content-width)) / 2));
-        border-inline-color: transparent;
-    }
+.catalog-header[data-scrolled]::before {
+    opacity: 1;
 }
 
 .catalog-brand {
@@ -362,9 +357,26 @@ main {
 }
 
 .review-setting {
-    display: grid;
-    justify-items: start;
+    display: flex;
+    align-items: center;
     gap: .5rem;
+}
+
+.form-settings {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: .75rem;
+    padding: 0;
+    border: 0;
+}
+
+.form-settings > legend {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
 }
 
 .choice-stack {
