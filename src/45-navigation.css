@@ -232,7 +232,7 @@
 
     .toc {
         display: grid;
-        gap: .65em;
+        gap: 1.125em;
         inline-size: 100%;
         min-inline-size: 0;
         border-radius: var(--radius-control);
@@ -243,14 +243,12 @@
         align-items: center;
         gap: 1em;
         min-block-size: var(--control-height);
-        padding: .65em .25em;
+        padding: .3em 0 .8em;
         border-radius: inherit;
         border-block-end: 1px solid var(--color-border);
         text-decoration: none;
         color: var(--color-text);
-        transition: color var(--duration-fast) var(--ease-functional),
-                    border-color var(--duration-fast) var(--ease-functional),
-                    background-color var(--duration-fast) var(--ease-functional);
+        transition: color var(--duration-fast) var(--ease-functional);
     }
 
     .toc > a span:first-child {
@@ -266,19 +264,15 @@
         fill: none;
         flex: none;
         color: var(--color-text-muted);
-        transition: color var(--duration-fast) var(--ease-functional),
-                    transform var(--duration-fast) var(--ease-functional);
+        transition: color var(--duration-fast) var(--ease-functional);
     }
 
     .toc > a:is(:hover, :focus-visible, [aria-current]:not([aria-current="false"])) {
         color: var(--color-link-hover);
-        border-color: var(--color-text-muted);
-        background-color: color-mix(in oklab, var(--color-surface-muted) 35%, transparent);
     }
 
     .toc > a:is(:hover, :focus-visible, [aria-current]:not([aria-current="false"])) svg {
         color: currentColor;
-        transform: translate(.1em, -.1em);
     }
 
     .toc > :is(p, small) {
@@ -287,11 +281,11 @@
     }
 
     .toc > p {
-        padding-block-end: .35em;
+        padding-block-end: .5em;
     }
 
     .toc > small {
-        padding-block-start: .5em;
+        padding-block-start: .625em;
     }
 
     .theme-switch-button:disabled {

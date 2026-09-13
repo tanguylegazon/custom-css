@@ -58,6 +58,8 @@ Filled buttons use light palette levels 9 and 10 in both modes, with white text 
 ## Form labels
 
 Single-line controls share the button height through `--control-height`: 2.5em in small, 2.625em by default and 2.667em in large.
+Stepper inputs reserve four character widths for their content by default.
+Override `--stepper-input-width` on the stepper when a wider numeric range is needed.
 Fields, selects, file inputs, toggles and steppers use the same scale. Multiline content remains content-sized.
 
 Use `.toggle` on a checkbox inside its label to display a selectable button with a native check indicator:

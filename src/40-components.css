@@ -9,6 +9,7 @@
 @layer components {
     .stepper {
         --stepper-radius: var(--radius-control);
+        --stepper-input-width: 4ch;
         --stepper-inner-height: calc(var(--control-height) - .4em - 2px);
         display: inline-flex;
         align-items: center;
@@ -30,7 +31,7 @@
     }
 
     .stepper > input {
-        inline-size: 4ch;
+        inline-size: calc(var(--stepper-input-width) + .8em + 2px);
         min-inline-size: 0;
         block-size: var(--stepper-inner-height);
         min-block-size: 0;
