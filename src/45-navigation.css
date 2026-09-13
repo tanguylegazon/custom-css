@@ -123,8 +123,7 @@
         list-style: none;
         cursor: pointer;
         box-shadow: none;
-        transition: color var(--duration-fast) var(--ease-functional),
-                    background-color var(--duration-fast) var(--ease-functional);
+        transition: color var(--duration-fast) var(--ease-functional);
     }
 
     .theme-switch-summary::-webkit-details-marker {
@@ -270,7 +269,6 @@
 
     .toc > a:is(:hover, :focus-visible, [aria-current]:not([aria-current="false"])) {
         color: var(--color-link-hover);
-        background-color: color-mix(in oklab, var(--color-surface-muted) 45%, transparent);
     }
 
     .toc > a:is(:hover, :focus-visible, [aria-current]:not([aria-current="false"])) svg {
