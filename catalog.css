@@ -524,15 +524,6 @@ main {
         grid-column: 1 / -1;
     }
 
-    .catalog-header {
-        flex-wrap: wrap;
-        gap: .5rem;
-    }
-
-    .theme-control {
-        margin-inline-start: auto;
-    }
-
     .panel-head {
         flex-wrap: wrap;
     }

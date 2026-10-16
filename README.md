@@ -197,6 +197,9 @@ page crosses your threshold, and `is-ready` after setting its initial state to
 enable transitions without animating scroll restoration.
 The optional `--navbar-expanded-width`, `--navbar-expanded-margin` and
 `--navbar-expanded-padding` properties control expansion within your layout.
+Set `data-wrapped` when the combined widths of the brand, navigation, controls and gaps
+exceed the available header width. This moves the navigation to a centered second row.
+The catalogue measures these widths with its existing resize observer.
 
 ## Theme switch
 

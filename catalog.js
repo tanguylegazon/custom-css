@@ -81,11 +81,21 @@
         const navigation = document.querySelector(".catalog-header");
         if (!navigation) return;
         const links = Array.from(navigation.querySelectorAll('nav a[href^="#"]'));
+        const menu = navigation.querySelector("nav");
+        const controls = Array.from(navigation.children).filter(element => element !== menu);
         const sections = links.map(link => document.querySelector(link.hash));
         let frame;
 
         const update = () => {
             frame = null;
+            const style = getComputedStyle(navigation);
+            const menuStyle = getComputedStyle(menu);
+            const menuWidth = links.reduce((width, link) => width + link.getBoundingClientRect().width, 0)
+                + parseFloat(menuStyle.columnGap) * (links.length - 1);
+            const requiredWidth = controls.reduce((width, element) => width + element.getBoundingClientRect().width, menuWidth)
+                + parseFloat(style.columnGap) * controls.length;
+            const availableWidth = navigation.clientWidth - parseFloat(style.paddingInlineStart) - parseFloat(style.paddingInlineEnd);
+            navigation.toggleAttribute("data-wrapped", requiredWidth > availableWidth);
             const height = navigation.offsetHeight;
             navigation.toggleAttribute("data-scrolled", scrollY >= 24);
             root.style.setProperty("--scroll-offset", height + "px");
@@ -103,7 +113,7 @@
             if (!frame) frame = requestAnimationFrame(update);
         };
         const observer = new ResizeObserver(schedule);
-        [navigation, ...sections].filter(Boolean).forEach(element => observer.observe(element));
+        [navigation, ...controls, ...links, ...sections].filter(Boolean).forEach(element => observer.observe(element));
         window.addEventListener("scroll", schedule, { passive: true });
         window.addEventListener("pageshow", schedule);
         update();
