@@ -31,7 +31,7 @@ main {
 }
 
 .catalog-footer {
-    margin-block-start: clamp(3rem, 8vw, 6rem);
+    margin-block-start: 2rem;
     padding-inline: max(1.25rem, calc((100% - var(--content-width)) / 2));
 }
 
