@@ -41,6 +41,7 @@ A copy of the license is available at https://github.com/tailwindlabs/heroicons/
             <a href="#components">Palette</a>
             <a href="#specs">Controls</a>
             <a href="#content">In context</a>
+            <a href="#installation">Install</a>
         </nav>
 
 <div class="theme-control">
@@ -90,6 +91,7 @@ A copy of the license is available at https://github.com/tailwindlabs/heroicons/
             <a href="#components"><span>01</span> Find your tone <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 8-8M4 4h8v8"/></svg></a>
             <a href="#specs"><span>02</span> Try the controls <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 8-8M4 4h8v8"/></svg></a>
             <a href="#content"><span>03</span> See it come together <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 8-8M4 4h8v8"/></svg></a>
+            <a href="#installation"><span>04</span> Use it in your project <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 12 8-8M4 4h8v8"/></svg></a>
             <small class="muted">Hover a component to see its HTML and classes.</small>
         </nav>
     </div>
@@ -377,6 +379,21 @@ A copy of the license is available at https://github.com/tailwindlabs/heroicons/
             <p>Monday at 10:00. Bring your draft and a few questions for the team.</p>
             <button type="button" class="soft rounded" popovertarget="review-schedule" popovertargetaction="hide">Close</button>
         </div>
+    </section>
+    <hr>
+    <section class="panel" id="installation">
+        <div class="panel-head">
+            <div><span class="section-number">04 / INSTALLATION</span><h2>One stylesheet to get started.</h2></div>
+            <p>Native HTML. No runtime dependencies.</p>
+        </div>
+        <p>Add this stylesheet to your HTML <code>&lt;head&gt;</code>, before your own CSS:</p>
+        <pre><code>&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/tanguylegazon/custom-css@dfdf1f3ed4a6fe4434e1aaa5d1ed3b12575ec559/custom.min.css"&gt;</code></pre>
+        <p class="muted">This URL pins a specific version. Update the commit hash when you choose to upgrade, or download the stylesheet to serve it locally.</p>
+        <p>Use native elements and add classes for size, tone and shape:</p>
+        <pre><code>&lt;button class="small rounded success"&gt;Save changes&lt;/button&gt;
+&lt;label&gt;&lt;input type="checkbox" class="toggle rounded"&gt; Notifications&lt;/label&gt;</code></pre>
+        <p>The stylesheet follows the system color scheme. Set <code>data-theme="light"</code> or <code>data-theme="dark"</code> on <code>&lt;html&gt;</code> to choose a theme explicitly. Interactive examples such as steppers and the theme selector use page-specific JavaScript.</p>
+        <p><a href="https://github.com/tanguylegazon/custom-css#readme" target="_blank" rel="noopener noreferrer">Read the documentation on GitHub</a> for components, customization and the MIT license.</p>
     </section>
 </main>
 <footer class="catalog-footer">

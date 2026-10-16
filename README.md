@@ -18,7 +18,7 @@ look that can be used alongside other user specific CSS files.
 - `tools/`: Palette generator, report and development dependencies.
 
 The source files are concatenated and minified by GitHub Actions. The generated distribution files are published on the
-`dist` branch.
+`dist` branch, alongside the catalogue's `index.html`, `catalog.css`, `catalog.js`, and license.
 Node packages are development-only and generate or verify the palette. The workflow pins its minifier separately.
 The published stylesheet has no runtime dependency, and `node_modules` remains ignored.
 
@@ -350,6 +350,15 @@ To use this custom CSS in your project, you can either:
    ```
 
 For stable production styling, replace `dist` with a specific tag or commit.
+
+## Catalogue
+
+The catalogue is available at [tanguy-bonandrini.fr/custom-css/](https://tanguy-bonandrini.fr/custom-css/).
+Open `catalog.html` to preview the source stylesheets locally. The distribution's `index.html` uses the compiled
+stylesheet from the same build.
+
+Portfolio includes the `dist` branch as a Git submodule at a reviewed commit. Updating Custom CSS does not automatically
+update the hosted catalogue; update the submodule reference in Portfolio to publish a new version.
 
 ## License
 

@@ -46,12 +46,22 @@ jobs:
           cat src/*.css > custom.css
           npx --yes csso-cli@4.0.2 -i "custom.css" -o "custom.min.css" --comments first-exclamation
 
+      - name: Build catalogue
+        run: |
+          node --input-type=module <<'JS'
+          import {readFileSync, writeFileSync} from 'node:fs';
+          const source = readFileSync('catalog.html', 'utf8');
+          const catalog = source.replace(/(?:[ \t]*<link rel="stylesheet" href="src\/[^"\r\n]+\.css">\r?\n)+/, '    <link rel="stylesheet" href="custom.min.css">\n');
+          if (catalog === source) throw new Error('Catalogue source stylesheets not found');
+          writeFileSync('index.html', catalog);
+          JS
+
       - name: Push to distribution branch
         run: |
           git config --local user.name "github-actions[bot]"
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout --orphan dist
           git reset
-          git add -f custom.min.css
-          git commit -m "[bot] Build CSS files"
+          git add -f custom.min.css index.html catalog.css catalog.js LICENSE
+          git commit -m "[bot] Build distribution files"
           git push --force origin dist
