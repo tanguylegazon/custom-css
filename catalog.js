@@ -139,12 +139,12 @@
 
     const setupTooltips = () => {
         const classes = ["note", "info", "warning", "danger", "success", "soft", "ghost", "rounded", "rounded-full", "small", "sm", "large", "lg", "muted", "toggle", "stepper"];
-        const scope = document.querySelectorAll(":is(#components, #specs) .tooltip");
+        const scope = document.querySelectorAll(":is(#palette, #controls) .tooltip");
         scope.forEach((element) => {
             element.classList.remove("tooltip");
             delete element.dataset.tooltip;
         });
-        document.querySelectorAll(":is(#components, #specs) :is(button, input, select, textarea, a, code, kbd, .stepper)").forEach((element) => {
+        document.querySelectorAll(":is(#palette, #controls) :is(button, input, select, textarea, a, code, kbd, .stepper)").forEach((element) => {
             const names = Array.from(element.classList).filter(name => classes.includes(name));
             const type = element.localName === "input" ? 'input[type="' + element.type + '"]' : element.localName;
             const state = element.matches(":disabled") ? " disabled" : "";
