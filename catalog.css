@@ -26,14 +26,8 @@ main {
     border-radius: 0;
 }
 
-.catalog-header .theme-switch {
+.theme-control .theme-switch {
     font-size: .8125rem;
-}
-
-.catalog-brand {
-    color: var(--color-text);
-    font-weight: 600;
-    text-decoration: none;
 }
 
 .catalog-footer {
@@ -83,11 +77,11 @@ main {
 }
 
 .catalog-intro {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 18rem;
-    align-items: end;
-    gap: 3rem;
-    padding-block: clamp(3rem, 7vw, 6rem);
+    --toc-width: 18rem;
+}
+
+.catalog-intro > div {
+    flex-basis: 20rem;
 }
 
 .catalog-intro h1 {
@@ -156,14 +150,10 @@ main {
     background-color: var(--color-bg);
 }
 
-
-
 .tone-card h3, .spec-card h3 {
     margin: 0;
     font-size: 1.125rem;
 }
-
-
 
 .tone-card > p, .spec-card > p {
     margin-block: .5rem 1.25rem;
@@ -492,15 +482,6 @@ main {
 @media (max-width: 48rem) {
     :root {
         --scroll-offset: 6rem;
-    }
-
-    .catalog-intro {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-    }
-
-    .intro-guide {
-        max-inline-size: 24rem;
     }
 
     .tone-grid, .spec-grid {

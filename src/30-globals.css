@@ -168,9 +168,12 @@
     }
 
     svg {
-        fill: currentColor;
         overflow: visible;
         height: .9lh;
+    }
+
+    svg:not([fill]) {
+        fill: currentColor;
     }
 
     @media (prefers-reduced-motion: reduce) {

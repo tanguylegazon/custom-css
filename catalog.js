@@ -18,8 +18,6 @@
         }
     };
 
-    applyTheme(readTheme());
-
     const setupThemeSwitch = () => {
         const buttons = Array.from(document.querySelectorAll(".theme-switch-button"));
         const groups = Array.from(document.querySelectorAll(".theme-switch"));
@@ -49,9 +47,7 @@
                 try {
                     if (theme === "auto") localStorage.removeItem(storageKey);
                     else localStorage.setItem(storageKey, theme);
-                } catch (_) {
-                    // Theme switching remains available without storage.
-                }
+                } catch (_) {}
             });
         });
 
@@ -83,19 +79,37 @@
         const links = Array.from(navigation.querySelectorAll('nav a[href^="#"]'));
         const menu = navigation.querySelector("nav");
         const controls = Array.from(navigation.children).filter(element => element !== menu);
+        const themeControl = navigation.querySelector(".theme-control");
+        const footer = document.querySelector(".catalog-footer");
         const sections = links.map(link => document.querySelector(link.hash));
         let frame;
+        let layoutChanged = true;
 
-        const update = () => {
-            frame = null;
+        const updateLayout = () => {
             const style = getComputedStyle(navigation);
             const menuStyle = getComputedStyle(menu);
+            const gap = parseFloat(style.columnGap);
+            const themeWidth = themeControl.getBoundingClientRect().width;
             const menuWidth = links.reduce((width, link) => width + link.getBoundingClientRect().width, 0)
                 + parseFloat(menuStyle.columnGap) * (links.length - 1);
             const requiredWidth = controls.reduce((width, element) => width + element.getBoundingClientRect().width, menuWidth)
-                + parseFloat(style.columnGap) * controls.length;
+                + gap * controls.length;
             const availableWidth = navigation.clientWidth - parseFloat(style.paddingInlineStart) - parseFloat(style.paddingInlineEnd);
-            navigation.toggleAttribute("data-wrapped", requiredWidth > availableWidth);
+            const compact = requiredWidth > availableWidth;
+            const visibleWidth = compact ? requiredWidth - themeWidth - gap : requiredWidth;
+            const themeParent = compact ? footer : navigation;
+            if (themeControl.parentElement !== themeParent) {
+                themeControl.querySelector("details").open = false;
+                themeParent.append(themeControl);
+            }
+            navigation.toggleAttribute("data-wrapped", visibleWidth > availableWidth);
+        };
+        const update = () => {
+            frame = null;
+            if (layoutChanged) {
+                layoutChanged = false;
+                updateLayout();
+            }
             const height = navigation.offsetHeight;
             navigation.toggleAttribute("data-scrolled", scrollY >= 24);
             root.style.setProperty("--scroll-offset", height + "px");
@@ -112,7 +126,10 @@
         const schedule = () => {
             if (!frame) frame = requestAnimationFrame(update);
         };
-        const observer = new ResizeObserver(schedule);
+        const observer = new ResizeObserver(() => {
+            layoutChanged = true;
+            schedule();
+        });
         [navigation, ...controls, ...links, ...sections].filter(Boolean).forEach(element => observer.observe(element));
         window.addEventListener("scroll", schedule, { passive: true });
         window.addEventListener("pageshow", schedule);
@@ -188,21 +205,10 @@
         syncTone(picker.value);
     };
 
-    if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", () => {
-            setupNavigation();
-            setupThemeSwitch();
-            setupTonePicker();
-            setupTooltips();
-            setupSteppers();
-            setupValidation();
-        });
-    } else {
-        setupNavigation();
-        setupThemeSwitch();
-        setupTonePicker();
-        setupTooltips();
-        setupSteppers();
-        setupValidation();
-    }
+    setupNavigation();
+    setupThemeSwitch();
+    setupTonePicker();
+    setupTooltips();
+    setupSteppers();
+    setupValidation();
 })();

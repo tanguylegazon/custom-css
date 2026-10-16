@@ -7,6 +7,7 @@ on:
       - main
     paths:
       - 'src/*.css'
+      - 'catalog.*'
       - 'tools/**'
       - '.github/workflows/distribute.yaml'
 
@@ -24,10 +25,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
 
       - name: Install Node.js
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
         with:
           node-version: 24
 
@@ -36,6 +37,9 @@ jobs:
 
       - name: Verify generated palette
         run: npm --prefix tools run palette:check
+
+      - name: Check catalogue script
+        run: node --check catalog.js
 
       - name: Build CSS files
         run: |

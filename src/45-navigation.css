@@ -20,6 +20,16 @@
         border-block-start-color: transparent;
     }
 
+    .navbar:has(> nav) {
+        column-gap: 2rem;
+    }
+
+    .navbar > a:first-child {
+        color: var(--color-text);
+        font-weight: 600;
+        text-decoration: none;
+    }
+
     .navbar.is-ready {
         transition: inline-size var(--duration-normal) var(--ease-emphasized),
                     margin-inline var(--duration-normal) var(--ease-emphasized),
@@ -74,6 +84,11 @@
     .navbar .theme-switch {
         --theme-menu-start: auto;
         --theme-menu-end: 0px;
+    }
+
+    footer .theme-switch {
+        --theme-menu-top: auto;
+        --theme-menu-bottom: calc(100% + .75em);
     }
 
     .navbar[data-wrapped] > nav {
@@ -244,6 +259,22 @@
 
     .theme-switch-button[aria-pressed="true"]::after {
         opacity: .8;
+    }
+
+    .intro {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 3rem;
+        padding-block: clamp(3rem, 7vw, 6rem);
+    }
+
+    .intro > div {
+        flex: 2 1 min-content;
+    }
+
+    .intro > .toc {
+        flex: 1 1 var(--toc-width, 12rem);
     }
 
     .toc {

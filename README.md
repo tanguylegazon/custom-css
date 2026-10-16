@@ -199,7 +199,10 @@ The optional `--navbar-expanded-width`, `--navbar-expanded-margin` and
 `--navbar-expanded-padding` properties control expansion within your layout.
 Set `data-wrapped` when the combined widths of the brand, navigation, controls and gaps
 exceed the available header width. This moves the navigation to a centered second row.
-The catalogue measures these widths with its existing resize observer.
+The first direct child link receives the brand styling. Headers with a navigation reserve a 2rem column gap.
+The catalogue measures the content with a resize observer and moves its theme control to the footer
+before wrapping the navigation. The same control is moved back when there is enough room.
+Scroll events update the active section without remeasuring the controls.
 
 ## Theme switch
 
@@ -242,8 +245,7 @@ Use native `disabled` on unavailable options; `details` has no native disabled s
 Place the menu away from clipping containers and viewport edges.
 The menu opens from the start edge, or the end edge inside a navbar.
 Override `--theme-menu-start` / `--theme-menu-end` for horizontal alignment.
-For a footer, set `--theme-menu-top: auto` and
-`--theme-menu-bottom: calc(100% + .75em)` to open it upward.
+Inside a footer, the menu opens upward automatically.
 
 ## Table of contents
 
@@ -251,6 +253,10 @@ Use `toc` on a labelled navigation element. Numbering and icons are optional.
 It fills the available width; constrain its parent or its own width to suit the layout.
 Size utilities adjust its typography and rhythm. Separator rows remain square.
 Use `aria-current="location"` for the current destination when tracking sections.
+
+Wrap an introductory `div` and a `.toc` in `.intro` for a vertically centered, wrapping layout.
+The contents determine when the columns stack. The table of contents starts at `--toc-width` (12rem by default)
+and grows with the available space; use a larger value for longer entries, as in the catalogue.
 
 ```html
 <nav class="toc small" aria-label="On this page">
