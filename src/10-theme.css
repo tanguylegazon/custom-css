@@ -1,129 +1,105 @@
 /*!
- * This Software is licensed under the terms of the MIT License.
+ * This material is licensed under the terms of the MIT License.
  * A copy of the license is available at https://github.com/tanguylegazon/custom-css/blob/main/LICENSE.
  */
 
-@media (prefers-color-scheme: light) {
+@layer theme {
     :root {
-        /* Neutral */
-        --color-neutral-primary: black;
-        --color-neutral-secondary: grey;
-        --color-neutral-surface: white;
-        --color-neutral-on: black;
-        --color-neutral-on-surface: black;
-        --color-neutral-on-primary: white;
+        /* Status */
+        --color-error: light-dark(var(--palette-light-danger-9), var(--palette-dark-danger-9));
+        --color-positive: light-dark(var(--palette-light-success-9), var(--palette-dark-success-9));
+        --color-caution: light-dark(var(--palette-light-warning-9), var(--palette-dark-warning-9));
 
-        /* Note */
-        --color-note-primary: #475569; /* slate-600 */
-        --color-note-secondary: #b5c1d0; /* slate-340 */
-        --color-note-surface: #e9eef4; /* slate-150 */
-        --color-note-on: var(--color-note-primary);
-        --color-note-on-surface: #374559; /* slate-680 */
-        --color-note-on-primary: #fbfcfd; /* slate-030 */
+        /* Typography */
+        --font-sans: system-ui, sans-serif;
+        --font-mono: ui-monospace, monospace;
+        --font-size-sm: .875rem;
+        --font-size-md: 1rem;
+        --font-size-lg: 1.125rem;
+        --control-height: 2.625em;
+        --font-size-h1: clamp(2.5rem, 1.5rem + 3vw, 5rem);
+        --font-size-h2: clamp(1.875rem, 1.4rem + 1.6vw, 3rem);
+        --font-size-h3: clamp(1.25rem, 1.1rem + .6vw, 1.75rem);
+        --line-height-body: 1.6;
+        --line-height-heading: 1.08;
 
-        /* Info */
-        --color-info-primary: #2563eb; /* blue-600 */
-        --color-info-secondary: #80b8fc; /* blue-340 */
-        --color-info-surface: #e3effe; /* blue-080 */
-        --color-info-on: var(--color-info-primary);
-        --color-info-on-surface: #1f52dc; /* blue-680 */
-        --color-info-on-primary: #f5faff; /* blue-030 */
+        /* Layout and shape */
+        --content-width: 75rem;
+        --reading-width: 65ch;
+        --space-flow: 1.25rem;
+        --scroll-offset: 0px;
+        --radius-control: .1875rem;
+        --radius-rounded: .625rem;
+        --radius-full: 9999px;
 
-        /* Warning */
-        --color-warning-primary: #d97706; /* amber-600 */
-        --color-warning-secondary: #fdaa5e; /* orange-340 */
-        --color-warning-surface: #fff6d5; /* amber-080 */
-        --color-warning-on: var(--color-warning-primary);
-        --color-warning-on-surface: #bb5a09; /* amber-680 */
-        --color-warning-on-primary: #fffdf3; /* amber-030 */
+        /* Motion */
+        --duration-instant: 0ms;
+        --duration-quick: 100ms;
+        --duration-fast: 150ms;
+        --duration-normal: 200ms;
+        --duration-slow: 300ms;
+        --duration-slower: 400ms;
+        --ease-standard: cubic-bezier(.2, 0, .38, .9);
+        --ease-enter: cubic-bezier(0, 0, .38, .9);
+        --ease-exit: cubic-bezier(.2, 0, 1, .9);
+        --ease-emphasized: cubic-bezier(.4, .14, .3, 1);
+        --ease-functional: var(--ease-standard);
 
-        /* Danger */
-        --color-danger-primary: #dc2626; /* red-600 */
-        --color-danger-secondary: #fb9190; /* red-340 */
-        --color-danger-surface: #fee8e8; /* red-080 */
-        --color-danger-on: var(--color-danger-primary);
-        --color-danger-on-surface: #c01e1e; /* red-670 */
-        --color-danger-on-primary: #fef7f7; /* red-030 */
+        color-scheme: light dark;
 
-        /* Success */
-        --color-success-primary: #16a34a; /* green-600 */
-        --color-success-secondary: #5adfab; /* emerald-340 */
-        --color-success-surface: #e4fcec; /* green-080 */
-        --color-success-on: var(--color-success-primary);
-        --color-success-on-surface: #158740; /* green-680 */
-        --color-success-on-primary: #f6fef8; /* green-030 */
-
-        /* Theme */
-        --theme-body-gradient: radial-gradient(circle at 60% 0, #fbedff /* fuchsia-080 */ 0%, #fdfdff /* violet-010 */ 42%);
-        --theme-body-pattern-color: rgba(91, 33, 182, .22); /* violet-800 */
-        --theme-body-noise-blend: multiply;
-        --theme-body-noise-opacity: 0.08;
+        /* Default palette */
+        --tone-1: light-dark(var(--palette-light-neutral-1), var(--palette-dark-neutral-1));
+        --tone-2: light-dark(var(--palette-light-neutral-2), var(--palette-dark-neutral-2));
+        --tone-3: light-dark(var(--palette-light-neutral-3), var(--palette-dark-neutral-3));
+        --tone-4: light-dark(var(--palette-light-neutral-4), var(--palette-dark-neutral-4));
+        --tone-5: light-dark(var(--palette-light-neutral-5), var(--palette-dark-neutral-5));
+        --tone-6: light-dark(var(--palette-light-neutral-6), var(--palette-dark-neutral-6));
+        --tone-7: light-dark(var(--palette-light-neutral-7), var(--palette-dark-neutral-7));
+        --tone-8: light-dark(var(--palette-light-neutral-8), var(--palette-dark-neutral-8));
+        --tone-9: light-dark(var(--palette-light-neutral-9), var(--palette-dark-neutral-9));
+        --tone-10: light-dark(var(--palette-light-neutral-10), var(--palette-dark-neutral-10));
+        --tone-11: light-dark(var(--palette-light-neutral-11), var(--palette-dark-neutral-11));
+        --tone-12: light-dark(var(--palette-light-neutral-12), var(--palette-dark-neutral-12));
     }
-}
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        /* Neutral */
-        --color-neutral-primary: white;
-        --color-neutral-secondary: grey;
-        --color-neutral-surface: black;
-        --color-neutral-on: white;
-        --color-neutral-on-surface: white;
-        --color-neutral-on-primary: black;
+    :where(:root, .note, .info, .warning, .danger, .success, label:has(> :is(input, select, textarea, progress, meter):is(.note, .info, .warning, .danger, .success))) {
+        /* Semantic roles */
+        --color-bg: var(--tone-1);
+        --color-surface: var(--tone-2);
+        --color-surface-muted: var(--tone-3);
+        --color-accent-soft: var(--tone-3);
+        --color-accent-soft-hover: var(--tone-4);
+        --color-border: var(--tone-5);
+        --color-border-strong: var(--tone-7);
+        --color-accent: var(--tone-9);
+        --color-accent-hover: var(--tone-10);
+        --color-link-hover: light-dark(var(--tone-11), var(--tone-10));
+        --color-button: var(--palette-light-neutral-9);
+        --color-button-hover: var(--palette-light-neutral-10);
+        --color-field-surface: color-mix(in oklab, var(--tone-2) 86%, light-dark(oklch(.99 0 0), oklch(.16 0 0)) 14%);
+        --color-field-border: color-mix(in oklab, var(--tone-7) 82%, light-dark(oklch(.5 0 0), oklch(.62 0 0)) 18%);
+        --color-field-text: color-mix(in oklab, var(--tone-12) 90%, light-dark(oklch(.12 0 0), oklch(.96 0 0)) 10%);
+        --color-field-muted: color-mix(in oklab, var(--tone-11) 85%, light-dark(oklch(.3 0 0), oklch(.78 0 0)) 15%);
+        --color-field-focus: color-mix(in oklab, var(--tone-9) 90%, light-dark(oklch(.35 0 0), oklch(.78 0 0)) 10%);
+        --color-text-muted: color-mix(in oklab, var(--tone-11) 12%, light-dark(var(--palette-light-neutral-9), var(--palette-dark-neutral-9)));
+        --color-text: var(--tone-12);
+        --color-accent-contrast: #fff;
+        --color-focus-ring: var(--tone-9);
+        --color-disabled-bg: color-mix(in oklab, var(--tone-3) 20%, light-dark(var(--palette-light-neutral-3), var(--palette-dark-neutral-3)));
+        --color-disabled-text: color-mix(in oklab, var(--tone-7) 20%, light-dark(var(--palette-light-neutral-7), var(--palette-dark-neutral-7)));
+        --color-disabled-border: color-mix(in oklab, var(--tone-5) 20%, light-dark(var(--palette-light-neutral-5), var(--palette-dark-neutral-5)));
 
-        /* Note */
-        --color-note-primary: #36309c; /* indigo-820 */
-        --color-note-secondary: #3932ab; /* indigo-780 */
-        --color-note-surface: #0c0715; /* indigo-990 */
-        --color-note-on: #acbafc; /* indigo-280 */
-        --color-note-on-surface: #d6dfff; /* indigo-140 */
-        --color-note-on-primary: #f5f7ff; /* indigo-030 */
-
-        /* Info */
-        --color-info-primary: #065c8b; /* sky-780 */
-        --color-info-secondary: #0b4d73; /* sky-880 */
-        --color-info-surface: #070e14; /* sky-990 */
-        --color-info-on: #8bd7fc; /* sky-280 */
-        --color-info-on-surface: #d1edfe; /* sky-140 */
-        --color-info-on-primary: #f6fbff; /* sky-030 */
-
-        /* Warning */
-        --color-warning-primary: #8b510d; /* yellow-780 */
-        --color-warning-secondary: #754211; /* yellow-880 */
-        --color-warning-surface: #150901; /* yellow-990 */
-        --color-warning-on: #fdd75a; /* amber-280 */
-        --color-warning-on-surface: #fff5ac; /* yellow-140 */
-        --color-warning-on-primary: #fffdf1; /* yellow-030 */
-
-        /* Danger */
-        --color-danger-primary: #a5123a; /* rose-780 */
-        --color-danger-secondary: #8d1337; /* rose-880 */
-        --color-danger-surface: #180506; /* rose-990 */
-        --color-danger-on: #feacb6; /* rose-280 */
-        --color-danger-on-surface: #ffdbde; /* rose-140 */
-        --color-danger-on-primary: #fff7f7; /* rose-030 */
-
-        /* Success */
-        --color-success-primary: #066449; /* emerald-780 */
-        --color-success-secondary: #06513d; /* emerald-880 */
-        --color-success-surface: #030d0a; /* emerald-990 */
-        --color-success-on: #7be9bc; /* emerald-280 */
-        --color-success-on-surface: #c1f7dd; /* emerald-140 */
-        --color-success-on-primary: #f4fef9; /* emerald-030 */
-
-        /* Theme */
-        --theme-body-gradient: radial-gradient(circle at 60% 0, #210f3d /* violet-960 */ -10%, #130e21 /* indigo-980 */ 38%);
-        --theme-body-pattern-color: rgba(224, 231, 255, .2); /* indigo-100 */
-        --theme-body-noise-blend: soft-light;
-        --theme-body-noise-opacity: 0.3;
+        /* Compatibility */
+        --color-text-contrast: var(--color-accent-contrast);
+        --color-on: var(--color-text);
+        --color-on-surface: var(--color-text);
     }
-}
 
-:root {
-    --color-primary: var(--color-neutral-primary);
-    --color-secondary: var(--color-neutral-secondary);
-    --color-surface: var(--color-neutral-surface);
-    --color-on: var(--color-neutral-on);
-    --color-on-primary: var(--color-neutral-on-primary);
-    --color-on-surface: var(--color-neutral-on-surface);
+    html[data-theme="light"] {
+        color-scheme: light;
+    }
+
+    html[data-theme="dark"] {
+        color-scheme: dark;
+    }
 }

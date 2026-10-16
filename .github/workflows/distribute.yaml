@@ -7,9 +7,15 @@ on:
       - main
     paths:
       - 'src/*.css'
+      - 'tools/**'
+      - '.github/workflows/distribute.yaml'
 
 permissions:
   contents: write
+
+concurrency:
+  group: distribution
+  cancel-in-progress: true
 
 jobs:
   distribute:
@@ -23,12 +29,18 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: 'latest'
+          node-version: 24
+
+      - name: Install development dependencies
+        run: npm --prefix tools ci
+
+      - name: Verify generated palette
+        run: npm --prefix tools run palette:check
 
       - name: Build CSS files
         run: |
           cat src/*.css > custom.css
-          npx csso-cli -i "custom.css" -o "custom.min.css" --comments first-exclamation
+          npx --yes csso-cli@4.0.2 -i "custom.css" -o "custom.min.css" --comments first-exclamation
 
       - name: Push to distribution branch
         run: |

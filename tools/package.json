@@ -1,0 +1,13 @@
+{
+    "name": "custom-css",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "palette": "node scripts/palette.mjs",
+        "palette:check": "node scripts/palette.mjs --check"
+    },
+    "devDependencies": {
+        "apca-w3": "0.1.9",
+        "culori": "4.0.2"
+    }
+}

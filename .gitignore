@@ -1,8 +1,2 @@
-*
-!.gitignore
-!.github/
-!.github/**
-!src/
-!src/**
-!README.md
-!LICENSE
+node_modules/
+.idea/

@@ -1,24 +1,118 @@
 /*!
- * This Software is licensed under the terms of the MIT License.
+ * This material is licensed under the terms of the MIT License.
  * A copy of the license is available at https://github.com/tanguylegazon/custom-css/blob/main/LICENSE.
  */
 
-.big {
-    font-size: 1.22rem;
-}
+@layer utilities {
+    .small, .sm {
+        --control-height: 2.5em;
+        font-size: var(--font-size-sm);
+    }
 
-.rounded {
-    border-radius: .75rem;
-    corner-shape: squircle;
-}
+    :where(button, input:not([type="checkbox"], [type="radio"], [type="range"], [type="color"], [type="hidden"], [type="image"]), textarea, select, details, fieldset):is(.small, .sm) {
+        padding: .5em .8em;
+    }
 
-.circle {
-    border-radius: 100%;
-}
+    :where(button, input:is([type="button"], [type="reset"], [type="submit"])):is(.small, .sm) {
+        min-block-size: var(--control-height);
+        padding: .45em .7em;
+    }
 
-.hidden {
-    height: 0 !important;
-    width: 0 !important;
-    overflow: hidden !important;
-    display: none !important;
+    :where(select:not([multiple], [size]), select[size="1"]):is(.small, .sm) {
+        padding-inline-end: 2.4em;
+    }
+
+    .large, .lg {
+        --control-height: 2.667em;
+        font-size: var(--font-size-lg);
+    }
+
+    :where(button, input:not([type="checkbox"], [type="radio"], [type="range"], [type="color"], [type="hidden"], [type="image"]), textarea, select, details, fieldset):is(.large, .lg) {
+        padding: .8em 1.5em;
+        gap: .9em;
+    }
+
+    :where(button, input:is([type="button"], [type="reset"], [type="submit"])):is(.large, .lg) {
+        padding-block: calc((var(--control-height) - 1.2em) / 2);
+    }
+
+    :where(input:not([type="button"], [type="submit"], [type="reset"], [type="checkbox"], [type="radio"], [type="range"], [type="color"], [type="hidden"], [type="image"]), textarea, select):is(.large, .lg) {
+        padding-inline: .85em;
+    }
+
+    :where(select:not([multiple], [size]), select[size="1"]):is(.large, .lg) {
+        padding-inline-end: 2.4em;
+    }
+
+    :where(input:not([type="button"], [type="submit"], [type="reset"], [type="checkbox"], [type="radio"], [type="range"], [type="color"], [type="hidden"], [type="image"]), textarea, select):is(.small, .sm, .large, .lg) {
+        padding-block: calc((var(--control-height) - 1.4em) / 2 - 1px);
+    }
+
+    :where(dialog, [popover]):is(.small, .sm) {
+        --overlay-padding: 1em;
+    }
+
+    :where(details, fieldset):is(.large, .lg) {
+        padding: 1em 1.5em;
+    }
+
+    :where(dialog, [popover]):is(.large, .lg) {
+        --overlay-padding: 2em;
+    }
+
+    .rounded {
+        border-radius: var(--radius-rounded);
+    }
+
+    .rounded-full {
+        border-radius: var(--radius-full);
+    }
+
+    :where(dialog, [popover]).rounded:not(.rounded-full) {
+        border-radius: calc(var(--radius-rounded) + var(--overlay-padding));
+    }
+
+    .hidden {
+        display: none !important;
+    }
+
+    :where(label:has(> input.toggle:is(.small, .sm))) {
+        --control-height: 2.5em;
+        font-size: var(--font-size-sm);
+        padding-inline: .8em;
+    }
+
+    :where(label:has(> input.toggle:is(.large, .lg))) {
+        --control-height: 2.667em;
+        font-size: var(--font-size-lg);
+        padding-inline: 1.1em;
+    }
+
+    :where(label:has(> input.toggle.rounded)) {
+        border-radius: var(--radius-rounded);
+    }
+
+    :where(label:has(> input.toggle.rounded-full)) {
+        border-radius: var(--radius-full);
+    }
+
+    .theme-switch:is(.small, .sm, .large, .lg) {
+        padding: 0;
+    }
+
+    .theme-switch.rounded {
+        --theme-switch-radius: var(--radius-rounded);
+    }
+
+    .theme-switch.rounded-full {
+        --theme-switch-radius: var(--radius-full);
+    }
+
+    .stepper.rounded {
+        --stepper-radius: var(--radius-rounded);
+    }
+
+    .stepper.rounded-full {
+        --stepper-radius: var(--radius-full);
+    }
 }
