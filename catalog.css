@@ -9,20 +9,20 @@
 }
 
 body {
-    padding: 0 1.25rem;
+    container-type: inline-size;
 }
 
 main {
-    inline-size: 100%;
+    inline-size: calc(100% - 2.5rem);
     max-inline-size: 75rem;
     margin-inline: auto;
     padding-block: 0;
 }
 
 .catalog-header {
-    --navbar-expanded-width: 100vw;
-    --navbar-expanded-margin: calc(50% - 50vw);
-    --navbar-expanded-padding: max(1.25rem, calc((100vw - var(--content-width)) / 2));
+    --navbar-expanded-width: 100cqw;
+    --navbar-expanded-margin: calc(50% - 50cqw);
+    --navbar-expanded-padding: max(1.25rem, calc((100cqw - var(--content-width)) / 2));
     border-radius: 0;
 }
 
@@ -37,10 +37,8 @@ main {
 }
 
 .catalog-footer {
-    inline-size: 100vw;
     margin-block-start: clamp(3rem, 8vw, 6rem);
-    margin-inline: calc(50% - 50vw);
-    padding-inline: max(1.25rem, calc((100vw - var(--content-width)) / 2));
+    padding-inline: max(1.25rem, calc((100% - var(--content-width)) / 2));
 }
 
 .catalog-footer p {
@@ -531,21 +529,12 @@ main {
         gap: .5rem;
     }
 
-    .catalog-header nav {
-        order: 3;
-        inline-size: 100%;
-    }
-
     .theme-control {
         margin-inline-start: auto;
     }
 
     .panel-head {
         flex-wrap: wrap;
-    }
-
-    .catalog-header nav {
-        gap: 1rem;
     }
 
     .panel {

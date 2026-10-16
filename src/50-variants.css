@@ -35,7 +35,18 @@
         outline: none;
     }
 
+    select.ghost:not(:disabled, :user-invalid, [aria-invalid="true"]) {
+        border-color: transparent;
+        background-color: transparent;
+        color: var(--color-text-muted);
+    }
+
     @media (hover: hover) {
+        select.ghost:not(:disabled, :user-invalid, [aria-invalid="true"]):hover {
+            background-color: var(--color-surface-muted);
+            color: var(--color-text);
+        }
+
         :where(label:has(> input[type="checkbox"].toggle:not(:disabled)):hover) {
             background-color: var(--color-accent-soft-hover);
         }

@@ -162,6 +162,8 @@ Buttons use a solid appearance by default and expose two visual variants:
 - `soft`
 - `ghost`
 
+Selects also support `ghost` for a muted, borderless control with a visible keyboard focus.
+
 Disabled controls use the native `disabled` attribute.
 
 ```html

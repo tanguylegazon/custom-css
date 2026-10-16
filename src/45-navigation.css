@@ -71,6 +71,14 @@
         --theme-menu-end: 0px;
     }
 
+    @media (max-width: 48rem) {
+        .navbar > nav {
+            order: 3;
+            inline-size: 100%;
+            justify-content: center;
+        }
+    }
+
     .theme-switch {
         --theme-switch-radius: var(--radius-control);
         position: relative;

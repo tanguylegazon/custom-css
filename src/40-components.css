@@ -598,6 +598,14 @@
         font-weight: 600;
     }
 
+    @media (max-width: 48rem) {
+        :where(footer) {
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+    }
+
     .floating {
         --floating-surface: var(--color-surface);
         position: sticky;
