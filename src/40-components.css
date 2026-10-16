@@ -116,13 +116,13 @@
     }
 
     @media (hover: hover) {
-        :where(button, input:is([type="button"], [type="reset"], [type="submit"])):not(:disabled, [aria-disabled="true"]):hover {
+        :where(button, input:is([type="button"], [type="reset"], [type="submit"])):not(:disabled):hover {
             background-color: var(--color-button-hover);
             color: var(--color-accent-contrast);
         }
     }
 
-    :where(button, input:is([type="button"], [type="reset"], [type="submit"])):not(:disabled, [aria-disabled="true"]):active {
+    :where(button, input:is([type="button"], [type="reset"], [type="submit"])):not(:disabled):active {
         filter: brightness(.96);
     }
 
@@ -478,7 +478,7 @@
                           linear-gradient(to right, transparent .25em, var(--color-button) .25em, var(--color-button) calc(100% - .25em), transparent calc(100% - .25em));
         background-size: 35% 100%;
         background-repeat: no-repeat;
-        animation: progress-pulse 1.6s ease-in-out infinite alternate;
+        animation: progress-pulse 1.6s var(--ease-standard) infinite alternate;
     }
 
     progress:indeterminate::-moz-progress-bar {

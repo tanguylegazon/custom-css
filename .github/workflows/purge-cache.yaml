@@ -15,4 +15,4 @@ jobs:
 
     steps:
       - name: Purge JSDelivr cache
-        run: curl -X GET "https://purge.jsdelivr.net/gh/$GITHUB_REPOSITORY@dist/custom.min.css" -s
+        run: curl --fail --silent --show-error "https://purge.jsdelivr.net/gh/$GITHUB_REPOSITORY@dist/custom.min.css"

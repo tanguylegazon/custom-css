@@ -12,6 +12,12 @@ A copy of the license is available at https://github.com/tailwindlabs/heroicons/
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
     <title>Component Catalog</title>
+    <script>
+        try {
+            const theme = localStorage.getItem("catalog-theme");
+            if (theme === "light" || theme === "dark") document.documentElement.dataset.theme = theme;
+        } catch (_) {}
+    </script>
     <script src="catalog.js" defer></script>
     <link rel="stylesheet" href="src/00-layers.css">
     <link rel="stylesheet" href="src/05-palette.css">

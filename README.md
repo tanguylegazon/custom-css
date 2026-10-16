@@ -12,11 +12,15 @@ look that can be used alongside other user specific CSS files.
 - `src/25-reset.css`: Browser normalization and resilient defaults.
 - `src/30-globals.css`: Global HTML and document styles.
 - `src/40-components.css`: Components.
+- `src/45-navigation.css`: Navigation components.
 - `src/50-variants.css`: Text emphasis and component variants.
 - `src/60-utilities.css`: Generic utility classes.
+- `tools/`: Palette generator, report and development dependencies.
 
 The source files are concatenated and minified by GitHub Actions. The generated distribution files are published on the
 `dist` branch.
+Node packages are development-only and generate or verify the palette. The workflow pins its minifier separately.
+The published stylesheet has no runtime dependency, and `node_modules` remains ignored.
 
 ## Cascade layers
 
@@ -28,6 +32,11 @@ The stylesheet uses ordered cascade layers:
 
 Unlayered site styles take precedence over normal declarations in the theme, making local overrides possible without
 increasing selector specificity. The layers themselves progress from foundational rules to explicit utilities.
+
+## Browser support
+
+The core theme targets current evergreen browsers and uses modern CSS, including `light-dark()`.
+Feature-dependent motion and visual enhancements retain native fallbacks where support is incomplete.
 
 ## Color tokens
 
@@ -42,9 +51,10 @@ tone classes override only the active tone inputs when needed.
 Form controls also use quieter field tokens for their surface, border, text, placeholder and focus colors.
 
 Each tone has twelve levels, in light and dark modes. Levels 1–5 are surfaces with shared OKLCH lightness and chroma.
-Levels 6–12 target absolute APCA contrasts of 25, 40, 60, 80, 86, 92 and 100 Lc in light mode,
+Levels 6–12 target absolute APCA contrasts of 25, 40, 60, 72, 80, 92 and 100 Lc in light mode,
 and 20, 35, 50, 65, 72, 85 and 95 Lc in dark mode, against that tone's level 1.
-Semantic hues share the same chroma at each level within a mode, reduced together to remain in sRGB.
+Semantic hues share the same base chroma at each level within a mode, with restrained hue-specific compensation.
+Colors are reduced independently when needed to remain in sRGB.
 Neutral tones stay desaturated. Equal model values do not guarantee identical perceived vibrancy.
 The neutral scale uses a restrained blue undertone instead of a perfectly achromatic grey.
 Light mode uses quieter chroma for surfaces, borders and control states than for primary accents.
@@ -57,6 +67,8 @@ Filled buttons use light palette levels 9 and 10 in both modes, with white text 
 
 ## Form labels
 
+The type scale uses .875rem in small, 1rem by default and 1.125rem in large.
+At the usual 16px root size, these resolve to 14px, 16px and 18px while respecting the user's browser preference.
 Single-line controls share the button height through `--control-height`: 2.5em in small, 2.625em by default and 2.667em in large.
 Stepper inputs reserve four character widths for their content by default.
 Override `--stepper-input-width` on the stepper when a wider numeric range is needed.
@@ -92,9 +104,19 @@ Use `.stepper` for a compact value control:
 
 ```html
 <div class="stepper small rounded">
-    <button class="ghost" aria-label="Decrease">−</button>
-    <input type="text" inputmode="numeric" aria-label="Quantity" value="16">
-    <button class="ghost" aria-label="Increase">+</button>
+    <button class="ghost" type="button" aria-label="Decrease">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor"
+             stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+            <path d="M3.5 8h9"/>
+        </svg>
+    </button>
+    <input type="number" min="1" value="16" aria-label="Quantity">
+    <button class="ghost" type="button" aria-label="Increase">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor"
+             stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+            <path d="M3.5 8h9M8 3.5v9"/>
+        </svg>
+    </button>
 </div>
 ```
 
@@ -118,13 +140,13 @@ Fonts use `system-ui` and `ui-monospace`, without named fonts or downloads.
 ### Regenerating the palette
 
 ```sh
-npm ci
-npm run palette
-npm run palette:check
+npm --prefix tools ci
+npm --prefix tools run palette
+npm --prefix tools run palette:check
 ```
 
-Edit the hue, chroma and contrast targets in `scripts/palette.mjs`, not the generated CSS.
-`palette.json` records signed APCA values and WCAG 2 contrast ratios against each tone's base surface.
+Edit the hue, chroma and contrast targets in `tools/scripts/palette.mjs`, not the generated CSS.
+`tools/palette.json` records signed APCA values and WCAG 2 contrast ratios against each tone's base surface.
 The generator checks sRGB gamut, contrast targets and reproducibility. No color calculation runs in the browser.
 
 APCA is an experimental design aid, not a claim of WCAG 3 conformance. WCAG 3 remains a draft.
@@ -149,10 +171,12 @@ Disabled controls use the native `disabled` attribute.
 <button class="soft info" disabled>Unavailable</button>
 ```
 
-## Floating navigation
+## Footer
 
 Use `<footer>` for a distinct surface, quiet separator, supporting text and wrapping horizontal content.
 Its width and page alignment remain controlled by the site layout. Use `<strong>` for the primary footer label.
+
+## Floating navigation
 
 Use `class="floating"` on a header or navigation container for a sticky, raised surface.
 Its surface appears on scroll through CSS scroll-driven animations where supported.
@@ -197,6 +221,18 @@ The menu radius is capped so a pill-shaped trigger keeps a usable menu.
 Opening the menu is native. Theme selection, persistence, Escape and outside-click
 handling belong to the host site's script; `catalog.js` provides an example.
 Update `data-selected`, `aria-pressed` and the current label together.
+Restore a saved theme in a blocking script before the stylesheets to avoid a theme flash:
+
+```html
+<script>
+    try {
+        const theme = localStorage.getItem("theme");
+        if (theme === "light" || theme === "dark") document.documentElement.dataset.theme = theme;
+    } catch (_) {}
+</script>
+<link rel="stylesheet" href="custom.min.css">
+```
+
 Use native `disabled` on unavailable options; `details` has no native disabled state.
 Place the menu away from clipping containers and viewport edges.
 The menu opens from the start edge, or the end edge inside a navbar.
@@ -208,7 +244,7 @@ For a footer, set `--theme-menu-top: auto` and
 
 Use `toc` on a labelled navigation element. Numbering and icons are optional.
 It fills the available width; constrain its parent or its own width to suit the layout.
-Size and shape utilities apply to the container; links inherit their shape.
+Size utilities adjust its typography and rhythm. Separator rows remain square.
 Use `aria-current="location"` for the current destination when tracking sections.
 
 ```html

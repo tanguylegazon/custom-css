@@ -148,6 +148,10 @@
         color: var(--color-text);
     }
 
+    label:has(> input:is([type="checkbox"], [type="radio"]):not(:disabled)) {
+        cursor: pointer;
+    }
+
     label:has(:disabled) {
         color: var(--color-disabled-text);
         cursor: not-allowed;

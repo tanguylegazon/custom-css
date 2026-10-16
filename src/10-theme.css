@@ -30,7 +30,7 @@
         --scroll-offset: 0px;
         --radius-control: .1875rem;
         --radius-rounded: .625rem;
-        --radius-full: calc(infinity * 1px);
+        --radius-full: 9999px;
 
         /* Motion */
         --duration-instant: 0ms;
