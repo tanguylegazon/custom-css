@@ -205,9 +205,27 @@
         syncTone(picker.value);
     };
 
+    const setupNotifications = () => {
+        const notifications = document.querySelector("#notifications");
+        const notificationOptions = document.querySelector("#notification-options");
+        const choices = Array.from(notificationOptions.querySelectorAll("input:not(:disabled)"));
+        const syncNotifications = () => {
+            const checked = choices.filter((input) => input.checked).length;
+            notifications.checked = checked === choices.length;
+            notifications.indeterminate = checked > 0 && checked < choices.length;
+        };
+        notifications.addEventListener("change", () => {
+            choices.forEach((input) => input.checked = notifications.checked);
+            syncNotifications();
+        });
+        notificationOptions.addEventListener("change", syncNotifications);
+        syncNotifications();
+    };
+
     setupNavigation();
     setupThemeSwitch();
     setupTonePicker();
+    setupNotifications();
     setupTooltips();
     setupSteppers();
     setupValidation();
